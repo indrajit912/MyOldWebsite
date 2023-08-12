@@ -19,16 +19,7 @@ Template Blocks:
 </head>
 <body>
 
-<div class="top-bar">
-    <a href="/">Home</a>
-    <a href="/teaching" target="_blank">Teaching</a>
-    <a href="/research" target="_blank">Research</a>
-</div>
-
-<div id="header">
-    <h1>Indrajit Ghosh</h1>
-    <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
-</div>
+    {% include '_header.html' %}
 
 <div id="content">
     <div class="profile">
@@ -53,14 +44,7 @@ Template Blocks:
     </div>
 </div>
 
-<div id="footer">
-    <p>&copy; 2023 Indrajit Ghosh. All rights reserved.</p>
-    <p>Contact: indrajitghosh912@gmail.com</p>
-    <p>Follow me on:
-        <a href="https://github.com/indrajit912" target="_blank">GitHub</a> |
-        <a href="https://fb.com/indrajitghosh912" target="_blank">Facebook</a>
-    </p>
-</div>
+    {% include '_footer.html' %}
 
 </body>
 </html>

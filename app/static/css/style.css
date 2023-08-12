@@ -29,6 +29,13 @@ body {
     margin-top: 5px;
 }
 
+/* Styling for large text */
+.large-text {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+}
+
 /* Content styles */
 #content {
     display: flex;
@@ -109,20 +116,3 @@ body {
     color: black;
 }
 
-/* Teaching content styles */
-.teaching-content {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.teaching-content b {
-    font-weight: bold;
-}
-
-.teaching-content a {
-    display: block;
-    margin-top: 10px;
-}
