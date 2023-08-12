@@ -14,7 +14,7 @@ Welcome to my personal website repository! This web app serves as an interactive
 
 This web app showcases my academic and professional accomplishments, highlighting my role as a Senior Research Fellow at the Theoretical Statistics and Mathematics Unit of the Indian Statistical Institute. It offers insights into my research focus, teaching experiences, and hobbies.
 
-## Features
+## What is there?
 
 - Detailed overview of my background, research interests, and achievements.
 - Dedicated sections for teaching experiences and research work.
