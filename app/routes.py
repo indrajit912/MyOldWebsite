@@ -32,6 +32,10 @@ def index():
 def teaching():
     return render_template('teaching.html')
 
+@app.route('/teaching/anal_several_vars_odd_2023.html')
+def anal_several_vars_odd_2023_ta():
+    return render_template('teaching/anal_several_vars_odd_2023.html')
+
 @app.route('/teaching/comp_anal_even_sem_2022.html')
 def comp_anal_even_sem_2022_ta():
     return render_template('teaching/comp_anal_even_sem_2022.html')
