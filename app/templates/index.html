@@ -16,6 +16,20 @@ Template Blocks:
     <title>Indrajit Ghosh - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add a media query to redirect mobile devices to index_mobile.html */
+        @media screen and (max-width: 768px) {
+            /* Redirect to index_mobile.html */
+            body:before {
+                content: "Redirecting to mobile version...";
+                font-size: 24px;
+                text-align: center;
+                display: block;
+                padding: 50px;
+                background-color: #f2f2f2;
+            }
+        }
+    </style>
 </head>
 <body>
 
