@@ -1,11 +1,18 @@
 /* app/static/css/style.css */
 
+/* Reset some default styles */
+body, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
 /* Body background color */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f2f2f2;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 /* Header styles */
@@ -16,14 +23,15 @@ body {
     text-align: center;
 }
 
-/* Header text styles */
-#header h1 {
-    margin: 0;
+/* Subtitle styles */
+.subtitle {
+    font-size: 18px;
+    margin-top: 5px;
 }
 
 /* Content styles */
 #content {
-    display: flex; /* Use flexbox for two-column layout */
+    display: flex;
     padding: 20px;
     background-color: #fff;
     margin: 20px;
@@ -38,7 +46,7 @@ body {
 }
 
 .profile-image {
-    max-width: 300px; /* Adjust the value to your preferred size */
+    max-width: 100%; /* Adjust the value to your preferred size */
     height: auto;
     border-radius: 5px;
     margin: 10px 0;
@@ -57,6 +65,12 @@ body {
     text-align: center;
 }
 
+/* Footer link styles */
+#footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: underline;
+}
 
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
