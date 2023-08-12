@@ -1,75 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Indrajit Ghosh - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Additional styles for mobile devices */
-        /* Customize styles as needed for mobile layout */
-        body {
-            font-size: 16px;
-            background-color: #f2f2f2;
-        }
-        #header {
-            padding: 10px;
-        }
-        #content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            margin: auto;
-        }
-        .profile {
-            flex: 0.7;
-            padding-right: 10px;
-        }
-        .profile-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px; /* Remove the oval border */
-            margin-top: 20px;
-            display: block;
-        }
-        .about-me {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        /* Adjust other styles as needed */
-    </style>
-</head>
-<body>
-
-    {% include '_header.html' %}
-
-    <div id="content">
-        <div class="profile">
-            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
-        </div>
-
-        <div class="about-me">
-            <h2>About Me</h2>
-            <!-- Include only essential information for mobile layout -->
-            <p>
-                Greetings! I am honored to introduce myself as a Senior Research Fellow in the 
-                Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute, 
-                Bangalore Centre. My area of interest lies broadly in the domain of Operator Algebra, with 
-                a pronounced focus on von-Neumann algebras, Type $II_1$ factors, and $C^*$-algebras.
-            </p>
-            <p>
-                Currently, I have the privilege of being guided by the esteemed 
-                <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>
-                on this rewarding journey.
-            </p>
-        </div>
-    </div>
-
-    {% include '_footer.html' %}
-
-</body>
-</html>
+<style>
+    /* Additional styles for mobile devices */
+    /* Customize styles as needed for mobile layout */
+    body {
+        font-size: 16px;
+        background-color: #f2f2f2;
+    }
+    #header {
+        padding: 10px;
+    }
+    #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin: auto;
+    }
+    .profile {
+        flex: 0.7;
+        padding-right: 0;
+    }
+    .profile-image {
+        max-width: 100%;
+        max-height: 200px; /* Adjust the max-height value as needed */
+        border-radius: 5px; /* Remove the oval border */
+        margin-top: 20px;
+        display: block;
+    }
+    .about-me {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    /* Adjust other styles as needed */
+</style>
