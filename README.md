@@ -2,6 +2,8 @@
 
 Welcome to my personal website repository! This web app serves as an interactive online portfolio where you can explore my professional profile, academic journey, research interests, and more.
 
+The website is currently lives [here on render](https://indrajitghosh.onrender.com).
+
 ## Table of Contents
 
 - [About](#about)
