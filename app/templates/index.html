@@ -22,9 +22,11 @@ Template Blocks:
     {% include '_header.html' %}
 
 <div id="content">
+    
     <div class="profile">
         <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
     </div>
+
     <div class="about-me">
         <h2>About Me</h2>
         <p>
@@ -47,8 +49,6 @@ Template Blocks:
         </p>
     </div>
     
-    
-        
 </div>
 
     {% include '_footer.html' %}
