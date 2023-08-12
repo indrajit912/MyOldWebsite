@@ -2,20 +2,51 @@
 
 /* Body background color */
 body {
-    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
 }
 
 /* Header styles */
 #header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+}
+
+/* Header text styles */
+#header h1 {
+    margin: 0;
 }
 
 /* Content styles */
 #content {
+    display: flex; /* Use flexbox for two-column layout */
     padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile image styles */
+.profile {
+    flex: 0.7;
+    padding-right: 20px;
+}
+
+.profile-image {
+    max-width: 300px; /* Adjust the value to your preferred size */
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* About Me styles */
+.about-me {
+    flex: 2;
 }
 
 /* Footer styles */
@@ -24,4 +55,23 @@ body {
     color: #fff;
     padding: 10px;
     text-align: center;
+}
+
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    #header {
+        padding: 10px;
+    }
+    #content {
+        margin: 10px;
+        padding: 10px;
+    }
+    .profile-image {
+        max-width: 100px;
+    }
+    /* Adjust other styles as needed */
 }
