@@ -28,7 +28,7 @@
         .profile-image {
             max-width: 100%;
             max-height: 200px; /* Adjust the max-height value as needed */
-            border-radius: 5px; /* Remove the oval border */
+            border-radius: 5px; /* Decrease the oval border */
             margin-top: 20px;
             display: block;
         }
@@ -48,24 +48,16 @@
     {% include '_header.html' %}
 
     <div id="content">
+
         <div class="profile">
             <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
         </div>
 
         <div class="about-me">
             <h2>About Me</h2>
-            <!-- Include only essential information for mobile layout -->
-            <p>
-                Greetings! I am honored to introduce myself as a Senior Research Fellow in the 
-                Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute, 
-                Bangalore Centre. My area of interest lies broadly in the domain of Operator Algebra, with 
-                a pronounced focus on von-Neumann algebras, Type $II_1$ factors, and $C^*$-algebras.
-            </p>
-            <p>
-                Currently, I have the privilege of being guided by the esteemed 
-                <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>
-                on this rewarding journey.
-            </p>
+
+            {% include '_small_about_me.html' %}
+            
         </div>
     </div>
 
