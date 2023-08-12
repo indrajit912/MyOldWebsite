@@ -100,6 +100,8 @@ body {
 .top-bar {
     background-color: #333;
     overflow: hidden;
+    padding: 2px 0; /* Adjust padding for top and bottom */
+    text-align: center;
 }
 
 .top-bar a {
@@ -109,6 +111,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 15px; /* Adjust font size */
 }
 
 .top-bar a:hover {
