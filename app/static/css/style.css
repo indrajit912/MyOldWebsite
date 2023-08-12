@@ -79,7 +79,7 @@ body {
 /* Profile image styles */
 .profile {
     flex: 0.7;
-    padding-right: 20px;
+    padding-right: 15px;
 }
 
 .profile-image {
