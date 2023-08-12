@@ -44,9 +44,8 @@ python run.py
 ```
 
 ## Deployment
-The web app is deployed using Heroku, a cloud platform. It is accessible online at https://your-app-name.herokuapp.com.
+The web app is deployed using [Render](https://render.com/), a cloud platform. It is accessible online at https://indrajitghosh.onrender.com.
 
-To deploy your own instance of the app to Heroku, follow the instructions in the Deployment section of this README.
 
 ## Contact
 For any inquiries, questions, or collaborations, please contact Indrajit Ghosh at indrajitghosh912@gmail.com.
