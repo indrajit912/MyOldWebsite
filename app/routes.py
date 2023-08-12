@@ -11,7 +11,9 @@ Attributes:
 from flask import render_template
 from app import app
 
-# Home
+######################################################################
+#                           Home
+######################################################################
 @app.route('/')
 def index():
     """
@@ -23,16 +25,31 @@ def index():
     return render_template('index.html')
 
 
-# Teaching
+######################################################################
+#                           Teaching
+######################################################################
 @app.route('/teaching')
 def teaching():
     return render_template('teaching.html')
 
-@app.route('/teaching/first.html')
-def first_teaching():
-    return render_template('teaching/first.html')
+@app.route('/teaching/comp_anal_even_sem_2022.html')
+def comp_anal_even_sem_2022_ta():
+    return render_template('teaching/comp_anal_even_sem_2022.html')
 
-# Research
+@app.route('/teaching/func_anal_even_sem_2021.html')
+def func_anal_even_sem_2021_ta():
+    return render_template('teaching/func_anal_even_sem_2021.html')
+
+@app.route('/teaching/optimization_odd_sem_2021.html')
+def optimization_odd_sem_2021_ta():
+    return render_template('teaching/optimization_odd_sem_2021.html')
+
+
+######################################################################
+
+######################################################################
+#                       Research
+######################################################################
 @app.route('/research')
 def research():
     return render_template('research.html')
