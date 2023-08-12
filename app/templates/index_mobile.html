@@ -22,35 +22,31 @@
 </head>
 <body>
 
-<div class="top-bar">
-    <a href="/">Home</a>
-    <a href="/teaching">Teaching</a>
-    <a href="/research">Research</a>
-</div>
-
-<div id="header">
-    <h1>Indrajit Ghosh</h1>
-    <p>Senior Research Fellow | Indian Statistical Institute</p>
-</div>
+    {% include '_header.html' %}
 
 <div id="content">
+    
+    <div class="profile">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
+    </div>
+
     <div class="about-me">
         <h2>About Me</h2>
-        <p>
-            Greetings! I am a Senior Research Fellow within the Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute, Bangalore Centre.
-        </p>
         <!-- Include only essential information for mobile layout -->
         <p>
-            I am working under the esteemed guidance of 
-            <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>.
+            Greetings! I am honored to introduce myself as a Senior Research Fellow in the 
+            Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute, 
+            Bangalore Centre. My area of interest lies broadly in the domain of Operator Algebra, with 
+            a pronounced focus on von-Neumann algebras, Type $II_1$ factors, and $C^*$-algebras.
         </p>
+        <p>
+            Currently, I have the privilege of being guided by the esteemed 
+            <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>
+             on this rewarding journey.
     </div>
 </div>
 
-<div id="footer">
-    <p>&copy; 2023 Indrajit Ghosh. All rights reserved.</p>
-    <p>Contact: indrajitghosh912@gmail.com</p>
-</div>
+{% include '_footer.html' %}
 
 </body>
 </html>
