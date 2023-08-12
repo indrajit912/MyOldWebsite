@@ -56,5 +56,11 @@ For any inquiries, questions, or collaborations, please contact Indrajit Ghosh a
 - [GitHub](https://github.com/indrajit912)
 - [Facebook](https://fb.com/indrajitghosh912)
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+© 2023 Indrajit Ghosh
+
 
 *This web app is created and maintained by Indrajit Ghosh.*
