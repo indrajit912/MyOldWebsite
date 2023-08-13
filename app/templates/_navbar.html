@@ -14,3 +14,19 @@
         <a href="/photos" class="top-link">Photos</a>
     </div>
 </div>
+
+<!-- Include the expanded mobile menu overlay -->
+<div id="overlay" class="overlay"></div>
+
+<!-- Mobile menu toggle script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("mobile-toggle");
+        const overlay = document.getElementById("overlay");
+
+        toggleButton.addEventListener("click", function () {
+            document.getElementById("top-bar").classList.toggle("show");
+            overlay.classList.toggle("show-overlay"); // Toggle the overlay
+        });
+    });
+</script>
