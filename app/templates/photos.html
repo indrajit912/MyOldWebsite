@@ -1,7 +1,7 @@
 <!DOCTYPE haml>
 <html>
 <head>
-    <title>Personal Photos</title>
+    <title>Photos - Indrajit</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/collage_style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,10 +46,26 @@
         </div>
 
         <div class="grid--item">
+            <div class="img" style="background-image: url(static/images/indra_library/books.jpg);"></div>
+            <div class="container">
+                <h2>Book Shelf</h2>
+                <div class="desc">Personal book shelf in my ISI Hostel</div>
+            </div>
+        </div>
+
+        <div class="grid--item">
             <div class="img" style="background-image: url(static/images/indrajit/photo_near_dqtrs.jpg);"></div>
             <div class="container">
                 <h2>Indrajit</h2>
                 <div class="desc">Photo by Sneha Bharti</div>
+            </div>
+        </div>
+
+        <div class="grid--item">
+            <div class="img" style="background-image: url(static/images/indrajit/photo_with_cat.jpg);"></div>
+            <div class="container">
+                <h2>Indrajit With Cat</h2>
+                <div class="desc">Captured using my Sneha Bharti</div>
             </div>
         </div>
 
@@ -70,38 +86,21 @@
         </div>
 
         <div class="grid--item">
-            <div class="img" style="background-image: url(static/images/indrajit/photo_mgroad.jpg);"></div>
+            <div class="img" style="background-image: url(static/images/indrajit/photo_sob_staircase.jpg);"></div>
             <div class="container">
                 <h2>Indrajit</h2>
-                <div class="desc">Captured by Krishna at MG Road</div>
+                <div class="desc">Captured by Geetika Barman</div>
+            </div>
+        </div>
+
+        <div class="grid--item">
+            <div class="img" style="background-image: url(static/images/indra_library/indra_with_books.jpg);"></div>
+            <div class="container">
+                <h2>Indrajit With Book</h2>
+                <div class="desc">Captured using my Apple Watch</div>
             </div>
         </div>
 
     </div>
-    
-    <!-- .grid
-        .grid--item
-        .grid--item
-            .img{ :style => "background-image: url(https://images.unsplash.com/photo-1423145369430-a9ea0de096cd?crop=entropy&fit=crop&fm=jpg&h=1375&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1725);"}
-            .container 
-                %h2 Horse
-                .desc Photo by Annie Spratt    
-        .grid--item
-            .img{ :style => "background-image: url(https://images.unsplash.com/photo-1432887382605-0abf9cc49e8f?crop=entropy&fit=crop&fm=jpg&h=1375&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1725);"}
-            .container 
-                %h2 Ice & Penguin
-                .desc Photo by Teodor Bjerrang
-        .grid--item
-            .img{ :style => "background-image: url(https://images.unsplash.com/photo-1417026846249-f31f7e43fc35?crop=entropy&fit=crop&fm=jpg&h=1375&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1725);"}
-            .container 
-                %h2 Pile of Logs
-                .desc Photo by Ales Krivec
-        .grid--item
-            .img{ :style => "background-image: url(https://images.unsplash.com/uploads/14122811862445bc266cf/931448f2?crop=entropy&fit=crop&fm=jpg&h=1375&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1725);"}
-            .container 
-                %h2 Winter Tree
-                .desc Photo by Mikael Kristenson -->
-
-
 </body>
 </html>

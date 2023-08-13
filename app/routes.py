@@ -76,6 +76,6 @@ def timeline():
 ######################################################################
 #                       Photos
 ######################################################################
-@app.route('/collage')
-def collage():
-    return render_template('collage.html')
+@app.route('/photos')
+def photos():
+    return render_template('photos.html')
