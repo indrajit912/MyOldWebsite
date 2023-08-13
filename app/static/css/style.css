@@ -70,12 +70,16 @@ body {
         width: 100%;
     }
 }
+
 .typing-text::after {
-    content: "_"; /* Cursor */
-    position: relative;
-    top: 0;
-    right: -0.1em; /* Adjust the distance from the text */
+    content: ""; /* Empty content to create the cursor */
+    display: inline-block;
+    width: 0.5em; /* Set the width of the cursor */
+    height: 0.15em; /* Set the height of the cursor */
+    background-color: orange; /* Set the cursor color */
     animation: typing-cursor 0.7s infinite;
+    position: relative;
+    top: 0.1em; /* Adjust the vertical position of the cursor */
 }
 
 @keyframes typing-cursor {
@@ -86,7 +90,6 @@ body {
         opacity: 1;
     }
 }
-
 /* Subtitle styles */
 .subtitle {
     font-size: 18px;
