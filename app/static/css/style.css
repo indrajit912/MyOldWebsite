@@ -40,14 +40,51 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative; /* Add relative positioning */
 }
 #header h1 {
     margin: 0;
     font-size: 2.5rem;
+    position: relative; /* Add relative positioning */
+    overflow: hidden; /* Hide overflowing text */
 }
 #header p {
     margin: 10px 0;
     font-size: 1.2rem;
+}
+
+/* Text typing animation */
+.typing-text {
+    display: inline-block;
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent line breaks */
+    position: relative; /* Add relative positioning */
+    animation: typing 5s steps(40) 1;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.typing-text::after {
+    content: "_"; /* Cursor */
+    position: relative;
+    top: 0;
+    right: -0.1em; /* Adjust the distance from the text */
+    animation: typing-cursor 0.7s infinite;
+}
+
+@keyframes typing-cursor {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* Subtitle styles */
@@ -81,8 +118,13 @@ body {
 .profile-image {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10%; /* Make the image round */
     margin: 10px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Add a smooth hover effect */
+}
+.profile-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
 }
 
 /* About Me styles */
