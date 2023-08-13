@@ -201,14 +201,6 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: underline;
 }
 
-/* Add styles for mobile navigation */
-.mobile-nav-icon {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #fff;
-}
-
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
     body {
@@ -227,31 +219,6 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     /* Adjust other styles as needed */
     .typing-text {
         animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
-    }
-    /* Display first few items in one line on smaller screens */
-    .top-bar {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-    .top-link {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    /* Display the hamburger icon */
-    .mobile-nav-icon {
-        display: block;
-    }
-    /* Adjust the layout when the navigation menu is shown */
-    .top-bar.show-nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .top-bar.show-nav .top-link {
-        display: block;
-        margin: 10px 0;
     }
 }
 
