@@ -201,7 +201,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: underline;
 }
 
-/* Mobile navigation */
+/* Add styles for mobile navigation */
 .mobile-nav-icon {
     display: none;
     cursor: pointer;
@@ -228,20 +228,27 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     .typing-text {
         animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
     }
+    /* Display first few items in one line on smaller screens */
     .top-bar {
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
     }
-
-    .top-bar a {
-        display: none;
+    .top-link {
+        display: inline-block;
+        margin-right: 10px;
     }
-
     .mobile-nav-icon {
         display: block;
     }
-
-    .top-bar.show-nav a {
+    .top-bar.show-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-bar.show-nav .top-link {
         display: block;
+        margin: 10px 0;
     }
 }
 
