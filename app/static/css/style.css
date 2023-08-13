@@ -62,6 +62,15 @@ body {
     animation: typing 5s steps(40) 1;
 }
 
+.typing-text .indrajit {
+    font-weight: bold;
+    color: #7196d1; /* Add your desired color for "Indrajit" */
+}
+.typing-text .ghosh {
+    font-weight: normal;
+    color: rgb(98, 98, 143); /* Add your desired color for "Ghosh" */
+}
+
 @keyframes typing {
     from {
         width: 0;
