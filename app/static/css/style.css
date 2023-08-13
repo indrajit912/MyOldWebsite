@@ -207,6 +207,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    padding: 10px; /* Add padding to increase the clickable area */
 }
 
 .bar {
@@ -214,13 +215,14 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     height: 3px;
     background-color: white;
     transition: 0.3s;
+    /* Adjust the positioning and spacing of bars */
+    margin: 3px auto;
 }
 
 /* Display navigation links on larger screens */
 #nav-links {
     display: flex;
 }
-
 
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
