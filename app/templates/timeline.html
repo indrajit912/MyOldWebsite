@@ -1,99 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Timeline - Indrajit Ghosh</title>
+    <title>Timeline</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline_style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Additional styles for the timeline */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .event {
-            position: relative;
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .event h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .event p {
-            margin: 10px 0;
-            font-size: 1rem;
-            color: #666;
-        }
-    </style>
-    <!-- Add any additional CSS or scripts as needed -->
 </head>
 <body>
 
     {% include '_header.html' %}
 
-    <div id="content">
-
-        <div class="timeline">
-            <div class="event">
-                <h2>Graduate Studies (Currently pursuing)</h2>
-                <p>Department: Statistics and Mathematics Unit</p>
-                <p>Institute: Indian Statistical Institute, Bangalore</p>
-                <p>Address: 8th Mile, Mysore Road, Bengaluru 560059</p>
-                <p>Years: 17th Jul 2019 to Present</p>
+    <ul>
+        <li style="--accent-color:#41516C">
+            <div class="date">2013</div>
+            <div class="title">Higher Secondary</div>
+            <div class="descr">
+                Passed Higher Secondary Exam from Dakshin Chatra High School, West Bengal, India.
             </div>
-            <div class="event">
-                <h2>Moved to Bangalore, India in 2019</h2>
+        </li>
+        <li style="--accent-color:#FBCA3E">
+            <div class="date">2016</div>
+            <div class="title">Under Graduate</div>
+            <div class="descr">
+                Obtained the degree of BSc(Hons.) in Mathematics from West 
+                Bengal State University, West Bengal, India.
             </div>
-            <div class="event">
-                <h2>Post Graduate</h2>
-                <p>Course: Masters in Pure Mathematics</p>
-                <p>Department: Department of Pure Mathematics</p>
-                <p>University: University of Calcutta</p>
-                <p>Years: 2016-2018</p>
-                <p>Address: Kolkata, India</p>
+        </li>
+        <li style="--accent-color:#E24A68">
+            <div class="date">2018</div>
+            <div class="title">Post Graduate</div>
+            <div class="descr">
+                Obtained the degree of MSc in Pure Mathematics from the Department of Pure Mathematics, 
+                University of Calcutta, Kolkata, India.
             </div>
-            <div class="event">
-                <h2>Moved to Kolkata</h2>
+        </li>
+        <li style="--accent-color:#1B5F8C">
+            <div class="date">2019</div>
+            <div class="title">Graduate Studies</div>
+            <div class="descr">
+                Joined the Theoretical Statistics and Mathematics Unit(SMU) at Indian Statistical Institute 
+                Bangalore as a Junior Research Fellow.
             </div>
-            <div class="event">
-                <h2>Under Graduate</h2>
-                <p>Course: Mathematics (Hons.)</p>
-                <p>College: Barasat Govt. College</p>
-                <p>University: West Bengal State University</p>
-                <p>Year: Jul 2013 to Aug 2016</p>
-                <p>Address: West Bengal, India</p>
+        </li>
+        <li style="--accent-color:#4CADAD">
+            <div class="date">2021-Present</div>
+            <div class="title">Senior Research Fellow</div>
+            <div class="descr">
+                Working as a Senior Research Fellow at SMU, ISI.
             </div>
-            <div class="event">
-                <h2>Secondary Schooling</h2>
-                <p>School Name: Dakshin Chatra High School</p>
-                <p>Year: 2005-2013</p>
-                <p>Address: West Bengal, India</p>
-            </div>
-            <div class="event">
-                <h2>Primary Schooling</h2>
-                <p>School Name: Netaji Shikha Niketan</p>
-                <p>Year: 2001 to 2005</p>
-                <p>Address: West Bengal, India</p>
-            </div>
-            <div class="event">
-                <h2>Born: 9th Dec, 1995</h2>
-                <p>Birth Place: Kolkata</p>
-            </div>
-        </div>
-
-    </div>
-
+        </li>
+    </ul>
+    
+    
     {% include '_footer.html' %}
-
-    <!-- Add any additional scripts or JavaScript libraries here -->
 
 </body>
 </html>
