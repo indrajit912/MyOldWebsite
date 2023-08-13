@@ -79,3 +79,10 @@ def timeline():
 @app.route('/photos')
 def photos():
     return render_template('photos.html')
+
+######################################################################
+#                       CV
+######################################################################
+@app.route('/cv')
+def cv():
+    return render_template('cv.html')
