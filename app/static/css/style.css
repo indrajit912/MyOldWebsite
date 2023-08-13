@@ -201,23 +201,12 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: underline;
 }
 
-/* Add styles for mobile toggle */
-.mobile-toggle {
+/* Add styles for mobile navigation */
+.mobile-nav-icon {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
     cursor: pointer;
-}
-
-.bar {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-}
-
-/* Display navigation links on larger screens */
-#nav-links {
-    display: flex;
+    font-size: 24px;
+    color: #fff;
 }
 
 /* Styles for smaller screens */
@@ -239,14 +228,26 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     .typing-text {
         animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
     }
-    /* Hide navigation links on smaller screens */
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-    .mobile-toggle {
+    /* Display first few items in one line on smaller screens */
+    .top-bar {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    .top-link {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .mobile-nav-icon {
+        display: block;
+    }
+    .top-bar.show-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-bar.show-nav .top-link {
+        display: block;
+        margin: 10px 0;
     }
 }
-
