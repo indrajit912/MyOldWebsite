@@ -186,6 +186,6 @@ body {
     }
     /* Adjust other styles as needed */
     .typing-text {
-        animation: typing 3s steps(40) 1; /* Adjust the animation duration as needed */
+        animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
     }
 }
