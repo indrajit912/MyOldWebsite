@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/collage_style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    {% include '_header.html' %}
+
+    <div class="collage-container">
+        <div class="collage-row">
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Photo 1" class="collage-image">
+            </div>
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Photo 2" class="collage-image">
+            </div>
+        </div>
+        <div class="collage-row">
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Photo 3" class="collage-image">
+            </div>
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='images/photo4.jpg') }}" alt="Photo 4" class="collage-image">
+            </div>
+        </div>
+    </div>
+    
+    {% include '_footer.html' %}
+
+</body>
+</html>

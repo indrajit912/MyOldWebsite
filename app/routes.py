@@ -72,3 +72,10 @@ def research():
 @app.route('/timeline')
 def timeline():
     return render_template('timeline.html')
+
+######################################################################
+#                       Photos
+######################################################################
+@app.route('/collage')
+def collage():
+    return render_template('collage.html')

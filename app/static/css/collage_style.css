@@ -1,0 +1,51 @@
+/* app/static/css/collage_style.css */
+
+/* Collage container */
+.collage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Collage rows */
+.collage-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Collage images */
+.collage-item {
+    flex: 1;
+}
+
+.collage-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.collage-image:hover {
+    transform: scale(1.05);
+}
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .collage-container {
+        margin: 10px;
+        padding: 10px;
+    }
+    .collage-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
