@@ -39,7 +39,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 .top-bar a:hover {
-    background-color: #1565C0; /* Change to your desired hover color */
+    background-color: rgb(84, 84, 134); /* Change to your desired hover color */
     transform: scale(1.06); /* Slightly enlarge the image on hover */
 }
 

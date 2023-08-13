@@ -63,3 +63,9 @@ def optimization_odd_sem_2021_ta():
 def research():
     return render_template('research.html')
 
+######################################################################
+#                       Timeline
+######################################################################
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html')

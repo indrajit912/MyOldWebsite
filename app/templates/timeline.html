@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timeline - Indrajit Ghosh</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Additional styles for the timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event {
+            position: relative;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .event h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .event p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
+    <!-- Add any additional CSS or scripts as needed -->
+</head>
+<body>
+
+    {% include '_header.html' %}
+
+    <div id="content">
+
+        <div class="timeline">
+            <div class="event">
+                <h2>Graduate Studies (Currently pursuing)</h2>
+                <p>Department: Statistics and Mathematics Unit</p>
+                <p>Institute: Indian Statistical Institute, Bangalore</p>
+                <p>Address: 8th Mile, Mysore Road, Bengaluru 560059</p>
+                <p>Years: 17th Jul 2019 to Present</p>
+            </div>
+            <div class="event">
+                <h2>Moved to Bangalore, India in 2019</h2>
+            </div>
+            <div class="event">
+                <h2>Post Graduate</h2>
+                <p>Course: Masters in Pure Mathematics</p>
+                <p>Department: Department of Pure Mathematics</p>
+                <p>University: University of Calcutta</p>
+                <p>Years: 2016-2018</p>
+                <p>Address: Kolkata, India</p>
+            </div>
+            <div class="event">
+                <h2>Moved to Kolkata</h2>
+            </div>
+            <div class="event">
+                <h2>Under Graduate</h2>
+                <p>Course: Mathematics (Hons.)</p>
+                <p>College: Barasat Govt. College</p>
+                <p>University: West Bengal State University</p>
+                <p>Year: Jul 2013 to Aug 2016</p>
+                <p>Address: West Bengal, India</p>
+            </div>
+            <div class="event">
+                <h2>Secondary Schooling</h2>
+                <p>School Name: Dakshin Chatra High School</p>
+                <p>Year: 2005-2013</p>
+                <p>Address: West Bengal, India</p>
+            </div>
+            <div class="event">
+                <h2>Primary Schooling</h2>
+                <p>School Name: Netaji Shikha Niketan</p>
+                <p>Year: 2001 to 2005</p>
+                <p>Address: West Bengal, India</p>
+            </div>
+            <div class="event">
+                <h2>Born: 9th Dec, 1995</h2>
+                <p>Birth Place: Kolkata</p>
+            </div>
+        </div>
+
+    </div>
+
+    {% include '_footer.html' %}
+
+    <!-- Add any additional scripts or JavaScript libraries here -->
+
+</body>
+</html>
