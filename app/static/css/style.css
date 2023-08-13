@@ -201,13 +201,26 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: underline;
 }
 
-/* Add styles for mobile navigation */
-.mobile-nav-icon {
-    display: none;
+/* Add styles for mobile toggle */
+.mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
-    font-size: 24px;
-    color: #fff;
 }
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* Display navigation links on larger screens */
+#nav-links {
+    display: flex;
+}
+
 
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
@@ -239,15 +252,25 @@ body, h1, h2, h3, h4, h5, h6, p, a {
         display: inline-block;
         margin-right: 10px;
     }
-    .mobile-nav-icon {
-        display: block;
-    }
-    .top-bar.show-nav {
+    #nav-links {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(98, 98, 143);
+        text-align: center;
+        transition: 0.3s;
     }
-    .top-bar.show-nav .top-link {
-        display: block;
-        margin: 10px 0;
+    #top-bar.show #nav-links {
+        display: flex;
+    }
+    .mobile-toggle {
+        display: flex;
+    }
+    .bar {
+        width: 25px;
     }
 }
