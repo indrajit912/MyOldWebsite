@@ -1,51 +1,113 @@
 /* app/static/css/collage_style.css */
 
-/* Collage container */
-.collage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+body {
+    background: #dedede;
+    -webkit-font-smoothing: antialiased;
+    min-width: 1200px;
 }
 
-/* Collage rows */
-.collage-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+.grid {
+    padding: 60px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Collage images */
-.collage-item {
-    flex: 1;
-}
-
-.collage-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.collage-image:hover {
-    transform: scale(1.05);
-}
-
-/* Styles for smaller screens */
-@media screen and (max-width: 768px) {
-    .collage-container {
-        margin: 10px;
-        padding: 10px;
+.grid--item {
+    position: relative;
+    margin-top: -90px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: calc(33.33% - 10px);
+    float: left;
+    transition: all 0.5s;
+    overflow: hidden;
+    -webkit-clip-path: polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+    clip-path: polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+    &:before {
+        display: block;
+        padding-top: 112.5%;
+        content: '';
     }
-    .collage-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    &:nth-child(1),
+    &:nth-child(2) { margin-top: 0; }
+    &:nth-child(7n - 1),
+    &:nth-child(1) {
+        margin-left: 185px;
     }
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    -webkit-clip-path: polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+    clip-path: polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+    &:before,
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    &:before {
+        background: rgba(purple, 0.25);
+    }
+    &:after {
+        background: linear-gradient(to top, transparent, rgba(black, 0.5), transparent);
+    }
+}
+
+.container { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    color: white;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: all 0.5s;
+    -webkit-shape-outside:   polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+    shape-outside:   polygon(
+        50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+    );
+}
+
+.desc {
+    margin: 1em 0 0;
+    font-family: 'ATC Overlook';
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1.5;
+    color: turquoise;
+}
+
+.grid--item:hover {
+    .img:before,
+    .img:after,
+    .container { opacity: 1; }
+    .container { transform: translate(-50%, -50%) scale(1); }
 }
