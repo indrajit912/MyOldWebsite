@@ -78,6 +78,18 @@ Template Blocks:
             }
         });
     </script>
+
+    <!-- Javascript to Hamburger icon animation -->
+
+    <script>
+        const mobileNavIcon = document.getElementById("mobile-nav-icon");
+        const topBar = document.getElementById("top-bar");
+    
+        mobileNavIcon.addEventListener("click", () => {
+            topBar.classList.toggle("show-nav");
+        });
+    </script>
+    
     
 </body>
 </html>

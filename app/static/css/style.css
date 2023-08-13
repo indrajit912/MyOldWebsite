@@ -201,6 +201,14 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     text-decoration: underline;
 }
 
+/* Mobile navigation */
+.mobile-nav-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
     body {
@@ -220,4 +228,20 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     .typing-text {
         animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
     }
+    .top-bar {
+        text-align: center;
+    }
+
+    .top-bar a {
+        display: none;
+    }
+
+    .mobile-nav-icon {
+        display: block;
+    }
+
+    .top-bar.show-nav a {
+        display: block;
+    }
 }
+
