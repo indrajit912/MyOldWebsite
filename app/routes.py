@@ -3,6 +3,9 @@ Routes and Views
 
 This module defines the routes and views for the Flask web application.
 
+Author: Indrajit Ghosh
+Created on: Aug 12, 2023
+
 Attributes:
     app (Flask): The Flask web application instance.
 """
