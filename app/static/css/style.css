@@ -230,7 +230,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     }
     /* Display first few items in one line on smaller screens */
     .top-bar {
-        display: flex;
+        display: none;
         justify-content: space-between;
         align-items: center;
         padding: 10px;
