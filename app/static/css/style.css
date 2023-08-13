@@ -9,6 +9,13 @@ body, h1, h2, p, a {
     box-sizing: border-box;
 }
 
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #1a237e; /* Your desired heading color */
+    margin-bottom: 10px;
+}
+
+
 /* Body background color */
 body {
     background-color: #f2f2f2;
@@ -18,21 +25,34 @@ body {
 
 /* Styles for top bar */
 .top-bar {
-    background-color: #222;
+    background-color: #1976D2; /* Change to your desired background color */
     overflow: hidden;
     text-align: left;
-    font-size: 1rem;
-    padding: 8px 0;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    font-family: "Arial", sans-serif; /* Change to your desired font */
 }
 .top-bar a {
     display: inline-block;
     color: #fff;
-    padding: 12px 16px;
+    padding: 8px 16px;
     transition: background-color 0.3s, color 0.3s;
 }
 .top-bar a:hover {
-    background-color: #444;
+    background-color: #1565C0; /* Change to your desired hover color */
+    transform: scale(1.06); /* Slightly enlarge the image on hover */
 }
+
+/* Style for bold links */
+.top-bar .top-link {
+    font-weight: bold;
+}
+
+/* Additional styles for the text font */
+body, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "Verdana", sans-serif; /* Change to your desired font */
+}
+
 
 /* Header styles */
 #header {
