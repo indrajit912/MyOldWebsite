@@ -42,8 +42,22 @@
         }
         /* Adjust other styles as needed */
     </style>    
+    
     <!-- The follwoing is for displaying LaTeX code outputs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <!-- For Hamburger icon animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("mobile-toggle");
+            const navLinks = document.getElementById("nav-links");
+
+            toggleButton.addEventListener("click", function () {
+                navLinks.classList.toggle("show");
+            });
+        });
+    </script>
+
 </head>
 <body>
 
