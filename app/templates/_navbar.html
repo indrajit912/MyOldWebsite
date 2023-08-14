@@ -24,10 +24,26 @@
     document.addEventListener("DOMContentLoaded", function () {
         const toggleButton = document.getElementById("mobile-toggle");
         const overlay = document.getElementById("overlay");
+        const topBar = document.getElementById("top-bar");
+        const bars = toggleButton.querySelectorAll(".bar");
 
         toggleButton.addEventListener("click", function () {
-            document.getElementById("top-bar").classList.toggle("show");
-            overlay.classList.toggle("show-overlay"); // Toggle the overlay
+            topBar.classList.toggle("show");
+            overlay.classList.toggle("show-overlay");
+
+            // Toggle the 'X' icon
+            bars.forEach(bar => {
+                bar.classList.toggle("change");
+            });
+        });
+
+        // Close the menu when clicking outside of it
+        overlay.addEventListener("click", function () {
+            topBar.classList.remove("show");
+            overlay.classList.remove("show-overlay");
+            bars.forEach(bar => {
+                bar.classList.remove("change");
+            });
         });
     });
 </script>

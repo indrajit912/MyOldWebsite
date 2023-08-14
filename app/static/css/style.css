@@ -219,6 +219,18 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     margin: 3px auto;
 }
 
+/* Add styles for the 'X' icon */
+.bar.change:nth-child(1) {
+    transform: rotate(45deg) translate(0, 13px);
+}
+.bar.change:nth-child(2) {
+    opacity: 0;
+}
+.bar.change:nth-child(3) {
+    transform: rotate(-45deg) translate(0, -13px);
+}
+
+
 /* Display navigation links on larger screens */
 #nav-links {
     display: flex;
