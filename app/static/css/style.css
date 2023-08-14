@@ -230,6 +230,26 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     transform: rotate(-45deg) translate(0, -13px);
 }
 
+/* Fade-in animation for the overlay */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-out animation for the overlay */
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 
 /* Display navigation links on larger screens */
 #nav-links {
