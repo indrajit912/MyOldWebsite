@@ -1,13 +1,24 @@
 <!-- app/templates/_header.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 
-<div id="header">
-    <h1>
-        <span class="typing-text">
-            <span class="indrajit">Indrajit</span>
-            <span class="ghosh">Ghosh</span>
-        </span>
-    </h1>
-    <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
-</div>
+    <body>
 
-{% include '_navbar.html' %}
+        <div id="header">
+            <h1>
+                <span class="typing-text">
+                    <span class="indrajit">Indrajit</span>
+                    <span class="ghosh">Ghosh</span>
+                </span>
+            </h1>
+            <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
+        </div>
+        
+        {% include '_navbar.html' %}
+
+    </body>
+</html>

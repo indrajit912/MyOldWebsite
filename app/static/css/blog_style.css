@@ -42,7 +42,7 @@
 /* Blog content styles */
 .blog-content {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 40px 20px;
     font-size: 16px;
     line-height: 1.6;

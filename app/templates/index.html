@@ -15,7 +15,6 @@ Template Blocks:
 <head>
     <title>Indrajit Ghosh - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script>
@@ -28,49 +27,50 @@ Template Blocks:
     <!-- The follwoing is for displaying LaTeX code outputs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
+
 <body>
 
     {% include '_header.html' %}
-
-<div id="content">
-
-    <div class="profile">
-        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
-    </div>
-
-    <div class="about-me">
-        <h2>About Me</h2>
+    
+    <div id="content">
+    
+        <div class="profile">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
+        </div>
+    
+        <div class="about-me">
+            <h2>About Me</h2>
+            
+            {% include '_small_about_me.html' %}
         
-        {% include '_small_about_me.html' %}
-
-        <p>
-            As a dedicated book enthusiast, I embark on captivating journeys of exploration and knowledge 
-            through the realm of literature. The act of collecting and immersing myself in books brings me 
-            immense joy, particularly as I hold a special affinity for the worlds of science, mystery, and 
-            Bengali literature.
-        </p>
-        <p>
-            Embracing holistic well-being, I advocate for physical health. The afternoons witness 
-            my spirited engagement in invigorating sessions of Badminton and Table Tennis, fostering 
-            a balanced lifestyle within the vibrant confines of the ISI campus.
-        </p>
-        <p>
-            Proficient not only in the abstraction of mathematics but also in the practical realm 
-            of programming, I wield Python as a potent tool to navigate and dissect intricate 
-            mathematical landscapes. My toolkit extends to Latex, C, C++, and SQL, empowering me 
-            to tackle challenges from multiple perspectives.
-        </p>
-        <p>
-            Feel free to peruse my <a href="https://www.dropbox.com/scl/fi/1oqircttm4w5rhcjce0cm/main.pdf?rlkey=s8st2hfwihymkwv8lod1c6mgj&dl=0" target="_blank">CV</a>, a testament to my academic journey.
-        </p>
+            <p>
+                As a dedicated book enthusiast, I embark on captivating journeys of exploration and knowledge 
+                through the realm of literature. The act of collecting and immersing myself in books brings me 
+                immense joy, particularly as I hold a special affinity for the worlds of science, mystery, and 
+                Bengali literature.
+            </p>
+            <p>
+                Embracing holistic well-being, I advocate for physical health. The afternoons witness 
+                my spirited engagement in invigorating sessions of Badminton and Table Tennis, fostering 
+                a balanced lifestyle within the vibrant confines of the ISI campus.
+            </p>
+            <p>
+                Proficient not only in the abstraction of mathematics but also in the practical realm 
+                of programming, I wield Python as a potent tool to navigate and dissect intricate 
+                mathematical landscapes. My toolkit extends to Latex, C, C++, and SQL, empowering me 
+                to tackle challenges from multiple perspectives.
+            </p>
+            <p>
+                Feel free to peruse my <a href="https://www.dropbox.com/scl/fi/1oqircttm4w5rhcjce0cm/main.pdf?rlkey=s8st2hfwihymkwv8lod1c6mgj&dl=0" target="_blank">CV</a>, a testament to my academic journey.
+            </p>
+        </div>
+        
     </div>
     
-</div>
-
-    {% include '_footer.html' %}
-
-
-<!-- MathJax congigauration -->
+        {% include '_footer.html' %}
+    
+    
+    <!-- MathJax congigauration -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
