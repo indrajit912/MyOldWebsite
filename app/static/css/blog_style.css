@@ -29,6 +29,10 @@
     color: #1a237e;
 }
 
+.blog-item p {
+    margin: 10px;
+}
+
 .date-time {
     font-size: 14px;
     color: #999;
