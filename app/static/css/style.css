@@ -372,7 +372,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
         padding: 10px;
     }
     .profile-image {
-        max-width: 100px;
+        max-width: 150%; 
     }
     /* Adjust other styles as needed */
     .typing-text {
