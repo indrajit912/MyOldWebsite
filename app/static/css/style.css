@@ -23,37 +23,6 @@ body {
     line-height: 1.6;
 }
 
-/* Styles for top bar */
-.top-bar {
-    background-color: rgb(98, 98, 143); /* Change to your desired background color */
-    overflow: hidden;
-    text-align: left;
-    font-size: 1rem;
-    padding: 10px 0;
-    font-family: "Arial", sans-serif; /* Change to your desired font */
-}
-.top-bar a {
-    display: inline-block;
-    color: #fff;
-    padding: 8px 16px;
-    transition: background-color 0.3s, color 0.3s;
-}
-.top-bar a:hover {
-    background-color: rgb(84, 84, 134); /* Change to your desired hover color */
-    transform: scale(1.06); /* Slightly enlarge the image on hover */
-}
-
-/* Style for bold links */
-.top-bar .top-link {
-    font-weight: normal;
-}
-
-/* Additional styles for the text font */
-body, h1, h2, h3, h4, h5, h6, p, a {
-    font-family: "Verdana", sans-serif; /* Change to your desired font */
-}
-
-
 /* Header styles */
 #header {
     background-color: #333;
@@ -131,6 +100,145 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     font-weight: bold;
     text-align: center;
 }
+
+
+/* Styling for the Nav Bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(98, 98, 143);
+    color: #fff;
+    /* Set height and width */
+    height: 23px; /* Adjust to your preferred height */
+    /* width: 100%; */
+  }
+  
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 25px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: rgb(84, 84, 134);
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+.services {
+  position: relative; 
+}
+
+.dropdown {
+    background-color: rgb(65, 65, 117);
+    padding: 1em 0;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    top: 100%; /* Adjust this value to control the distance from the parent */
+    left: 10%;
+    transform: translateX(-50%); /* Center the dropdown horizontally */
+    z-index: 1000; /* Ensure the dropdown is above other content */
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  background-color: rgb(84, 84, 134);
+}
+
+.services:hover .dropdown {
+  display: block;
+}
+
+/* RESPONSIVE NAVBAR MENU STARTS */
+
+/* CHECKBOX HACK */
+
+input[type=checkbox] {
+    display: none;
+} 
+  
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+ .menu {
+    display:none;
+    position: absolute;
+    background-color:rgb(98, 98, 143);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color:rgb(98, 98, 143);
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 10%;
+    top: 100%;
+    transform: translateX(-50%);
+    background-color: rgb(65, 65, 117);
+  }
+
+  .dropdown li:hover {
+    background-color: rgb(84, 84, 134);
+  }
+}
+
+
+/* Additional styles for the text font */
+body, h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "Verdana", sans-serif; /* Change to your desired font */
+}
+
 
 /* Content styles */
 #content {
@@ -248,60 +356,7 @@ body, h1, h2, h3, h4, h5, h6, p, a {
   }
 
 /* Add styles for mobile toggle */
-.mobile-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 10px; /* Add padding to increase the clickable area */
-}
 
-.bar {
-    display: flex;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    transition: 0.3s;
-    margin: 3px auto;
-}
-
-/* Add styles for the 'X' icon */
-.bar.change:nth-child(1) {
-    transform: rotate(45deg) translate(0, 13px);
-}
-.bar.change:nth-child(2) {
-    opacity: 0;
-}
-.bar.change:nth-child(3) {
-    transform: rotate(-45deg) translate(0, -13px);
-}
-
-/* Fade-in animation for the overlay */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Fade-out animation for the overlay */
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-
-/* Display navigation links on larger screens */
-#nav-links {
-    display: flex;
-    align-items: center;
-}
 
 /* Styles for smaller screens */
 @media screen and (max-width: 768px) {
@@ -321,58 +376,5 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     /* Adjust other styles as needed */
     .typing-text {
         animation: typing 2s steps(40) 1; /* Adjust the animation duration as needed */
-    }
-    /* Display first few items in one line on smaller screens */
-    .top-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-    .top-link {
-        display: inline-block;
-        margin-right: 10px;
-    }
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: rgb(98, 98, 143);
-        text-align: center;
-        transition: 0.3s;
-    }
-    #top-bar.show #nav-links {
-        display: flex;
-    }
-    .mobile-toggle {
-        display: flex;
-    }
-    .bar {
-        width: 25px;
-    }
-    /* Position the expanded menu above other content */
-    #top-bar.show #nav-links {
-        z-index: 1000; /* Ensure the expanded menu is above other content */
-    }
-
-    /* Overlay styles */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity as needed */
-        z-index: 999; /* Position the overlay just below the expanded menu */
-        display: none; /* Initially hidden */
-    }
-
-    /* Show the overlay when the menu is active */
-    .show-overlay {
-        display: block;
     }
 }

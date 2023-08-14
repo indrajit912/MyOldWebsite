@@ -101,3 +101,10 @@ def photos():
 @app.route('/cv')
 def cv():
     return render_template('cv.html')
+
+######################################################################
+#                       Coming Soon!
+######################################################################
+@app.route('/coming_soon')
+def coming_soon():
+    return render_template('coming_soon.html')
