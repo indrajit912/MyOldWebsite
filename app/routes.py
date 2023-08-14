@@ -67,6 +67,21 @@ def research():
     return render_template('research.html')
 
 ######################################################################
+#                       Blog
+######################################################################
+@app.route('/blog')
+def blog():
+    return render_template('blog_listings.html')
+
+@app.route('/blog_posts/blog_post1.html')
+def blog_post1():
+    return render_template('blog_posts/blog_post1.html')
+
+@app.route('/blog_posts/blog_post2.html')
+def blog_post2():
+    return render_template('blog_posts/blog_post2.html')
+
+######################################################################
 #                       Timeline
 ######################################################################
 @app.route('/timeline')

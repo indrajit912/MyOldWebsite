@@ -1,0 +1,72 @@
+/* Styles for My Blog */
+
+/* Blog list styles */
+.blog-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.blog-item h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #1a237e; /* Heading color */
+}
+
+.date-time {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Blog content styles */
+.blog-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Text color */
+}
+
+.blog-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1a237e; /* Heading color */
+}
+
+.blog-content p {
+    margin-bottom: 15px;
+}
+
+/* Stylish blockquote */
+.blog-content blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 5px solid #1a237e;
+    background-color: #f5f5f5;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .blog-list, .blog-content {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .blog-item h2 {
+        font-size: 24px;
+    }
+    
+    .date-time {
+        font-size: 12px;
+    }
+}
