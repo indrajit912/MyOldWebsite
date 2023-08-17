@@ -11,7 +11,7 @@ body, h1, h2, p, a {
 
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
-    color: #1a237e; /* Your desired heading color */
+    color: #001233; /* Your desired heading color */
     margin-bottom: 10px;
 }
 
@@ -25,7 +25,7 @@ body {
 
 /* Header styles */
 #header {
-    background-color: #333;
+    background-color: #001233;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -40,6 +40,7 @@ body {
 #header p {
     margin: 10px 0;
     font-size: 1.2rem;
+    color: #CAC0B3;
 }
 
 /* Text typing animation */
@@ -53,11 +54,11 @@ body {
 
 .typing-text .indrajit {
     font-weight: bold;
-    color: #7196d1; /* Add your desired color for "Indrajit" */
+    color: #FF595A; /* Add your desired color for "Indrajit" */
 }
 .typing-text .ghosh {
     font-weight: normal;
-    color: rgb(98, 98, 143); /* Add your desired color for "Ghosh" */
+    color: #CAC0B3; /* Add your desired color for "Ghosh" */
 }
 
 @keyframes typing {
@@ -74,7 +75,7 @@ body {
     display: inline-block;
     width: 0.5em; /* Set the width of the cursor */
     height: 0.15em; /* Set the height of the cursor */
-    background-color: orange; /* Set the cursor color */
+    background-color: #CAC0B3; /* Set the cursor color */
     animation: typing-cursor 0.7s infinite;
     position: relative;
     top: 0.1em; /* Adjust the vertical position of the cursor */
@@ -108,15 +109,15 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: rgb(98, 98, 143);
-    color: #fff;
+    background-color: #001233;
+    color: #CAC0B3;
     /* Set height and width */
     height: 23px; /* Adjust to your preferred height */
     /* width: 100%; */
   }
   
 .nav-links a {
-  color: #fff;
+  color: #CAC0B3;
 }
 
 /* LOGO */
@@ -132,7 +133,7 @@ body {
 }
 
 .menu li:hover {
-  background-color: rgb(84, 84, 134);
+  background-color: #FF595A;
   border-radius: 5px;
   transition: 0.3s ease;
 }
@@ -147,7 +148,7 @@ body {
 }
 
 .dropdown {
-    background-color: rgb(65, 65, 117);
+    background-color: rgb(51, 51, 110);
     padding: 1em 0;
     position: absolute;
     display: none;
@@ -169,7 +170,7 @@ body {
 }
 
 .dropdown li:hover {
-  background-color: rgb(84, 84, 134);
+  background-color: #FF595A;
 }
 
 .services:hover .dropdown {
@@ -196,7 +197,7 @@ input[type=checkbox] {
  .menu {
     display:none;
     position: absolute;
-    background-color:rgb(98, 98, 143);
+    background-color:#001233;
     right: 0;
     left: 0;
     text-align: center;
@@ -206,7 +207,7 @@ input[type=checkbox] {
 
   .menu li:hover {
     display: inline-block;
-    background-color:rgb(98, 98, 143);
+    background-color:#FF595A;
     transition: 0.3s ease;
   }
 

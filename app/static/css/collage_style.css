@@ -6,6 +6,10 @@ body {
     min-width: 1200px;
 }
 
+body h2 {
+    color: #FF595A;
+}
+
 .grid {
     padding: 60px;
     margin: 0 auto;
@@ -102,7 +106,7 @@ body {
     font-weight: bold;
     font-size: 11px;
     line-height: 1.5;
-    color: turquoise;
+    color: #f6fa06;
 }
 
 .grid--item:hover {
