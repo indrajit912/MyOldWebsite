@@ -1,60 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Timeline - Indrajit</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline_style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- The follwoing is for displaying logos for github, fb, twitter etc -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/timeline_style.css') }}">
+<!-- The Timeline -->
 
-</head>
-<body>
+{% include '_navbar.html' %}
 
-    {% include '_header.html' %}
+<ul class="timeline">
 
-    <ul>
-        <li style="--accent-color:#41516C">
-            <div class="date">2013</div>
-            <div class="title">Higher Secondary Education</div>
-            <div class="descr">
-                Successfully completed my Higher Secondary Examination from Dakshin Chatra High School in West Bengal, India.
-            </div>
-        </li>
-        <li style="--accent-color:#FBCA3E">
-            <div class="date">2016</div>
-            <div class="title">Undergraduate Studies</div>
-            <div class="descr">
-                Attained a Bachelor's degree with Honors in Mathematics from West Bengal State University in West Bengal, India.
-            </div>
-        </li>
-        <li style="--accent-color:#E24A68">
-            <div class="date">2018</div>
-            <div class="title">Postgraduate Studies</div>
-            <div class="descr">
-                Successfully completed my Master's degree in Pure Mathematics from the Department of Pure Mathematics at the University of Calcutta, Kolkata, India.
-            </div>
-        </li>
-        <li style="--accent-color:#1B5F8C">
-            <div class="date">2019</div>
-            <div class="title">Graduate Studies and Research</div>
-            <div class="descr">
-                Embarked on my academic and research journey by joining the Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute (ISI) Bangalore as a Junior Research Fellow.
-            </div>
-        </li>
-        <li style="--accent-color:#4CADAD">
-            <div class="date">2021-Present</div>
-            <div class="title">Senior Research Fellow</div>
-            <div class="descr">
-                Currently serving as a Senior Research Fellow within the SMU at ISI.
-            </div>
-        </li>
-    </ul>
-    
-    
-    {% include '_footer.html' %}
+    <!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Senior Research Fellow</span>
+				<span class="time-wrapper"><span class="time">2021 - Present</span></span>
+			</div>
+			<div class="desc">Currently serving as a Senior Research Fellow within the SMU at ISI.</div>
+		</div>
+	</li>
 
-</body>
-</html>
+    <!-- Item -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Graduate Studies</span>
+				<span class="time-wrapper"><span class="time">2019</span></span>
+			</div>
+			<div class="desc">Embarked on my academic and research journey by joining the Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute (ISI) Bangalore as a Junior Research Fellow.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Postgraduate Deegree</span>
+				<span class="time-wrapper"><span class="time">2016 - 2018</span></span>
+			</div>
+			<div class="desc">Successfully completed my Master's degree in Pure Mathematics from the Department of Pure Mathematics at the University of Calcutta, Kolkata, India.</div>
+		</div>
+	</li>
+  
+	<!-- Item -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Undergraduate Degree</span>
+				<span class="time-wrapper"><span class="time">2013 - 2016</span></span>
+			</div>
+			<div class="desc">Attained a Bachelor's degree with Honors in Mathematics from West Bengal State University in West Bengal, India.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Higher Secondary</span>
+				<span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+			</div>
+			<div class="desc">Successfully completed my Higher Secondary Examination from Dakshin Chatra High School in West Bengal, India.</div>
+		</div>
+	</li>
+  
+</ul>
