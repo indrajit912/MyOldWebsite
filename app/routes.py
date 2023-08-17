@@ -11,7 +11,7 @@ Attributes:
 """
 
 
-from flask import render_template
+from flask import render_template, request
 from app import app
 
 ######################################################################
@@ -108,3 +108,17 @@ def cv():
 @app.route('/coming_soon')
 def coming_soon():
     return render_template('coming_soon.html')
+
+######################################################################
+#                       Contact Me!
+######################################################################
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        # Process the form data and send an email or save the message, etc.
+        # You can use Flask-Mail or other libraries for email sending.
+
+        # After processing, you can redirect to a thank-you page.
+        return render_template('thank_you.html')
+
+    return render_template('contact.html')
