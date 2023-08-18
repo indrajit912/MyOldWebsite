@@ -141,7 +141,7 @@ def contact():
         msg = EmailMessage(
             sender_email_id=MAIL_DEFAULT_SENDER,
             to="indrajitghosh912@gmail.com",
-            subject="New Response",
+            subject="Message from your WebSite!",
             email_html_text=_email_html_text
         )
 
