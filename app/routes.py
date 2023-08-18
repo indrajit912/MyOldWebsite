@@ -126,7 +126,7 @@ def contact():
         # You can use Flask-Mail or other libraries for email sending.
         # Get form data from the request object
         name = request.form.get('name')
-        email = request.form.get('email')
+        email_id = request.form.get('email')
         subject = request.form.get('subject')
         message = request.form.get('message')
 
@@ -134,22 +134,24 @@ def contact():
         _email_html_text = render_template(
             'emails/email_template.html', 
             name=name, 
-            subject=subject, message=message, email=email
+            subject=subject, 
+            message=message, 
+            email_id=email_id
         )
 
-
+        # Create the email message
         msg = EmailMessage(
-            sender_email_id=MAIL_DEFAULT_SENDER,
-            to="indrajitghosh912@gmail.com",
+            sender_email_id=INDRAJITS_BOT_EMAIL_ID,
+            to=INDRAJIT912_GMAIL,
             subject="Message from your WebSite!",
             email_html_text=_email_html_text
         )
 
         try:
-            # Send the email
+            # Send the email to Indrajit
             msg.send(
-                sender_email_password=MAIL_PASSWORD, 
-                server_info=['smtp.gmail.com', 587],
+                sender_email_password=INDRAJITS_BOT_EMAIL_PASSWD, 
+                server_info=GMAIL_SERVER,
                 print_success_status=False
             )
 
