@@ -13,6 +13,10 @@ Attributes:
 
 from flask import render_template, request
 from app import app
+from config import *
+
+from scripts.email_message import EmailMessage
+
 
 ######################################################################
 #                           Home
@@ -117,8 +121,33 @@ def contact():
     if request.method == 'POST':
         # Process the form data and send an email or save the message, etc.
         # You can use Flask-Mail or other libraries for email sending.
+        # Get form data from the request object
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
 
-        # After processing, you can redirect to a thank-you page.
-        return render_template('thank_you.html')
+        msg = EmailMessage(
+            sender_email_id=MAIL_DEFAULT_SENDER,
+            to="indrajitghosh912@gmail.com",
+            subject="New Response",
+            email_plain_text=f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}"
+        )
+
+        try:
+            # Send the email
+            msg.send(
+                sender_email_password=MAIL_PASSWORD, 
+                server_info=['smtp.gmail.com', 587],
+                print_success_status=False
+            )
+
+            # After processing, you can redirect to a thank-you page.
+            return render_template('thank_you.html')
+        
+        except Exception as e:
+            # Handle email sending error
+            return f"An error occurred while sending the email."
+
 
     return render_template('contact.html')

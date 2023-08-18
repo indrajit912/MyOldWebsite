@@ -2,3 +2,4 @@
 # run the cmd: ```pip install -r requirements.txt```
 Flask==2.0.1
 gunicorn
+python-dotenv
