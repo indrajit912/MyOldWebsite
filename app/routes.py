@@ -11,11 +11,14 @@ Attributes:
 """
 
 
-from flask import render_template, request
+from flask import render_template, request, abort
 from app import app
 from config import *
+# Import the 'errors' Blueprint
+from .errors.handlers import errors_bp
 
 from scripts.email_message import EmailMessage
+from smtplib import SMTPAuthenticationError, SMTPException
 
 
 ######################################################################
@@ -127,11 +130,19 @@ def contact():
         subject = request.form.get('subject')
         message = request.form.get('message')
 
+        # Render the email template with the provided parameters
+        _email_html_text = render_template(
+            'emails/email_template.html', 
+            name=name, 
+            subject=subject, message=message, email=email
+        )
+
+
         msg = EmailMessage(
             sender_email_id=MAIL_DEFAULT_SENDER,
             to="indrajitghosh912@gmail.com",
             subject="New Response",
-            email_plain_text=f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}"
+            email_html_text=_email_html_text
         )
 
         try:
@@ -145,9 +156,26 @@ def contact():
             # After processing, you can redirect to a thank-you page.
             return render_template('thank_you.html')
         
-        except Exception as e:
+        except SMTPAuthenticationError as e:
+            # Redirect to the email authentication error page using the error blueprint
+            return errors_bp.email_auth_error(e)
+        
+        except SMTPException as e:
+            return errors_bp.email_send_error(e)
+        
+        except:
             # Handle email sending error
-            return f"An error occurred while sending the email."
+            return errors_bp.generic_error(e)
 
 
     return render_template('contact.html')
+
+######################################################################
+#                       Test Error!
+######################################################################
+
+@app.route('/test-error')
+def test_error():
+    # Simulate an error
+    # Use the `abort()` function to raise a 404 error
+    abort(500)
