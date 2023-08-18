@@ -102,6 +102,17 @@ body {
     text-align: center;
 }
 
+/* A custom class for dates */
+.datestamp {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Add a class to style the underlined link */
+.underlined-link {
+  text-decoration: underline;
+}
+
 
 /* Styling for the Nav Bar */
 .navbar {
