@@ -4,6 +4,7 @@
 <head>
     <title>Indrajit Ghosh - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -43,6 +44,14 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         /* Adjust other styles as needed */
+
+        .address {
+            font-size: 13px;
+            color: #4b4c4d;
+        }
+        .address p {
+            font-family: 'Roboto Mono', monospace;
+        }
     </style>    
     
     <!-- The follwoing is for displaying LaTeX code outputs -->
@@ -59,6 +68,11 @@
 
         <div class="profile">
             <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
+        </div>
+
+        <div class="address">
+            <p><strong>Office:</strong> S6, ISI Bangalore</p>
+            <p><strong>Email:</strong> rs_math1902@isibang.ac.in</p>
         </div>
 
         <div class="about-me">

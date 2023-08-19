@@ -9,12 +9,16 @@ Template Variables:
 Template Blocks:
     content: This block can be extended by child templates to provide specific content.
 
+Google Fonts API:
+    https://fonts.google.com/
+
 -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Indrajit Ghosh - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script>
@@ -26,6 +30,17 @@ Template Blocks:
     
     <!-- The follwoing is for displaying LaTeX code outputs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <style>
+        .address {
+            font-size: 14px;
+            color: #4b4c4d;
+        }
+        .address p {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -36,6 +51,10 @@ Template Blocks:
     
         <div class="profile">
             <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Indrajit Ghosh" class="profile-image">
+            <div class="address">
+                <p><strong>Office:</strong> S6, ISI Bangalore</p>
+                <p><strong>Email:</strong> rs_math1902@isibang.ac.in</p>
+            </div>
         </div>
     
         <div class="about-me">

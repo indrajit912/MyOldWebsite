@@ -2,8 +2,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Google Font API -->
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            .catchy-line {
+                font-family: 'Kalam', cursive;
+                /* font-family: 'Roboto Mono', monospace; Apply the chosen font */
+                font-size: 20px;
+                margin-top: 10px;
+                color: #FF595A; /* Adjust the color as needed */
+                font-style: italic;
+            }
+        </style>
     </head>
 
     <body>
@@ -16,6 +30,7 @@
                 </span>
             </h1>
             <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
+            <p class="catchy-line">Navigating the Elegance and Complexity of Abstract Mathematical Realms.</p>
         </div>
         
         {% include '_navbar.html' %}
