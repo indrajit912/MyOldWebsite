@@ -17,21 +17,33 @@
                 color: #FF595A; /* Adjust the color as needed */
                 font-style: italic;
             }
+
+            .quotation {
+                font-family: 'Kalam', cursive;
+                font-size: 18px;
+                margin-top: 20px;
+                color: #555;
+                font-style: italic;
+                text-align: center; /* Center align the quote and author */
+            }
         </style>
     </head>
 
     <body>
-
         <div id="header">
             <h1>
-                <span class="typing-text">
+                <span>
                     <span class="indrajit">Indrajit</span>
                     <span class="ghosh">Ghosh</span>
                 </span>
             </h1>
             <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
-            <p class="catchy-line">Navigating the Elegance and Complexity of Abstract Mathematical Realms.</p>
+
+            <p class="quotation">
+                "{{ quote }}" - {{ quote_source }}
+            </p>
         </div>
+        
         
         {% include '_navbar.html' %}
 

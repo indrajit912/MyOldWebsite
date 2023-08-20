@@ -20,6 +20,50 @@ from .errors.handlers import errors_bp
 from scripts.email_message import EmailMessage
 from smtplib import SMTPAuthenticationError, SMTPException
 
+import random
+
+
+QUOTES = [
+    (
+        "Just because we can't find a solution, it doesn't mean there isn't one.",
+        "Andrew Wiles"
+    ),
+    (
+        "The only way to learn mathematics is to do mathematics.",
+        "Paul R. Halmos"
+    ),
+    (
+        "Mathematics is the music of reason.",
+        "James Joseph Sylvester"
+    ),
+    (
+        "Go down deep enough into anything and you will find mathematics.",
+        "Dean Schlicter"
+    ),
+    (
+        "Nature is written in mathematical language.",
+        "Galileo Galilei"
+    ),
+    (
+        "Mathematics is a language.",
+        "Josiah Willard Gibbs"
+    ),
+    (
+        "Millions saw the apple fall, but Newton asked why.",
+        "Bernard Baruch"
+    )
+]
+
+
+######################################################################
+#                           Processor Function
+######################################################################
+# Define the context processor function
+# This function make the variables abailable for all routes!
+@app.context_processor
+def inject_quote():
+    quote, quote_source = random.choice(QUOTES)
+    return dict(quote=quote, quote_source=quote_source)
 
 ######################################################################
 #                           Home
