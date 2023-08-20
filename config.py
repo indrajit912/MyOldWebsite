@@ -75,5 +75,37 @@ QUOTES = [
     (
         "Five out of four people have trouble with fractions.",
         "Steven Wright"
+    ),
+    (
+        "To ask the right question is harder than to answer it.",
+        "George Cantor"
+    ),
+    (
+        "Mathematics is, in its way, the poetry of logical ideas.",
+        "Albert Einstein"
+    ),
+    (
+        "Mathematics is the most beautiful and most powerful creation of the human spirit.",
+        "Stefan Banach"
+    ),
+    (
+        "Mathematics allows for no hypocrisy and no vagueness.",
+        "Marie-Henri Beyle"
+    ),
+    (
+        "Do not worry about your difficulties in mathematics. I can assure you mine are still greater.",
+        "Albert Einstein"
+    ),
+    (
+        "Sometimes the questions are complicated and the answers are simple.",
+        "Dr. Seuss"
+    ),
+    (
+        "You know what seems odd to me? Numbers that aren't divisible by two.",
+        "Anonymous"
+    ),
+    (
+        "Have you heard the latest statistics joke? Probably.",
+        "Anonymous"
     )
 ]
