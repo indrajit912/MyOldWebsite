@@ -25,6 +25,12 @@
                 color: #dbddb8;
                 text-align: center; /* Center align the quote and author */
             }
+            q::before,
+            q::after {
+              animation: dancing 1s linear infinite;
+              display: inline-block;
+              transform: rotate(13deg);
+            }
         </style>
     </head>
 
@@ -39,7 +45,7 @@
             <p class="subtitle">Senior Research Fellow | Indian Statistical Institute</p>
 
             <p class="quotation">
-                "{{ quote }}" - {{ quote_source }}
+                <q>{{ quote }}</q> - {{ quote_source }}
             </p>
         </div>
         
