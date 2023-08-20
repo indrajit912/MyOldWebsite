@@ -23,38 +23,6 @@ from smtplib import SMTPAuthenticationError, SMTPException
 import random
 
 
-QUOTES = [
-    (
-        "Just because we can't find a solution, it doesn't mean there isn't one.",
-        "Andrew Wiles"
-    ),
-    (
-        "The only way to learn mathematics is to do mathematics.",
-        "Paul R. Halmos"
-    ),
-    (
-        "Mathematics is the music of reason.",
-        "James Joseph Sylvester"
-    ),
-    (
-        "Go down deep enough into anything and you will find mathematics.",
-        "Dean Schlicter"
-    ),
-    (
-        "Nature is written in mathematical language.",
-        "Galileo Galilei"
-    ),
-    (
-        "Mathematics is a language.",
-        "Josiah Willard Gibbs"
-    ),
-    (
-        "Millions saw the apple fall, but Newton asked why.",
-        "Bernard Baruch"
-    )
-]
-
-
 ######################################################################
 #                           Processor Function
 ######################################################################
