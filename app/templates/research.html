@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- MathJax configuration for equations fitting on smaller screens -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -18,7 +19,7 @@
             }
         });
     </script>
-    
+    <!-- Script for LaTeX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
         /* Additional styles for research content */
@@ -82,6 +83,40 @@
             font-size: 16px;
             line-height: 1.5;
             color: #333;
+        }
+
+        /* Add a media query for screens up to 768px wide (typical for mobile devices) */
+        @media only screen and (max-width: 768px) {
+            /* Adjustments for mobile devices */
+        
+            /* Example: Make font size smaller for better readability on smaller screens */
+            body {
+                font-size: 16px;
+            }
+        
+            /* Example: Reduce padding and margin for better use of screen space */
+            .research-content {
+                padding: 10px;
+                margin-top: 10px;
+            }
+        
+            /* Example: Adjust font sizes for headings on mobile */
+            .research-heading h1 {
+                font-size: 24px;
+            }
+            .research-heading h2 {
+                font-size: 20px;
+            }
+        
+            /* Example: Adjust font size for text content on mobile */
+            .research-text {
+                font-size: 14px;
+            }
+        
+            /* Example: Adjust font size for references on mobile */
+            .reference-heading {
+                font-size: 18px;
+            }
         }
 
     </style>
