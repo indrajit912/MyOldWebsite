@@ -5,12 +5,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- MathJax configuration for equations fitting on smaller screens -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            CommonHTML: {
+                scale: 80,  // Adjust this value as needed
+                linebreaks: { automatic: true },
+                EqnChunk: 10,
+                EqnChunkFactor: 1.5,
+                EqnChunkDelay: 10,
+                EqnChunkSize: MathJax.Hub.Browser.isMobile ? 10 : 50
+            }
+        });
+    </script>
     
-    <!-- The follwoing is for displaying logos for github, fb, twitter etc -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <style>
-        /* Additional styles for research page */
+        /* Additional styles for research content */
         .research-content {
             background-color: #fff;
             border-radius: 5px;
@@ -18,19 +29,147 @@
             padding: 20px;
             margin-top: 20px;
         }
+        /* Additional styles for research text */
+        .research-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        /* Additional styles for research headings */
+        .research-heading {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .research-heading h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #001233;
+            margin-bottom: 5px;
+        }
+        .research-heading h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #002366;
+            margin-bottom: 5px;
+        }
+        /* Additional styles for equations */
+        .equation {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        /* Styling for the reference heading */
+        .reference-heading {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #001233;
+        }
+
+        /* Styling for the references */
+        .references {
+            margin: 20px 0;
+        }
+
+        .references li {
+            margin-bottom: 15px;
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .references p {
+            margin: 5px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
     </style>
 </head>
 <body>
-
     {% include '_header.html' %}
 
-<div class="content">
-    <div class="research-content">
-        <p class="large-text">To Be Updated Soon</p>
+    <div class="content">
+        <div class="research-content">
+
+            <h1 class="research-heading">Research Interests</h1>
+
+                <p class="research-text">
+                    My primary focus revolves around Operator Algebras, encompassing a particular fascination with von-Neumann algebras. Currently pursuing my graduate studies within the Stat-Math Unit at the Indian Statistical Institute in Bangalore, India, my research efforts are channeled into two primary avenues:
+                    <ul>
+                        <li>
+                            Exploring the Functoriality of Affiliated Operators linked to von-Neumann algebras.
+                        </li>
+
+                        <li>
+                            Investigating Matrix Decomposition Outcomes within the scope of General von-Neumann Algebras.
+                        </li>   
+                    </ul>
+                </p>
+
+
+            <!-- Functoriality of Affiliated Operators -->
+            <h2 class="research-heading">Functoriality of The Set of Affiliated Operators</h2>
+
+                <p class="research-text">
+                    The main purpose here is to carefully examine the notion of <i>affiliated operators</i> for 
+                    von Neumann algebras, and describe how they should transform under morphisms (unital normal 
+                    homomorphisms) between von Neumann algebras. In a recent paper, a joint work with my PhD 
+                    supervisor <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>, we 
+                    have tried to give a answer to this.
+                </p>
+            
+            <!-- Matrix Decomposition -->
+            <h2 class="research-heading">Matrix Decomposition Results in \(M_n(\mathscr{R})\)</h2>
+
+                <p class="research-text">
+                    It is well known that any normal matrix in \(M_n(\mathbb{C})\) can be unitarily "diagonalized", that is, there is a unitary matrix \(U\) such that \(U A U^{-1}\) is diagonal. For a \(C^*\)-algebra \(\mathfrak{A}\), the ring of \(n \times n\) matrices over \(\mathfrak{A}\), \(M_n(\mathfrak{A})\), naturally has the structure of a \(C^*\)-algebra. For a von Neumann algebra \(\mathscr{R}\), \(M_n(\mathscr{R})\) is a von Neumann algebra. In <cite><a href="#kad_diag">[2]</a></cite>, R. V. Kadison proved that each normal element in \(M_n(\mathscr{R})\) can be diagonalized via conjugation with a unitary matrix in \(M_n(\mathscr{R})\). Furthermore, using basic homotopy theoretic techniques, he showed that this is not true in general in the context of  \(M_2(C(\mathbb{S}^4))\) where \(\mathbb{S}^4\) denotes the 4-sphere, and \(C(\mathbb{S}^4)\) is the \(C^*\)-algebra of complex-valued continuous functions on \(\mathbb{S}^4\).
+                </p>
+
+                <p class="research-text">
+                    In response to one of the questions posed by R. V. Kadison, in <cite><a href="#grove_ped">[1]</a></cite>, K. Grove and G. Pedersen provided a complete topological characterization of those compact Hausdorff spaces \(X\) for which every normal matrix in \(M_n(C(X))\) is diagonalizable (for all \(n \in \mathbb{N}\)).
+                </p>
+                <p class="research-text">
+                    I have two main interests:
+                </p>
+                <ol class="research-text">
+                    <li>
+                        <strong>Other Decomposition Results</strong>
+                        <p>
+                            I'm interested in exploring other decomposition results over \(M_n(C(X))\), such as QR decomposition or polar decomposition. Interestingly, I've discovered that the Polar Decomposition holds over \(C(X)\) whenever \(X\) is a (sub)-Stonean space.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Decomposition over Type \(II_1\) Factor</strong>
+                        <p>
+                            I'm investigating decomposition results over a Type \(II_1\) factor and their implications.
+                        </p>
+                    </li>
+                </ol>
+
+                <!-- References -->
+                <div class="reference-heading">
+                    References
+                </div>
+                <ol class="references">
+                    <li id="grove_ped">
+                        <p>
+                            <strong>Grove, Karsten and Pedersen, Gert Kj&#230;rg&#229;rd.</strong>
+                            "<a href="https://doi.org/10.1016/0022-1236(84)90053-3">Diagonalizing matrices over $C(X)$</a>." 
+                            <em>Journal of Functional Analysis</em> 59 (1984): 65-89.
+                        </p>
+                    </li>
+                    <li id="kad_diag">
+                        <p>
+                            <strong>Kadison, Richard V.</strong>
+                            "<a href="https://www.jstor.org/stable/2374397">Diagonalizing Matrices</a>." 
+                            <em>American Journal of Mathematics</em> 106 (1984): 1451-1468.
+                        </p>
+                    </li>
+                </ol>
+        </div>
     </div>
-</div>
 
     {% include '_footer.html' %}
-
 </body>
 </html>
