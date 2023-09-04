@@ -23,6 +23,7 @@ MAIL_DEFAULT_SENDER = INDRAJITS_BOT_EMAIL_ID  # Default sender email address
 
 GMAIL_SERVER = ['smtp.gmail.com', 587] 
 
+# Math quotes: "http://math.furman.edu/~mwoodard/data.html"
 QUOTES = [
     (
         "You don't have to be a mathematician to have a feel for numbers.",
