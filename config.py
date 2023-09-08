@@ -34,6 +34,14 @@ QUOTES = [
         "Andrew Wiles"
     ),
     (
+        "The whole is more than the sum of its parts.",
+        "Aristotle"
+    ),
+    (
+        "To Thales the primary question was not what do we know, but how do we know it.",
+        "Aristotle"
+    ),
+    (
         "Mathematics is like love; a simple idea, but it can get complicated.",
         "Anonymous"
     ),
@@ -54,8 +62,40 @@ QUOTES = [
         "Galileo Galilei"
     ),
     (
+        "Life is a school of probability.",
+        "Walter Bagehot"
+    ),
+    (
+        "Everything should be made as simple as possible, but not simpler.",
+        "Albert Einstein"
+    ),
+    (
+        "Imagination is more important than knowledge.",
+        "Albert Einstein"
+    ),
+    (
+        "The truth of a theory is in your mind, not in your eyes.",
+        "Albert Einstein"
+    ),
+    (
+        "Numbers are intellectual witnesses that belong only to mankind.",
+        "Honore de Balzac"
+    ),
+    (
+        "An expert is a man who has made all the mistakes, which can be made, in a very narrow field.",
+        "Niels Bohr"
+    ),
+    (
         "Mathematics is a language.",
         "Josiah Willard Gibbs"
+    ),
+    (
+        "Structures are the weapons of the mathematician.",
+        "Bourbaki"
+    ),
+    (
+        "It is not enough to have a good mind. The main thing is to use it well.",
+        "René Descartes"
     ),
     (
         "Millions saw the apple fall, but Newton asked why.",

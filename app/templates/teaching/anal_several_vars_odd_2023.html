@@ -204,7 +204,12 @@
                         <span class="datestamp"> Aug 25, 2023</span>)
                     </li>
 
-                    <li>Homework 2 (Coming soon!)</li>
+                    <li>
+                        <a href="#homework-2" class="underlined-link">
+                            Homework 2
+                        </a> (Due on: 
+                        <span class="datestamp"> Sep 06, 2023</span>)
+                    </li>
                 </ul>
             </div>
         </div>
@@ -283,6 +288,37 @@
                 </p>
             </div>
         </div>
+    </div>
+
+
+    <div class="content">
+        <div class="assignment", id="homework-2">
+            <h2>Homework 2</h2>
+            <p class="due-date">Due Date: Sep 06, 2023</p>
+            
+            <div class="problem">
+                <b>Problem 1</b>
+                <p>
+                    Let \(f\) be defined on an open set \(S\) in \(\mathbb{R}^n\). We say that \(f\) is homogeneous
+                    of degree \(p\) over \(S\) if \(f(\lambda \mathbf{x}) = \lambda^p f(\mathbf{x})\) for every real \(\lambda\) and for 
+                    every \(\mathbf{x}\) in \(S\) for which \(\lambda \mathbf{x}\in S\). If such a function differentiable 
+                    at \(\mathbf{x}\), show that 
+                    \[
+                        \mathbf{x} \cdot \nabla f(\mathbf{x}) = p f(\mathbf{x}).
+                    \]
+                    Also prove the converse, that is, show that if \(\mathbf{x} \cdot \nabla f(\mathbf{x}) = p f(\mathbf{x})\) for all \(\mathbf{x}\) 
+                    in an open set \(S\), then \(f\) must be homogeneous of degree \(p\) over \(S\).
+                </p>
+            </div>
+
+            <div class="problem">
+                <b>Problem 2</b>
+                <p>
+                    Exercises 17, 18 of section 10.18 in Tom M. Apostol, <cite>Calculus Vol 2</cite>, second edition.
+                </p>
+            </div>
+        </div>
+
     </div>
 
     {% include '_footer.html' %}
