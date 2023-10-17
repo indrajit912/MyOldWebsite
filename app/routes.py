@@ -22,6 +22,12 @@ from smtplib import SMTPAuthenticationError, SMTPException
 
 import random
 
+##################################################
+#   Google Verification
+##################################################
+@app.route('/googlef85d794e7327d47e')
+def googlef85d794e7327d47e():
+    return 'googlef85d794e7327d47e.html'
 
 ######################################################################
 #                           Processor Function
