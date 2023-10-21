@@ -19,8 +19,15 @@
         });
     </script>
     
-    <!-- The follwoing is for displaying LaTeX code outputs -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: {
+                extensions: ["AMSmath.js", "AMSsymbols.js", "esint.js"]
+            }
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
     <style>
         .content {
             flex-direction: column;
@@ -81,6 +88,11 @@
             font-size: 16px;
         }
 
+        .problem ol {
+            color: #777;
+            font-size: 16px;
+        }
+
         .due-date {
             color: #999;
             font-size: 14px;
@@ -106,6 +118,20 @@
             content: "(" counter(my-counter, lower-alpha) ")";
             position: absolute;
             left: 0;
+        }
+
+        .center-img {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            height: 40vh; /* Set the height of the container to the viewport height for vertical centering */
+        }
+
+        .center-img img {
+            max-width: 100%; /* Limit the image width to the container's width */
+            max-height: 100%; /* Limit the image height to the container's height */
         }
 
         /* Styles for smaller screens */
@@ -210,6 +236,13 @@
                         </a> (Due on: 
                         <span class="datestamp"> Sep 06, 2023</span>)
                     </li>
+
+                    <li>
+                        <a href="#homework-3" class="underlined-link">
+                            Homework 3
+                        </a> (Due on: 
+                        <span class="datestamp"> Oct 25, 2023</span>)
+                    </li>
                 </ul>
             </div>
         </div>
@@ -217,7 +250,7 @@
 
     <!-- Homeworks -->
     <div class="content">
-        <div class="assignment", id="homework-1">
+        <div class="assignment" id="homework-1">
             <h2>Homework 1</h2>
             <p class="due-date">Due Date: Aug 25, 2023</p>
             
@@ -292,7 +325,7 @@
 
 
     <div class="content">
-        <div class="assignment", id="homework-2">
+        <div class="assignment" id="homework-2">
             <h2>Homework 2</h2>
             <p class="due-date">Due Date: Sep 06, 2023</p>
             
@@ -320,6 +353,123 @@
         </div>
 
     </div>
+
+
+    <div class="content">
+        <div class="assignment" id="homework-3">
+            <h2>Homework 3</h2>
+            <p class="due-date">Due Date: Oct 25, 2023</p>
+            
+            <div class="problem">
+                <b>Problem 1</b>
+                <p>
+                    Let \(f\) and \(g\) be scalar fields with continuous first- and second-order partial derivatives on an open set \(S\) in the plane.
+                    Let \(\mathbf{R}\) denote a region (in \(S\)) whose boundary is a piecewise smooth Jordan curve \(C\). Prove the following identities,
+                    where \(\nabla^2 u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \).
+                </p>
+
+                <ol type="a">
+                    <li value="1">
+                        \[ \oint_{C} \frac{\partial g}{\partial n} ds = \iint_{\mathbf{R}} \nabla^2g \; dx dy \]
+                    </li>
+        
+                    <li>
+                        \[ \oint_{C} f \frac{\partial g}{\partial n} ds = \iint_{\mathbf{R}} (f\nabla^2g + \nabla f \nabla g)\; dx dy \]
+                    </li>
+                    <li>
+                        \[ 
+                            \oint_{C} \left( f \frac{\partial g}{\partial n} - g \frac{\partial f}{\partial n} \right) = \iint_{\mathbf{R}} \left( f \nabla^2 g - g \nabla^2 f \right) \; dxdy
+                        \]
+                    </li>
+                </ol>
+                
+                <p>
+                    The identity c is known as <em>Green's formula</em>; it shows that
+                        \[
+                            \oint_{C} f\frac{\partial g}{\partial n} \; ds = \oint_{C} g \frac{\partial f}{\partial n}\; ds
+                        \]
+                    whenever \(f\) and \(g\) are both harmonic on \(\mathbf{R}\) (that is, when \(\nabla^2 f= \nabla^2g = 0\) on \(\mathbf{R}\)).
+                </p>
+            </div>
+
+            <div class="problem">
+                <b>Problem 2</b>
+                <figure class="center-img">
+                    <img src="{{ url_for('static', filename='images/teaching/apostol-exercise-6.png') }}" alt="Apostol Vol 2, Figure 11.22 Exercise 6">
+                    <figcaption>Figure 2.1</figcaption>
+                </figure>
+
+                <p>
+                    Let \(I_k = \oint_{C_k} P dx + Q dy\), where
+                    \[
+                        P(x,y) = -y \left[ \frac{1}{(x-1)^2 + y^2} + \frac{1}{x^2 + y^2} + \frac{1}{(x+1)^2 + y^2} \right]
+                    \]
+
+                    and 
+
+                    \[
+                        Q(x,y) = \frac{x-1}{(x-1)^2 + y^2} + \frac{x}{x^2 + y^2} + \frac{x + 1}{(x+1)^2 + y^2}
+                    \]
+
+                    In Figure 2.1, \(C_1\) is the smallest circle, \(x^2 + y^2 = \frac{1}{8}\) (traced clockwise), \(C_2\) is 
+                    the largest circle, \(x^2 + y^2 = 4\) (traced counterclockwise), and \(C_3\) is the curve made up of the three
+                    intermediate circles \( (x -1)^2 + y^2 = \frac{1}{4}, \; x^2 + y^2 = \frac{1}{4}\) 
+                    and \( (x +1)^2 + y^2 = \frac{1}{4} \) traced out as shown. If \(I_2 = 6 \pi \) and \( I_3 = 2 \pi \), find the 
+                    value of \( I_1 \).
+                </p>
+            </div>
+
+            <div class="problem">
+                <b>Problem 3</b>
+
+                <p>
+                    Let \(S\) be a parametric surface described by the explicit formula \(z = f(x,y)\), where \((x,y)\) varies over a plane region \(T\), 
+                    the  projection of \(S\) in the \(xy\)-plane. Let \( \mathbf{F} = P \mathbf{i} + Q \mathbf{j} + R \mathbf{k} \) and let 
+                    \(\mathbf{n}\) denote the unit normal to \(S\) having a nonnegative \(z\)-component. Use the parametric representation 
+                    \( \mathbf{r}(x,y) = x \mathbf{i} + y \mathbf{j} + f(x,y) \mathbf{k} \) and show that
+                    \[
+                        \iint_{S} \mathbf{F}\cdot \mathbf{n} = \iint_{T} \left( -P \frac{\partial f}{\partial x} - Q \frac{\partial f}{\partial y} + R \right) \; dxdy,
+                    \]
+                    where each \( P, Q\) and \(R\) is to be evaluated at \( (x,y, f(x,y))\).
+                </p>
+
+            </div>
+
+            <div class="problem">
+                <b>Problem 4</b>
+                
+                <p>
+                    Let \(S\) be as in Problem 3, and \(\varphi\) be a scalar field. Show that
+                </p>
+
+                <ol type="a">
+                    <li>
+                        \[
+                        \iint_{S} \varphi(x, y, z)\; dS = \iint_{T} \varphi[x, y, f(x, y)] \sqrt{1 + \left( \frac{\partial f}{\partial x} \right)^2 + \left( \frac{\partial f}{\partial y} \right)^2} \; dxdy.
+                        \]
+                    </li>
+                        
+                    <li>
+                        \[
+                        \iint_{S} \varphi(x, y, z)\; dy \wedge dz = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial x}\; dxdy.
+                        \]
+                    </li>
+
+                    <li>
+                        \[
+                        \iint_{S} \varphi(x, y, z)\; dz \wedge dx = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial y}\; dxdy.
+                        \]
+                    </li>
+                    </li>
+
+                </ol>
+            </div>
+
+
+        </div>
+
+    </div>
+      
 
     {% include '_footer.html' %}
 
