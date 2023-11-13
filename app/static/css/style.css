@@ -209,6 +209,23 @@ input[type=checkbox] {
   }
 }
 
+/* Styles for the "Back to top" link */
+a.back-to-top {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #3498db; /* Choose a color that fits your design */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+a.back-to-top:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+}
+
 
 /* Additional styles for the text font */
 body, h1, h2, h3, h4, h5, h6, p, a {
