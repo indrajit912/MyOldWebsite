@@ -3,6 +3,7 @@
 <head>
     <title>Analysis of Several Variables (BMAT2), Odd Sem 2023</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MathJax configauration for equations fitting on smaller screen -->
@@ -27,140 +28,6 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    
-    <style>
-        .content {
-            flex-direction: column;
-        }
-
-        /* Additional styles for grading page */
-        .grading-table {
-            width: 30%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            border: 1px solid #ccc;
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-
-        .grading-table th, .grading-table td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .grading-table th {
-            background-color: #f2f2f2;
-        }
-
-        .assignment {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
-        }
-
-        .assignment h2 {
-            color: #333;
-            font-size: 25px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .problem {
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .problem b {
-            color: #555;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .problem p {
-            color: #777;
-            font-size: 16px;
-        }
-
-        .problem ol {
-            color: #777;
-            font-size: 16px;
-        }
-
-        .due-date {
-            color: #999;
-            font-size: 14px;
-            text-align: center;
-            margin-top: -10px;
-        }
-
-        .custom-list {
-            list-style: none;
-            counter-reset: my-counter;
-        }
-
-        .custom-list li {
-            position: relative;
-            counter-increment: my-counter;
-            margin-bottom: 10px;
-            padding-left: 25px;
-            color: #777;
-            font-size: 16px;
-        }
-
-        .custom-list li::before {
-            content: "(" counter(my-counter, lower-alpha) ")";
-            position: absolute;
-            left: 0;
-        }
-
-        .center-img {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #777;
-            height: 40vh; /* Set the height of the container to the viewport height for vertical centering */
-        }
-
-        .center-img img {
-            max-width: 100%; /* Limit the image width to the container's width */
-            max-height: 100%; /* Limit the image height to the container's height */
-        }
-
-        /* Styles for smaller screens */
-        @media screen and (max-width: 768px) {
-            .assignment {
-                max-width: 92%;
-                padding: 10px;
-                /* margin: 15px auto; */
-                /* margin-left: 8px; */
-            }
-
-            .problem {
-                max-width: 95%;
-                padding: 15px;
-                align-items: center;
-            }
-
-            /* Adjust font size for equations */
-            .problem p, .problem b, .problem {
-                font-size: 14px; /* You can adjust this value as needed */
-            }
-
-            /* Adjust line heights and margins for equations */
-            .problem p, .problem b {
-                line-height: 1;
-                margin-bottom: 2px;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -168,92 +35,90 @@
     {% include '_header.html' %}
 
     <div class="content">
-        <div class="teaching-content">
+        <div class="course-details">
             <h2>Analysis of Several Variables (BMAT2), Odd Sem 2023 (Currently offered)</h2>
-            <div class="course-details">
-                <b>Term:</b> Odd Semester 2023<br>
-                <b>Duration:</b> Aug 01, 2023 - Present<br><br>
-                <b>Course Name:</b> Analysis of Several Variables (B. Math. II)<br>
-                <b>Course Description:</b> <a href="https://www.isibang.ac.in/~adean/infsys/database/Bmath/ASV.html" class="underlined-link">Link to ISI course archives</a><br>
-                <b>Instructor:</b>  Mathew Joseph<br>
-                <b>TA:</b> Indrajit Ghosh<br>
-                <b>Room:</b> G26<br>
-                <br>
-        
-                <h3>Textbooks and other references</h3>
-        
-                <ul>
-                    <li>T. M. Apostol, <i>Mathematical Analysis.</i></li>
-                    <li>T. M. Apostol, <i>Calculus (Vol 2).</i></li>
-                    <li>S. Dineen, <i>Multivariate Calculus and Geometry.</i></li>
-                    <li>R. R. Goldberg, <i>Methods of Real Analysis.</i></li>
-                    <li>T. Tao, <i>Analysis I & II.</i></li>
-                    <li>Bartle and Sherbert, <i>Introduction to Real Analysis.</i></li>
-                    <li>H. Royden, <l>Real Analysis.</l></li>
-                </ul>
-                <br>
-                
-                <!-- A blank anchor tag for 'Back to Top' -->
-                <a id="top"></a>
-                <div>
-                    <h3>Grading Scheme</h3>
-                    <table class="grading-table">
-                        <tr>
-                            <th>Category</th>
-                            <th>Marks</th>
-                        </tr>
-                        <tr>
-                            <td>Midterm</td>
-                            <td>30 marks</td>
-                        </tr>
-                        <tr>
-                            <td>Assignments</td>
-                            <td>20 marks</td>
-                        </tr>
-                        <tr>
-                            <td>Final Exam</td>
-                            <td>50 marks</td>
-                        </tr>
-                        <tr>
-                            <td>Total</td>
-                            <td>100 marks</td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
+            <b>Term:</b> Odd Semester 2023<br>
+            <b>Duration:</b> Aug 01, 2023 - Present<br><br>
+            <b>Course Name:</b> Analysis of Several Variables (B. Math. II)<br>
+            <b>Course Description:</b> <a href="https://www.isibang.ac.in/~adean/infsys/database/Bmath/ASV.html" class="underlined-link">Link to ISI course archives</a><br>
+            <b>Instructor:</b>  Mathew Joseph<br>
+            <b>TA:</b> Indrajit Ghosh<br>
+            <b>Room:</b> G26<br>
+            <br>
+    
+            <h3>Textbooks and other references</h3>
+    
+            <ul>
+                <li>T. M. Apostol, <i>Mathematical Analysis.</i></li>
+                <li>T. M. Apostol, <i>Calculus (Vol 2).</i></li>
+                <li>S. Dineen, <i>Multivariate Calculus and Geometry.</i></li>
+                <li>R. R. Goldberg, <i>Methods of Real Analysis.</i></li>
+                <li>T. Tao, <i>Analysis I & II.</i></li>
+                <li>Bartle and Sherbert, <i>Introduction to Real Analysis.</i></li>
+                <li>H. Royden, <l>Real Analysis.</l></li>
+            </ul>
+            <br>
+            
+            <!-- A blank anchor tag for 'Back to Top' -->
+            <a id="top"></a>
+            <div>
+                <h3>Grading Scheme</h3>
+                <table class="grading-table">
+                    <tr>
+                        <th>Category</th>
+                        <th>Marks</th>
+                    </tr>
+                    <tr>
+                        <td>Midterm</td>
+                        <td>30 marks</td>
+                    </tr>
+                    <tr>
+                        <td>Assignments</td>
+                        <td>20 marks</td>
+                    </tr>
+                    <tr>
+                        <td>Final Exam</td>
+                        <td>50 marks</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>100 marks</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
                 
     
-                <h3>Homeworks</h3>
-                <ul>
-                    <li>
-                        <a href="#homework-1" class="underlined-link">
-                            Homework 1
-                        </a> (Due on: 
-                        <span class="datestamp"> Aug 25, 2023</span>)
-                    </li>
+            <h3>Homeworks</h3>
+            <ul>
+                <li>
+                    <a href="#homework-1" class="underlined-link">
+                        Homework 1
+                    </a> (Due on: 
+                    <span class="datestamp"> Aug 25, 2023</span>)
+                </li>
 
-                    <li>
-                        <a href="#homework-2" class="underlined-link">
-                            Homework 2
-                        </a> (Due on: 
-                        <span class="datestamp"> Sep 06, 2023</span>)
-                    </li>
+                <li>
+                    <a href="#homework-2" class="underlined-link">
+                        Homework 2
+                    </a> (Due on: 
+                    <span class="datestamp"> Sep 06, 2023</span>)
+                </li>
 
-                    <li>
-                        <a href="#homework-3" class="underlined-link">
-                            Homework 3
-                        </a> (Due on: 
-                        <span class="datestamp"> Oct 25, 2023</span>)
-                    </li>
-
-                    <li>
-                        <a href="#homework-4" class="underlined-link">
-                            Homework 4
-                        </a> (Due on: 
-                        <span class="datestamp"> Nov 10, 2023</span>)
-                    </li>
-                </ul>
-            </div>
+                <li>
+                    <a href="#homework-3" class="underlined-link">
+                        Homework 3
+                    </a> (Due on: 
+                    <span class="datestamp"> Oct 25, 2023</span>)
+                </li>
+                
+                <li>
+                    <a href="#homework-4" class="underlined-link">
+                        Homework 4
+                    </a> (Due on: 
+                    <span class="datestamp"> Nov 10, 2023</span>)
+                </li>
+            </ul>
         </div>
     </div>
 

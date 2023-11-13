@@ -1,0 +1,164 @@
+/* Styles for teaching */
+
+.teaching-content {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.teaching-content p {
+    margin-bottom: 10px;
+}
+
+.teaching-content b {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.teaching-content a {
+    color: #333;
+    display: block;
+    margin-top: 5px;
+    transition: color 0.2s ease-in-out;
+}
+
+.teaching-content a:hover {
+    color: #007bff;
+}
+
+/* Additional Styles */
+.content {
+    flex-direction: column;
+}
+
+/* Additional styles for grading page */
+.grading-table {
+    width: 30%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.grading-table th, .grading-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.grading-table th {
+    background-color: #f2f2f2;
+}
+
+.assignment {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.assignment h2 {
+    color: #333;
+    font-size: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.problem {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.problem b {
+    color: #555;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.problem p {
+    color: #777;
+    font-size: 16px;
+}
+
+.problem ol {
+    color: #777;
+    font-size: 16px;
+}
+
+.due-date {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.custom-list {
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+.custom-list li {
+    position: relative;
+    counter-increment: my-counter;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    color: #777;
+    font-size: 16px;
+}
+
+.custom-list li::before {
+    content: "(" counter(my-counter, lower-alpha) ")";
+    position: absolute;
+    left: 0;
+}
+
+.center-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    height: 40vh; /* Set the height of the container to the viewport height for vertical centering */
+}
+
+.center-img img {
+    max-width: 100%; /* Limit the image width to the container's width */
+    max-height: 100%; /* Limit the image height to the container's height */
+}
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .assignment {
+        max-width: 92%;
+        padding: 10px;
+        /* margin: 15px auto; */
+        /* margin-left: 8px; */
+    }
+
+    .problem {
+        max-width: 95%;
+        padding: 15px;
+        align-items: center;
+    }
+
+    /* Adjust font size for equations */
+    .problem p, .problem b, .problem {
+        font-size: 14px; /* You can adjust this value as needed */
+    }
+
+    /* Adjust line heights and margins for equations */
+    .problem p, .problem b {
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+}
