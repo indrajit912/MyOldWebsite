@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Functional Analysis (MMAT1), Even Sem 2021-22</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<!-- 
+    Functional Analysis page for the Website
+    Author: Indrajit Ghosh
+    Created On: Nov 14, 2023
+ -->
 
-<body>
+ {% extends 'base.html' %}
 
-    {% include '_header.html' %}
+ {% block title %}Functional Analysis (MMAT1), Even Sem 2021-22{% endblock %}
+  
+ {% block styles %}
+     {{ super() }}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
+ {% endblock %}
+ 
+  
+ {% block content %}
 
-<div class="content">
+ <div class="content">
     <div class="course-details">
         <h2>Functional Analysis (MMAT1) - Even Semester 2021-22</h2>
         <b>Term:</b> Even Semester 2021-22<br>
@@ -33,7 +39,6 @@
     </div>
 </div>
 
-    {% include '_footer.html' %}
-
-</body>
-</html>
+ {% endblock %}
+  
+ 

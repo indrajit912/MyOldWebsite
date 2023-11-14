@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Indrajit - Teaching</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- 
+    Teaching page for the Website
+    Author: Indrajit Ghosh
+    Created On: Nov 14, 2023
+ -->
+
+{% extends 'base.html' %}
+
+{% block title %}Indrajit Ghosh - Home{% endblock %}
+ 
+{% block styles %}
+    {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+{% endblock %}
 
-    {% include '_header.html' %}
-
-<div class="content">
+ 
+{% block content %}
+ <div class="content">
     <div class="teaching-content">
         <p>Below, you'll find a list of mathematics courses I assisted in as a graduate student in the Stat-Math Unit at the Indian Statistical Institute, Bangalore.</p>
         <b>Teaching Assistantship</b>
@@ -35,7 +40,5 @@
     </div>
 </div>
 
-    {% include '_footer.html' %}
-
-</body>
-</html>
+{% endblock %}
+ 

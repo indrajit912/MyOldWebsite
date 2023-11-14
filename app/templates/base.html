@@ -48,6 +48,28 @@
                 }
             });
         </script>
+
+        <!-- MathJax configuration for equations fitting on smaller screens -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                CommonHTML: {
+                    scale: 80,  // Adjust this value as needed
+                    linebreaks: { automatic: true },
+                    EqnChunk: 10,
+                    EqnChunkFactor: 1.5,
+                    EqnChunkDelay: 10,
+                    EqnChunkSize: MathJax.Hub.Browser.isMobile ? 10 : 50
+                }
+            });
+        </script>
+
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: {
+                    extensions: ["AMSmath.js", "AMSsymbols.js", "esint.js"]
+                }
+            });
+        </script>
     {% endblock %}
 </body>
 

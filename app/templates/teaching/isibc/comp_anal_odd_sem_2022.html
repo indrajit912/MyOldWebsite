@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Complex Analysis I (BMAT3), Odd Sem 2022-23</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<!-- 
+    Complex Analysis page for the Website
+    Author: Indrajit Ghosh
+    Created On: Nov 14, 2023
+ -->
 
-    {% include '_header.html' %}
+ {% extends 'base.html' %}
 
-<div class="content">
+ {% block title %}Complex Analysis I (BMAT3), Odd Sem 2022-23{% endblock %}
+  
+ {% block styles %}
+     {{ super() }}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
+ {% endblock %}
+ 
+  
+ {% block content %}
+ <div class="content">
     <div class="course-details">
         <h2>Complex Analysis I (BMAT3), Odd Sem 2022-23</h2>
         <b>Term:</b> Odd Semester 2022-23<br>
@@ -30,8 +36,7 @@
         <br>
     </div>
 </div>
-
-    {% include '_footer.html' %}
-
-</body>
-</html>
+ 
+ {% endblock %}
+  
+ 
