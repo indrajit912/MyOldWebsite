@@ -1,14 +1,18 @@
-<!-- app/templates/index_mobile.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Indrajit Ghosh - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 
+    Homepage for the Mobile Website
+    Author: Indrajit Ghosh
+    Created On: Nov 14, 2023
+ -->
 
-    <style>
-        /* Additional styles for mobile devices */
+ {% extends 'base.html' %}
+
+ {% block title %}Indrajit Ghosh - Home{% endblock %}
+ 
+ {% block styles %}
+     {{ super() }}
+     <!-- Additional styles specific to this template go here -->
+     <style>
+         /* Additional styles for mobile devices */
         /* Customize styles as needed for mobile layout */
         body {
             font-size: 16px;
@@ -52,18 +56,16 @@
         .address p {
             font-family: 'Roboto Mono', monospace;
         }
-    </style>    
-    
-    <!-- The follwoing is for displaying LaTeX code outputs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-</head>
-<body>
-
-    {% include '_header.html' %}
-
-
-    <!-- Content section -->
+     </style>
+ {% endblock %}
+ 
+ 
+ {% block scripts %}
+    {{ super() }}
+ {% endblock %}
+ 
+ 
+ {% block content %}
     <div class="content">
 
         <div class="profile">
@@ -82,21 +84,5 @@
 
         </div>
     </div>
-
-    {% include '_footer.html' %}
-
-
-    <!-- MathJax congigauration -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['\\(','\\)'] ],
-                displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-                processEscapes: true,
-                processClass: "mathjax"
-            }
-        });
-    </script>
-
-</body>
-</html>
+ {% endblock %}
+ 

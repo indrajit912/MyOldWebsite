@@ -1,37 +1,22 @@
-<!--
-Index Page Template
+<!-- 
+    Homepage for the Website
+    Author: Indrajit Ghosh
+    Created On: Nov 13, 2023
+ -->
 
-This HTML template defines the structure and content of the index page for the Flask web application.
+{% extends 'base.html' %}
 
-Template Variables:
-    None
+{% block title %}Indrajit Ghosh - Home{% endblock %}
 
-Template Blocks:
-    content: This block can be extended by child templates to provide specific content.
-
-Google Fonts API:
-    https://fonts.google.com/
-
--->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Indrajit Ghosh - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block meta_tags %}
+    {{ super() }}
+    <!-- Additional meta tags specific to this template go here -->
     <meta name="google-site-verification" content="cHABD_fahdWNIJDCadQVrN3ylDpyoStL-_UfYRKRo9c" />
-    
-    <script>
-        // JavaScript for mobile redirection
-        if (window.innerWidth <= 768) {
-            window.location.href = "{{ url_for('index_mobile') }}";
-        }
-    </script>
-    
-    <!-- The follwoing is for displaying LaTeX code outputs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+{% endblock %}
 
+{% block styles %}
+    {{ super() }}
+    <!-- Additional styles specific to this template go here -->
     <style>
         .address {
             font-size: 14px;
@@ -40,14 +25,22 @@ Google Fonts API:
         .address p {
             font-family: 'Roboto Mono', monospace;
         }
-
     </style>
-</head>
+{% endblock %}
 
-<body>
 
-    {% include '_header.html' %}
-    
+{% block scripts %}
+    {{ super() }}
+    <script>
+        // JavaScript for mobile redirection
+        if (window.innerWidth <= 768) {
+            window.location.href = "{{ url_for('index_mobile') }}";
+        }
+    </script>
+{% endblock %}
+
+
+{% block content %}
     <div class="content">
     
         <div class="profile">
@@ -86,21 +79,6 @@ Google Fonts API:
         </div>
         
     </div>
-    
-        {% include '_footer.html' %}
-    
-    
-    <!-- MathJax congigauration -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['\\(','\\)'] ],
-                displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-                processEscapes: true,
-                processClass: "mathjax"
-            }
-        });
-    </script>
-    
-</body>
-</html>
+{% endblock %}
+
+

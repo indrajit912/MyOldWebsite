@@ -1,0 +1,54 @@
+<!-- 
+    base.html for the website 
+    Author: Indrajit Ghosh
+    Created On: Nov 13, 2023
+
+    Google Fonts API:
+    https://fonts.google.com/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block meta_tags %}
+        <!-- Default meta tags go here -->
+    {% endblock %}
+    
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
+
+    {% block scripts %}
+        <!-- The follwoing is for displaying LaTeX code outputs -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    {% endblock %}
+
+</head>
+
+<body>
+    {% include '_header.html' %}
+
+    {% block content %}{% endblock %}
+    
+    {% include '_footer.html' %}
+
+    {% block bottom_scripts %}
+        <!-- MathJax configuration -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['\\(','\\)'] ],
+                    displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+                    processEscapes: true,
+                    processClass: "mathjax"
+                }
+            });
+        </script>
+    {% endblock %}
+</body>
+
+</html>
