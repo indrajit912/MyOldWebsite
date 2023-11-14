@@ -232,15 +232,15 @@
 
             <ol type="a">
                 <li value="1">
-                    \[ \oint_{C} \frac{\partial g}{\partial n} ds = \iint_{\mathbf{R}} \nabla^2g \; dx dy \]
+                    \[ \oint_{C} \frac{\partial g}{\partial n} \, \mathrm{d}s = \iint_{\mathbf{R}} \nabla^2g \; \mathrm{d}x\, \mathrm{d}y \]
                 </li>
     
                 <li>
-                    \[ \oint_{C} f \frac{\partial g}{\partial n} ds = \iint_{\mathbf{R}} (f\nabla^2g + \nabla f \nabla g)\; dx dy \]
+                    \[ \oint_{C} f \frac{\partial g}{\partial n}\, \mathrm{d}s = \iint_{\mathbf{R}} (f\nabla^2g + \nabla f \nabla g)\; \mathrm{d}x\, \mathrm{d}y \]
                 </li>
                 <li>
                     \[ 
-                        \oint_{C} \left( f \frac{\partial g}{\partial n} - g \frac{\partial f}{\partial n} \right) = \iint_{\mathbf{R}} \left( f \nabla^2 g - g \nabla^2 f \right) \; dxdy
+                        \oint_{C} \left( f \frac{\partial g}{\partial n} - g \frac{\partial f}{\partial n} \right)\,\mathrm{d}s = \iint_{\mathbf{R}} \left( f \nabla^2 g - g \nabla^2 f \right) \; \mathrm{d}x\, \mathrm{d}y
                     \]
                 </li>
             </ol>
@@ -248,7 +248,7 @@
             <p>
                 The identity c is known as <em>Green's formula</em>; it shows that
                     \[
-                        \oint_{C} f\frac{\partial g}{\partial n} \; ds = \oint_{C} g \frac{\partial f}{\partial n}\; ds
+                        \oint_{C} f\frac{\partial g}{\partial n} \; \mathrm{d}s = \oint_{C} g \frac{\partial f}{\partial n}\; \mathrm{d}s
                     \]
                 whenever \(f\) and \(g\) are both harmonic on \(\mathbf{R}\) (that is, when \(\nabla^2 f= \nabla^2g = 0\) on \(\mathbf{R}\)).
             </p>
@@ -290,7 +290,7 @@
                 \(\mathbf{n}\) denote the unit normal to \(S\) having a nonnegative \(z\)-component. Use the parametric representation 
                 \( \mathbf{r}(x,y) = x \mathbf{i} + y \mathbf{j} + f(x,y) \mathbf{k} \) and show that
                 \[
-                    \iint_{S} \mathbf{F}\cdot \mathbf{n} = \iint_{T} \left( -P \frac{\partial f}{\partial x} - Q \frac{\partial f}{\partial y} + R \right) \; dxdy,
+                    \iint_{S} \mathbf{F}\cdot \mathbf{n} = \iint_{T} \left( -P \frac{\partial f}{\partial x} - Q \frac{\partial f}{\partial y} + R \right) \; \mathrm{d}x\, \mathrm{d}y,
                 \]
                 where each \( P, Q\) and \(R\) is to be evaluated at \( (x,y, f(x,y))\).
             </p>
@@ -307,19 +307,19 @@
             <ol type="a">
                 <li>
                     \[
-                    \iint_{S} \varphi(x, y, z)\; dS = \iint_{T} \varphi[x, y, f(x, y)] \sqrt{1 + \left( \frac{\partial f}{\partial x} \right)^2 + \left( \frac{\partial f}{\partial y} \right)^2} \; dxdy.
+                    \iint_{S} \varphi(x, y, z)\; \mathrm{d}S = \iint_{T} \varphi[x, y, f(x, y)] \sqrt{1 + \left( \frac{\partial f}{\partial x} \right)^2 + \left( \frac{\partial f}{\partial y} \right)^2} \; \mathrm{d}x\, \mathrm{d}y.
                     \]
                 </li>
                     
                 <li>
                     \[
-                    \iint_{S} \varphi(x, y, z)\; dy \wedge dz = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial x}\; dxdy.
+                    \iint_{S} \varphi(x, y, z)\; \mathrm{d}y \wedge \mathrm{d}z = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial x}\; \mathrm{d}x\, \mathrm{d}y.
                     \]
                 </li>
 
                 <li>
                     \[
-                    \iint_{S} \varphi(x, y, z)\; dz \wedge dx = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial y}\; dxdy.
+                    \iint_{S} \varphi(x, y, z)\; \mathrm{d}z \wedge \mathrm{d}x = - \iint_{T} \varphi[x, y, f(x, y)] \frac{\partial f}{\partial y}\; \mathrm{d}x\, \mathrm{d}y.
                     \]
                 </li>
                 </li>
