@@ -11,13 +11,15 @@ Attributes:
 """
 
 
-from flask import render_template, request, abort
+from flask import render_template, request, abort, url_for
 from app import app
 from config import *
+from pathlib import Path
 # Import the 'errors' Blueprint
 from .errors.handlers import errors_bp
 
 from scripts.email_message import EmailMessage
+from scripts.utils import convert_zip_to_base64
 from smtplib import SMTPAuthenticationError, SMTPException
 
 import random
@@ -90,7 +92,9 @@ def research():
 ######################################################################
 @app.route('/misc')
 def misc():
-    return render_template('misc.html')
+    isi_reg_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'isi_reg_form.zip'
+    isi_reg_form_zip_base64 = convert_zip_to_base64(isi_reg_zip_path)
+    return render_template('misc.html', isi_reg_form_zip_base64=isi_reg_form_zip_base64)
 
 ######################################################################
 #                       Blog

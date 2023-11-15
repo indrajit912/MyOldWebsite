@@ -21,7 +21,7 @@ MAIL_USERNAME = INDRAJITS_BOT_EMAIL_ID # Your Gmail email address
 MAIL_PASSWORD = INDRAJITS_BOT_EMAIL_PASSWD  # Your Gmail password or app-specific password
 MAIL_DEFAULT_SENDER = INDRAJITS_BOT_EMAIL_ID  # Default sender email address
 
-GMAIL_SERVER = ['smtp.gmail.com', 587] 
+GMAIL_SERVER = ['smtp.gmail.com', 587]
 
 # Math quotes: "http://math.furman.edu/~mwoodard/data.html"
 QUOTES = [

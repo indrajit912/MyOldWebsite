@@ -1,36 +1,106 @@
 {% extends 'base.html' %}
 
 {% block title %}Indrajit - Misc{% endblock %}
- 
+
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sticky_style.css') }}">
+    <style>
+        .download-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .download-links a {
+            padding: 6px 8px; /* Adjusted padding */
+            font-size: 14px; /* Adjusted font size */
+            background-color: #007bff; /* Green background color */  
+            color: white; /* White text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .download-links a:hover {
+            background-color: #0056b3; /* Darker green on hover */  
+        }
+
+        .download-links a:not(:last-child) {
+            margin-right: 10px; /* Adjusted margin between links */
+        }
+
+        .download-links .overleaf-link {
+            background-color: #4CAF50; /* Blue background color for Overleaf link */
+            padding: 8px 12px; /* Adjusted padding */
+            font-size: 16px; /* Adjusted font size */
+            color: white; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-links .overleaf-link:hover {
+            background-color: #45a049; /* Darker blue on hover */
+        }
+
+        /* Media query for screens with a maximum width of 600px */
+        @media (max-width: 600px) {
+            .download-links {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+
+            .download-links a,
+            .download-links .overleaf-link {
+                width: 80%; /* Set full width for each link */
+                margin-bottom: 10px; /* Add space between links */
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ url_for('static', filename='js/overleaf.js') }}"></script>
 {% endblock %}
 
 {% block content %}
 
 <div class="container">
-    <!-- <h2 class="center">LaTeX Templates</h2> -->
     
-    <article class="episode">
-      <div class="episode__number">01</div>
-      <div class="episode__content">
+  <article class="episode">
+    <div class="episode__number">01</div>
+    <div class="episode__content">
         <div class="title">ISI PhD Registration Form</div>
         <div class="story">
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.          </p>
+            This LaTeX template is designed for the PhD registration form of the Indian Statistical Institute,
+            Bangalore Center. To get started, download the <code>.zip</code> file, extract it on your local computer, and locate
+            the 'main.tex' file within. Modify the initial <code>\FirstName</code>, <code>\MidName</code>, etc., within
+            this file. Additionally, you can access this project using Overleaf through the following link.
+            <br>
+            <div class="download-links">
+                <a href="{{ url_for('static', filename='others/isi_reg_form.zip') }}" download>Download .zip</a>
+                <a href="{{ url_for('static', filename='others/isi_reg_form.pdf') }}" target="_blank">View PDF</a>
+                <button onclick="openOverleaf('{{ isi_reg_form_zip_base64 }}')" class="overleaf-link">Open in Overleaf</button>
+            </div>
         </div>
-      </div>
-    </article>
+    </div>
+  </article>
 
-    <article class="episode">
-      <div class="episode__number">02</div>
-      <div class="episode__content">
-        <div class="title">LaTeX Template for AMSart</div>
-        <div class="story">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis         </div>
+
+  <article class="episode">
+    <div class="episode__number">02</div>
+    <div class="episode__content">
+      <div class="title">LaTeX Template for AMSart</div>
+      <div class="story">
+        <p>Will be updated soon!</p>
       </div>
-    </article>
+    </div>
+  </article>
 
 </div>
 
