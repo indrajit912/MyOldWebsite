@@ -16,7 +16,7 @@ p {
 }
 
 a {
-  color: #fff;
+  color: rgb(7, 175, 7);
 }
 
 .center { text-align: center; }
@@ -24,8 +24,11 @@ a {
 .container {
   width: 95%;
   max-width: 1220px;
-  margin: 0 auto;
-  margin-top: 8pt;
+  margin: 20px auto;
+  padding: 20px;
+  /* background-color: #fff; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .episode {
@@ -37,6 +40,7 @@ a {
 .episode__number {
   font-size: 5vw;
   font-weight: 600;
+  color: #001233;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -53,6 +57,10 @@ a {
   padding: 15px 0;
 }
 
+.title {
+  color: #001233;
+}
+
 .episode__content .title {
   font-weight: 600
 }
@@ -64,6 +72,9 @@ a {
 @media (max-width: 600px) {
   .episode__content {
     grid-template-columns: 1fr;
+  }
+  .episode__number {
+    font-size: 10vw;
   }
 }
 
