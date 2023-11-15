@@ -141,7 +141,7 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     padding: 20px;
-    max-width: 800px;
+    max-width: 1200px;
 }
 
 .assignment h2 {
@@ -221,12 +221,9 @@ p {
     .assignment {
         max-width: 92%;
         padding: 10px;
-        /* margin: 15px auto; */
-        /* margin-left: 8px; */
     }
 
     .problem {
-        max-width: 95%;
         padding: 15px;
         align-items: center;
     }

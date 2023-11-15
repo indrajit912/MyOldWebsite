@@ -220,6 +220,8 @@ a.back-to-top {
   border-radius: 5px;
   margin-top: 20px;
   transition: background-color 0.3s ease;
+  width: 20%;
+  margin: 0 auto;
 }
 
 a.back-to-top:hover {
@@ -365,5 +367,8 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     }
     .profile-image {
         max-width: 150%; 
+    }
+    a.back-to-top {
+      width: 100%;
     }
 }
