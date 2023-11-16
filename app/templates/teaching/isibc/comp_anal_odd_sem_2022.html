@@ -16,7 +16,7 @@
   
  {% block content %}
  <div class="content">
-    <div class="course-details">
+    <div>
         <h2>Complex Analysis I (BMAT3), Odd Sem 2022-23</h2>
         <b>Term:</b> Odd Semester 2022-23<br>
         <b>Duration:</b> Aug 2022 - Nov 2022<br><br>
@@ -26,6 +26,9 @@
         <b>TA:</b> Indrajit Ghosh<br>
         <br>
 
+        <!-- A blank anchor tag for 'Back to Top' -->
+        <a id="top"></a>
+
         <b>Textbooks and other references</b><br>
 
         <ul>
@@ -34,7 +37,334 @@
             <li>J. B. Conway, <i>Functions of one complex Variable</i>.</li>
         </ul>
         <br>
+
+        <h3>Homeworks</h3>
+        <ul>
+            <li>
+                <a href="#homework-1" class="underlined-link">
+                    Homework 1
+                </a> (Due on: 
+                <span class="datestamp"> Aug 23, 2022</span>)
+            </li>
+
+            <li>
+                <a href="#homework-2" class="underlined-link">
+                    Homework 2
+                </a> (Due on: 
+                <span class="datestamp"> Sep 01, 2022</span>)
+            </li>
+
+            <li>
+                <a href="#homework-3" class="underlined-link">
+                    Homework 3
+                </a> (Due on: 
+                <span class="datestamp"> Sep 15, 2022</span>)
+            </li>
+            
+            <li>
+                <a href="#homework-4" class="underlined-link">
+                    Homework 4
+                </a> (Due on: 
+                <span class="datestamp"> Oct 20, 2022</span>)
+            </li>
+
+            <li>
+                <a href="#homework-5" class="underlined-link">
+                    Homework 5
+                </a> (Due on: 
+                <span class="datestamp"> Nov 01, 2022</span>)
+            </li>
+
+            <li>
+                <a href="#homework-6" class="underlined-link">
+                    Homework 6
+                </a> (Due on: 
+                <span class="datestamp"> Nov 11, 2022</span>)
+            </li>
+        </ul>
     </div>
+</div>
+
+<!-- Homeworks -->
+
+<div class="assignment" id="homework-1">
+    <h2>Homework 1</h2>
+    <p class="due-date">Due Date: Aug 23, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            Consider a holomorphic function \(f\) on a region \(\Omega\). Let \(C\) be a circle inside \(\Omega\)
+            whose interior is also contained in \(\Omega\). Here is another way to show that
+            \[
+                \oint_{C} f(z)\,\mathrm{d}z=0.
+            \]
+            <ol type="a">
+                <li value="1">
+                    Consider any regular polygon \(P_n\) of \(n\) sides inscribed inside the circle. Argue that 
+                    \[
+                        \int_{P_n}f(z)\,\mathrm{d}z=0.
+                    \]
+                </li>
+                <li>
+                    Show that 
+                    \[
+                        \lim_{n\to \infty} \int_{P_n}f(z)\,\mathrm{d}z= \oint_{C} f(z)\,\mathrm{d}z.
+                    \]
+                </li>
+            </ol>
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            Would the above continue to hold if \(C\) was instead a twice differentiable curve inside \(\Omega\) whose
+            interior was <em>convex</em> and also contained in \(\Omega\)? Argue.
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
+</div>
+
+
+<div class="assignment" id="homework-2">
+    <h2>Homework 2</h2>
+    <p class="due-date">Due Date: Sep 01, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            The angle between two non-zero complex numbers \(z\) and \(w\) (taken in that order) is simply the oriented
+            angle, in \( (-\pi, \pi] \), that is formed between the two vectors in \(\mathbb{R}^2\) corresponding to the
+            points \(z\) and \(w\). This oriented angle, say \(\alpha\), is uniquely determined by the two quantities
+            \[
+                \frac{(z, w)}{|z||w|} \text{ and } \frac{(z, -iw)}{|z||w|}
+            \]
+            which are simply the cosine and sine of \(\alpha\), respectively. Here the notation \((\cdot, \cdot)\) corresponds
+            to the usual inner product in \(\mathbb{R}^2\), which in terms of complex numbers takes the form \((z, w)= \Re(z\,\bar{w})\).
+            <br>
+            Let \(\Omega\) be an open set. A holomorphic function \(f\) defined near \(z_0\in \Omega\) is said to <em>preserve angles</em>
+            at \(z_0\) if for any two smooth curves \(\gamma\) and \(\eta\) intersecting at \(z_0\), the angle formed between 
+            the curves \(f \circ \gamma\) and \(f \circ \eta\) at \(f(z_0)\). In particular, we assume that the tangents to the 
+            curves \(\gamma, \eta, f\circ \gamma\) and \(f\circ\eta\) at the point \(z_0\) and \(f(z_0)\) are all non-zero.
+            <ol type="a">
+                <li value="1">
+                    Prove that if \(f:\Omega\to \mathbb{C}\) is holomorphic, and \(f'(z_0)\ne = 0\), then \(f\) preserves
+                    angles at \(z_0\).
+                </li>
+                
+                <li>
+                    Conversely, prove the following: suppose \(f:\Omega\to \mathbb{C}\) is a complex valued function, that is 
+                    real continuously differentiable at \(z_0\in \Omega\), and \(J_{f}(z_0)\ne 0\). If \(f\) preserves angles at
+                    \(z_0\), then \(f\) is holomorphic at \(z_0\) with \(f'(z_0)\ne 0\). 
+                </li>
+            </ol>
+
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            Prove 
+            \[
+                \int_{0}^{\infty} \sin(x^2)\, \mathrm{d}x = \int_{0}^{\infty} \cos(x^2)\, \mathrm{d}x = \frac{\sqrt{2\pi}}{4}.
+            \]
+            The integral \(\int_{0}^{\infty}\) is interpreted as \(\lim_{R\to 0} \int_{0}^{R}\). 
+            <br>
+            <em>Hint</em>: Integrate \(e^{-z^2}\) from \(0\) to \(R\), then along the circular arc from \(R\) to \(Re^{\frac{i\pi}{4}}\)
+            and then along the straight line from \( Re^{\frac{i\pi}{4}} \) to \(0\).
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
+</div>
+
+
+<div class="assignment" id="homework-3">
+    <h2>Homework 3</h2>
+    <p class="due-date">Due Date: Sep 15, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            Prove that 
+            \[
+                \int_{0}^{2\pi} \frac{\mathrm{d}\theta}{(a + \cos\, \theta)^2} = \frac{2 \pi a}{(a^2 - 1)^{\frac{3}{2}}}, \text{ whenever } a > 1.
+            \]
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            Suppose \(f\) is holomorphic in a punctured disc \( D_r(z_0)\setminus \{z_0\} \). Suppose also that 
+            \[
+                |f(z)| \le A |z-z_0|^{-1+ \epsilon}
+            \]
+            for some \(\epsilon >0\), and all \(z\) near \(z_0\). Show that the singularity of \(f\) at \(z_0\) is removable.
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
+</div>
+
+
+<div class="assignment" id="homework-4">
+    <h2>Homework 4</h2>
+    <p class="due-date">Due Date: Oct 20, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            Let \(t>0\) be given and fixed, and define \(F(z)\) by 
+            \[
+                F(z) = \prod_{n = 1}^{\infty} \left(1 - e^{-2\pi n t} e^{2\pi i z} \right).
+            \]
+            <ol type="a">
+                <li value="1">
+                    Show that the product defines an entire function of \(z\).
+                </li>
+                
+                <li>
+                    Show that \(|F(z)|\le A e^{a|z|^2}\), hence \(F\) is of order \(2\).
+                </li>
+
+                <li>
+                    \(F\) vanishes exactly when \(z = -int + m\) for \(n, m\) integers. Then, if \(z_n\) is an enumeration 
+                    of these zeros we have
+                    \[
+                        \sum \frac{1}{|z_n|^2} = \infty \text{ but } \sum \frac{1}{|z|^{2+ \epsilon}} < \infty.
+                    \]
+                </li>
+            </ol>
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            Suppose that \(Q_n, n = 1, 2, \dots\) are given polynomials with constant terms equal to \(0\). Suppose also thet
+            we are given a sequence of complex numbers \((a_n)\) without limit points. Prove that there exists a meromorphic 
+            function \(f\) whose only poles are at \((a_n)\), and so that for each \(n\), the difference
+            \[
+                f(z) - Q_n\left(\frac{1}{z - a_n}\right)
+            \]
+            is holomorphic near \(a_n\). In other words, \(f\) has prescribed poles and principal parts at each of these poles.
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
+</div>
+
+
+<div class="assignment" id="homework-5">
+    <h2>Homework 5</h2>
+    <p class="due-date">Due Date: Nov 01, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            Let \(f\) be a complex valued \(C^1\) function (that is both the real and imaginary parts are \(C^1\) functions)
+            defined in the neighbourhood of a point \(z_0\). There are several notions closely related to conformality at \(z_0\).
+            We say that \(f\) is <em>isogonal</em> at \(z_0\) if whenever \(\gamma\) and \(\eta\) are two smooth curves with \(\gamma(0) = \eta(0) = z_0\),
+            that make an angle \(\theta\) there (\(|\theta|<\pi\)), then \(f\circ \gamma\) and \(f\circ \eta\) make an angle \(\theta'\)
+            at \(t = 0\) with \(|\theta'| = |\theta|\) for all \(\theta\). Also \(f\) is said to be <em>isotropic</em> if it
+            magnifies lengths by some factor for all directions emanating from \(z_0\), that is, if the limit
+            \[
+                \lim_{r \to 0} \frac{| f(z_0 + re^{i\theta}) - f(z_0) |}{r}
+            \] 
+            exists, is non-zero, and independent of \(\theta\).
+            <br>
+            Show that \(f\) is isogonal at \(z_0\) if and only if it is isotropic at \(z_0\); moreover, \(f\) is isogonal at \(z_0\)
+            if and only if either \(f'(z_0)\) exists and is non-zero, or the same holds for \(f\) replaced by \(\bar{f}\).
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            If \(f\) is holomorphic in the deleted neighbourhood \( \{0 < |z-z_0| < r \} \) and has a pole of order \(k\)
+            at \(z_0\), then we can write
+            \[
+                f(z) = \frac{a_{-k}}{(z-z_0)^k} + \dots + \frac{a_{-1}}{(z-z_0)} + g(z)
+            \]
+            where \(g\) is holomorphic in the disc \( \{ |z-z_0|< r \}\). There is a generalization of this expansion that 
+            holds even if \(z_0\) is an essential singularity.
+            <br>
+            Let \(f\) be holomorphic in a region containing the annulus \( \{ z: r_1 \le |z-z_0| \le r_2 \} \) where \(0< r_1 < r_2\).
+            Then, 
+            \[
+                f(z) = \sum_{n = -\infty}^{\infty}a_n (z - z_0)^n
+            \]
+            where the series converges absolutely in the interior of the annulus. To prove this, it suffices to write
+            \[
+                f(z) = \frac{1}{2 \pi i} \int_{C_{r_2}} \frac{f(\zeta)}{\zeta - z}\,\mathrm{d}\zeta - \frac{1}{2 \pi i} \int_{C_{r_1}} \frac{f(\zeta)}{\zeta - z}\,\mathrm{d}\zeta
+            \]
+            when \(r_1 < |z-z_0| < r_2\), and argue as in the proof of the existence of power series for holomorphic functions 
+            done in class. Here \(C_{r_1}\) and \(C_{r_2}\) are the circles bounding the annulus.
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
+</div>
+
+
+<div class="assignment" id="homework-6">
+    <h2>Homework 6</h2>
+    <p class="due-date">Due Date: Nov 11, 2022</p>
+    
+    <div class="problem">
+        <b>Problem 1</b>
+        <p>
+            Show that if \(f:D(0, R)\to \mathbb{C}\) is holomorphic, with \(|f(z)| \le M \) for some \(M > 0\), then 
+            \[
+                \left|\frac{f(z) - f(0)}{M^2 - \overline{f(0)}f(z)} \right| \le \frac{|z|}{M R}.
+            \]
+            <br>
+            <em>Hint</em>: Use Schwarz Lemma!
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 2</b>
+        <p>
+            A complex number \(w \in \mathbb{D}\) is a fixed point for the map \(f:\mathbb{D} \to \mathbb{D}\) if \(f(w) = w\).
+            <ol type="a">
+                <li value="1">
+                    Prove that if \(f:\mathbb{D} \to \mathbb{D}\) is holomorphic and has two distinct fixed points, then \(f\) is the 
+                    identity.
+                </li>
+                <li>
+                    Must every holomorphic function \(f:\mathbb{D} \to \mathbb{D}\) have a fixed point? (Hint: consider the upper half plane)
+                </li>
+            </ol>
+        </p>
+    </div>
+    <div class="problem">
+        <b>Problem 3</b>
+        <p>
+            The <em>pseudo-hyperbolic distance</em> between two points \(z, w \in \mathbb{D}\) is defined by 
+            \[
+                \rho(z, w) = \left| \frac{z - w}{1- \bar{w}z}  \right|.
+            \]
+            <ol type="a">
+                <li value="1">
+                    Prove that if \(f:\mathbb{D} \to \mathbb{D}\) is holomorphic then 
+                    \[
+                        \rho(f(z), f(w)) \le \rho(z, w), \text{ for all } z, w \in \mathbb{D}.
+                    \]
+                    <br>
+                    <em>Hint</em>: Consider the automorphism \(\psi_{\alpha}(z) = (z - \alpha) / (1 - \bar{\alpha}z)\) and apply 
+                    the Schwarz lemma to \( \psi_{f(w)}\circ f \circ \psi_{w}^{-1} \).
+                </li>
+                <li>
+                    Prove that 
+                    \[
+                        \frac{|f'(z)|}{1 - |f(z)|^2} \le \frac{1}{1 - |z|^2} \text{ for all } z \in \mathbb{D}.
+                    \]
+                    This result is called <em>Schwarz-Pick Lemma</em>.
+                </li>
+            </ol>
+        </p>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" class="back-to-top">Back to top</a>
 </div>
  
  {% endblock %}
