@@ -46,21 +46,6 @@
             background-color: #45a049; /* Darker blue on hover */
         }
 
-        /* Media query for screens with a maximum width of 600px */
-        @media (max-width: 600px) {
-            .download-links {
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: stretch;
-            }
-
-            .download-links a,
-            .download-links .overleaf-link {
-                width: 80%; /* Set full width for each link */
-                margin-bottom: 10px; /* Add space between links */
-            }
-        }
-
         .visit-button {
             display: inline-block;
             padding: 8px 16px;
@@ -79,6 +64,21 @@
         .visit-button:hover {
             background-color: #45a049; /* Darker green on hover */
         }
+
+        /* Media query for screens with a maximum width of 600px */
+        @media (max-width: 600px) {
+            .download-links {
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: stretch;
+            }
+
+            .download-links a,
+            .download-links .overleaf-link {
+                width: 80%; /* Set full width for each link */
+                margin-bottom: 10px; /* Add space between links */
+            }
+        }
     </style>
 {% endblock %}
 
@@ -89,9 +89,22 @@
 
 {% block content %}
 
+<div class="toc_container">
+    <h2 class="center">Page Contents</h2>
+    <ul>
+        <li>
+            <a href="#latex-templates" class="toc_title">LaTeX Templates</a>
+        </li>
+
+        <li>
+            <a href="#math-research-resources" class="toc_title">Mathematics Research Resources</a>
+        </li>
+    </ul>
+</div>
 
 
-<div class="container">
+
+<div class="container" id="latex-templates">
     <h2 class="center">LaTeX Templates</h2>
     <article class="episode">
       <div class="episode__number">01</div>
@@ -124,7 +137,7 @@
     </article>
 </div>
 
-<div class="container" id="mathematics-research-resources">
+<div class="container" id="math-research-resources">
     <h2 class="center">Mathematics Research Resources</h2>
     <article class="episode">
         <div class="episode__number">01</div>

@@ -90,28 +90,19 @@ p {
   .course__content {
     grid-template-columns: 1fr;
   }
-  .course__number {
-    font-size: 11vw;
+  .course__content .course-details {
+    font-size: 15px;
+    column-count: 1; /* Change to a single column on smaller screens */
+  }
+  .teaching-heading {
+      font-size: 5vw;
   }
   .course-details {
     display: column;
-}
-}
-
-@media (max-width: 576px) {
-  .course__content .course-details {
-    font-size: 15px;
   }
-}
-
-@media (max-width: 1200px) {
-    .course__content .course-details {
-      column-count: 1; /* Change to a single column on smaller screens */
-    }
-
-    .teaching-heading {
-        font-size: 5vw;
-    }
+  .course__number {
+    font-size: 11vw;
+  }
 }
 
 
