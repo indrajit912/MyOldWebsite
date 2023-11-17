@@ -7,7 +7,7 @@ Attributes:
     app (Flask): The Flask web application instance.
 """
 from flask import Flask
-from .errors.handlers import errors_bp
+from app.errors.handlers import errors_bp
 
 app = Flask(__name__)
 

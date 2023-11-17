@@ -11,9 +11,19 @@ errors_bp = Blueprint('errors', __name__)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
 
+# Create a named route for page_not_found
+@errors_bp.route('/page_not_found')
+def page_not_found_route():
+    return page_not_found(None)
+
 @errors_bp.app_errorhandler(500)
 def internal_server_error(error):
     return render_template('errors/500.html'), 500
+
+# Create a named route for internal_server_error
+@errors_bp.route('/internal_server_error')
+def internal_server_error_route():
+    return internal_server_error(None)
 
 @errors_bp.app_errorhandler(401)
 def unauthorized(error):
@@ -23,6 +33,11 @@ def unauthorized(error):
     """
     return render_template('errors/401.html'), 401
 
+# Create a named route for unauthorized
+@errors_bp.route('/unauthorized')
+def unauthorized_route():
+    return unauthorized(None)
+    
 
 @errors_bp.app_errorhandler(403)
 def forbidden(error):
@@ -32,6 +47,11 @@ def forbidden(error):
     """
     return render_template('errors/403.html'), 403
 
+# Create a named route for forbidden
+@errors_bp.route('/forbidden')
+def forbidden_route():
+    return forbidden(None)
+
 @errors_bp.app_errorhandler(400)
 def bad_request(error):
     """
@@ -39,12 +59,22 @@ def bad_request(error):
     """
     return render_template('errors/400.html'), 400
 
+# Create a named route for bad_request
+@errors_bp.route('/bad_request')
+def bad_request_route():
+    return bad_request(None)
+
 @errors_bp.app_errorhandler(429)
 def too_many_requests(error):
     """
     Handle cases where a user has exceeded a rate limit for making requests.
     """
     return render_template('errors/429.html'), 429
+
+# Create a named route for too_many_requests
+@errors_bp.route('/too_many_requests')
+def too_many_requests_route():
+    return too_many_requests(None)
 
 # Email-related errors
 @errors_bp.app_errorhandler(SMTPAuthenticationError)

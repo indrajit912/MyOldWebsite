@@ -1,0 +1,34 @@
+<!-- LaTeX Templates -->
+
+<div class="container" id="latex-templates">
+    <h2 class="center">LaTeX Templates</h2>
+    <article class="episode">
+      <div class="episode__number">01</div>
+      <div class="episode__content">
+          <div class="title">ISI PhD Registration Form</div>
+          <div class="story">
+              This LaTeX template is designed for the PhD registration form of the Indian Statistical Institute,
+              Bangalore Center. To get started, download the <code>.zip</code> file, extract it on your local computer, and locate
+              the 'main.tex' file within. Modify the initial <code>\FirstName</code>, <code>\MidName</code>, etc., within
+              this file. Additionally, you can access this project using Overleaf through the following link.
+              <br>
+              <div class="download-links">
+                  <a href="{{ url_for('static', filename='others/isi_reg_form.zip') }}" download>Download .zip</a>
+                  <a href="{{ url_for('static', filename='others/isi_reg_form.pdf') }}" target="_blank">View PDF</a>
+                  <button onclick="openOverleaf('{{ isi_reg_form_zip_base64 }}')" class="overleaf-link">Open in Overleaf</button>
+              </div>
+          </div>
+      </div>
+    </article>
+
+
+    <article class="episode">
+      <div class="episode__number">02</div>
+      <div class="episode__content">
+        <div class="title">LaTeX Template for AMSart</div>
+        <div class="story">
+          <p>Will be updated soon!</p>
+        </div>
+      </div>
+    </article>
+</div>
