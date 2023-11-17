@@ -114,6 +114,17 @@
                 margin: 15px;
                 margin-right: 20px;
               }
+
+              #attachment-container .input-box {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start; /* Align items to the start (left) */
+              }
+
+              .clear-btn {
+                  width: 30%;
+                  margin-top: 10px; /* Add margin at the top for spacing */
+              }
             }
         </style>
     </head>
@@ -144,11 +155,13 @@
               <!-- Add the attachment field -->
               <div id="attachment-container">
                 <div class="input-box">
-                    <label for="attachment">Attachment:</label>
-                    <input type="file" id="attachment" name="attachment[]" onchange="validateFileSize(this)">
-                    <button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>
+                  <label for="attachment">Attachment:</label>
+                  <input type="file" id="attachment" name="attachment[]" onchange="validateFileSize(this)">
+                  <button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>
                 </div>
+                    
               </div>
+
               <button type="button" id="add-more-btn" onclick="addAttachmentField()">Add More</button>
               <div class="button-container">
                 <button type="submit">Send</button>
