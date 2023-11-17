@@ -64,6 +64,47 @@
                 margin-top: 20px;
             }
 
+            /* Add styles for the "Add More" and "Clear" buttons */
+            #attachment-container {
+                margin-top: 10px;
+            }
+
+            #attachment-container .input-box {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            #attachment-container label {
+                margin-right: 10px;
+            }
+
+            #add-more-btn,
+            .clear-btn {
+                background-color: #28a745;
+                color: #fff;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+            #add-more-btn:hover,
+            .clear-btn:hover {
+                background-color: #218838;
+            }
+
+            .clear-btn {
+                background-color: #dc3545; /* Red color for the "Clear" button */
+                margin-right: 0; /* Remove right margin for spacing */
+            }
+
+            .clear-btn:hover {
+                background-color: #c82333;
+            }
+
             @media (max-width: 480px) {
               .contact-container {
                   padding: 15px;
@@ -74,7 +115,6 @@
                 margin-right: 20px;
               }
             }
-
         </style>
     </head>
     <body>
@@ -84,7 +124,7 @@
         <div class="contact-container">
           <h1>Contact Indrajit</h1>
           
-          <form method="post">
+          <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
               <div class="input-box">
                   <label for="name">Name:</label>
                   <input type="text" id="name" name="name" required>
@@ -101,13 +141,53 @@
                   <label for="message">Message:</label>
                   <textarea id="message" name="message" rows="4" required></textarea>
               </div>
+              <!-- Add the attachment field -->
+              <div id="attachment-container">
+                <div class="input-box">
+                    <label for="attachment">Attachment:</label>
+                    <input type="file" id="attachment" name="attachment[]" onchange="validateFileSize(this)">
+                    <button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>
+                </div>
+              </div>
+              <button type="button" id="add-more-btn" onclick="addAttachmentField()">Add More</button>
               <div class="button-container">
                 <button type="submit">Send</button>
-            </div>
+              </div>
           </form>
         </div>
 
         {% include '_footer.html' %}
+
+        <script>
+          function addAttachmentField() {
+                var container = document.getElementById('attachment-container');
+                var newInput = document.createElement('div');
+                newInput.classList.add('input-box');
+                newInput.innerHTML = '<label for="attachment">Attachment:</label><input type="file" name="attachment[]" onchange="validateFileSize(this)"><button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>';
+                container.appendChild(newInput);
+            }
+
+            function validateFileSize(input) {
+                var maxSizeMB = 24;
+                var fileSize = input.files[0].size / (1024 * 1024); // Size in MB
+                if (fileSize > maxSizeMB) {
+                    alert("File size exceeds the maximum limit of 24 MB.");
+                    input.value = ""; // Clear the file input
+                    return false;
+                }
+                return true;
+            }
+
+            function clearAttachment(button) {
+                var input = button.previousElementSibling;
+                input.value = ""; // Clear the file input
+            }
+
+            function validateForm() {
+                // Add any additional form validation logic here
+                return true; // Return false to prevent form submission
+            }
+        </script>
     
     </body>
 </html>

@@ -153,6 +153,17 @@ def contact():
         subject = request.form.get('subject')
         message = request.form.get('message')
 
+        # Process file attachments
+        attachments = request.files.getlist('attachment[]')
+
+        # Attach files to the email
+        _attachment_paths = []
+        for attachment in attachments:
+            if attachment:
+                _attachment_filename = APP_DATA_DIR / attachment.filename
+                attachment.save(_attachment_filename)
+                _attachment_paths.append(_attachment_filename)
+
         # Render the email template with the provided parameters
         _email_html_text = render_template(
             'emails/email_template.html', 
@@ -167,8 +178,10 @@ def contact():
             sender_email_id=INDRAJITS_BOT_EMAIL_ID,
             to=INDRAJIT912_GMAIL,
             subject="Message from your WebSite!",
-            email_html_text=_email_html_text
+            email_html_text=_email_html_text,
+            attachments=_attachment_paths
         )
+
 
         try:
             # Send the email to Indrajit
@@ -177,6 +190,12 @@ def contact():
                 server_info=GMAIL_SERVER,
                 print_success_status=False
             )
+
+            # Delete the attachments from server
+            for attachment_path in _attachment_paths:
+                if attachment_path.exists():
+                    attachment_path.unlink()
+
 
             # After processing, you can redirect to a thank-you page.
             return render_template('thank_you.html')
@@ -194,13 +213,3 @@ def contact():
 
 
     return render_template('contact.html')
-
-######################################################################
-#                       Test Error!
-######################################################################
-
-@app.route('/test-error')
-def test_error():
-    # Simulate an error
-    # Use the `abort()` function to raise a 404 error
-    abort(500)
