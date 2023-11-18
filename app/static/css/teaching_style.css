@@ -1,10 +1,5 @@
 /* Styles for teaching */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
   /* background: #444; */
