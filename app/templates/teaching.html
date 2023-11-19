@@ -3,16 +3,22 @@
     Author: Indrajit Ghosh
     Created On: Nov 14, 2023
  -->
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 
- {% block title %}Indrajit - Teaching{% endblock %}
+{% block title %}Indrajit Ghosh - Teaching{% endblock %}
+
+{% block meta_tags %}
+  {{ super() }}
+  <meta name="keywords" content="smu, indrajit ghosh, teaching, mathematics, bmath, mmath, ISI Bangalore">
+{% endblock %}
+
   
- {% block styles %}
-     {{ super() }}
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
- {% endblock %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/teaching_style.css') }}">
+{% endblock %}
  
- {% block content %}
+{% block content %}
 
 <div class="teaching-container">
   <h2 class="teaching-heading">Teaching Assistantship at ISI</h2>
@@ -71,5 +77,5 @@
 
 </div>
  
- {% endblock %}
+{% endblock %}
  

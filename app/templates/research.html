@@ -6,7 +6,12 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Indrajit - Research{% endblock %}
+{% block title %}Indrajit Ghosh - Research{% endblock %}
+
+{% block meta_tags %}
+    {{ super() }}
+    <meta name="keywords" content="stat-math unit ISI, mathematics research, operator algebra, von Neumann algebra, C*-algebra, type II_1 infty, ISI Bangalore">
+{% endblock %}
  
 {% block styles %}
      {{ super() }}
@@ -110,6 +115,4 @@
 </div>
 
 {% endblock %}
- 
- 
- 
+  

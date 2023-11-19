@@ -1,78 +1,78 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Indrajit - Timeline</title>
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/timeline_style.css') }}">
-	</head>
+{% extends 'base.html' %}
 
-	<body>
+{% block title %}Indrajit Ghosh - Timeline{% endblock %}
 
-		<!-- The Timeline -->
-		
-		{% include '_header.html' %}
-		
-		<ul class="timeline">
-		
-		    <!-- Item -->
-			<li>
-				<div class="direction-r">
-					<div class="flag-wrapper">
-						<span class="flag">Senior Research Fellow</span>
-						<span class="time-wrapper"><span class="time">2021 - Present</span></span>
-					</div>
-					<div class="desc">Currently serving as a Senior Research Fellow within the SMU at ISI.</div>
-				</div>
-			</li>
-		
-		    <!-- Item -->
-			<li>
-				<div class="direction-l">
-					<div class="flag-wrapper">
-						<span class="flag">Graduate Studies</span>
-						<span class="time-wrapper"><span class="time">2019</span></span>
-					</div>
-					<div class="desc">Embarked on my academic and research journey by joining the Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute (ISI) Bangalore as a Junior Research Fellow.</div>
-				</div>
-			</li>
-		
-			<!-- Item -->
-			<li>
-				<div class="direction-r">
-					<div class="flag-wrapper">
-						<span class="flag">Postgraduate Deegree</span>
-						<span class="time-wrapper"><span class="time">2016 - 2018</span></span>
-					</div>
-					<div class="desc">Successfully completed my Master's degree in Pure Mathematics from the Department of Pure Mathematics at the University of Calcutta, Kolkata, India.</div>
-				</div>
-			</li>
-		
-			<!-- Item -->
-			<li>
-				<div class="direction-l">
-					<div class="flag-wrapper">
-						<span class="flag">Undergraduate Degree</span>
-						<span class="time-wrapper"><span class="time">2013 - 2016</span></span>
-					</div>
-					<div class="desc">Attained a Bachelor's degree with Honors in Mathematics from West Bengal State University in West Bengal, India.</div>
-				</div>
-			</li>
-		
-			<!-- Item -->
-			<li>
-				<div class="direction-r">
-					<div class="flag-wrapper">
-						<span class="flag">Higher Secondary</span>
-						<span class="time-wrapper"><span class="time">2011 - 2013</span></span>
-					</div>
-					<div class="desc">Successfully completed my Higher Secondary Examination from Dakshin Chatra High School in West Bengal, India.</div>
-				</div>
-			</li>
-		
-		</ul>
+{% block meta_tags %}
+  {{ super() }}
+  <meta name="keywords" content="smu, indrajit ghosh, timeline, mathematics, university of calcutta, barasat govt. college, ISI Bangalore">
+{% endblock %}
 
-		{% include '_footer.html' %}
+  
+{% block styles %}
+    {{ super() }}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/timeline_style.css') }}">
+{% endblock %}
 
-	</body>
-</html>
+{% block content %}
 
+<ul class="timeline">
+		
+	<!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Senior Research Fellow</span>
+				<span class="time-wrapper"><span class="time">2021 - Present</span></span>
+			</div>
+			<div class="desc">Currently serving as a Senior Research Fellow within the SMU at ISI.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Graduate Studies</span>
+				<span class="time-wrapper"><span class="time">2019</span></span>
+			</div>
+			<div class="desc">Embarked on my academic and research journey by joining the Theoretical Statistics and Mathematics Unit (SMU) at the Indian Statistical Institute (ISI) Bangalore as a Junior Research Fellow.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Postgraduate Deegree</span>
+				<span class="time-wrapper"><span class="time">2016 - 2018</span></span>
+			</div>
+			<div class="desc">Successfully completed my Master's degree in Pure Mathematics from the Department of Pure Mathematics at the University of Calcutta, Kolkata, India.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-l">
+			<div class="flag-wrapper">
+				<span class="flag">Undergraduate Degree</span>
+				<span class="time-wrapper"><span class="time">2013 - 2016</span></span>
+			</div>
+			<div class="desc">Attained a Bachelor's degree with Honors in Mathematics from West Bengal State University in West Bengal, India.</div>
+		</div>
+	</li>
+
+	<!-- Item -->
+	<li>
+		<div class="direction-r">
+			<div class="flag-wrapper">
+				<span class="flag">Higher Secondary</span>
+				<span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+			</div>
+			<div class="desc">Successfully completed my Higher Secondary Examination from Dakshin Chatra High School in West Bengal, India.</div>
+		</div>
+	</li>
+
+</ul>
+
+{% endblock %}
