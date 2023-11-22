@@ -1,11 +1,15 @@
 <!-- templates/errors/403.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>403 Forbidden</title>
-</head>
-<body>
-    <h1>403 - Forbidden</h1>
-    <p>You don't have permission to access this resource. Please contact the administrator.</p>
-</body>
-</html>
+
+{% extends 'error_base.html' %}
+
+{% block title %}Forbidden{% endblock %}
+
+{% block content %}
+
+    <h1>403</h1>
+    <h2>Oops! Forbidden.</h2>
+    <p>You don't have permission to view this content.
+      If you believe this is an error, please contact Indrajit Ghosh.
+    </p>
+
+{% endblock %}

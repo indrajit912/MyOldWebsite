@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>429 Too Many Requests</title>
-</head>
-<body>
-    <h1>429 - Too Many Requests</h1>
-    <p>You have exceeded the rate limit for making requests. Please wait and try again later.</p>
-</body>
-</html>
+<!-- templates/errors/429.html -->
+
+{% extends 'error_base.html' %}
+
+{% block title %}Too Many Requests{% endblock %}
+
+{% block content %}
+
+    <h1>429</h1>
+    <h2>Oops! Too Many Requests.</h2>
+    <p>We're sorry, but you've made too many requests in a short period.
+      Please wait a moment and try again later.
+    </p>
+
+{% endblock %}

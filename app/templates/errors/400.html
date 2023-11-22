@@ -1,11 +1,15 @@
 <!-- templates/errors/400.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>400 Bad Request</title>
-</head>
-<body>
-    <h1>400 - Bad Request</h1>
-    <p>Your request was malformed or incorrect. Please check your input and try again.</p>
-</body>
-</html>
+
+{% extends 'error_base.html' %}
+
+{% block title %}Bad Request{% endblock %}
+
+{% block content %}
+
+    <h1>400</h1>
+    <h2>Oops! Bad Request.</h2>
+    <p>It seems there was a problem with your request.
+      Please check the information you provided and try again.
+    </p>
+
+{% endblock %}

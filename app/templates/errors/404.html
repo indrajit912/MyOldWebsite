@@ -1,11 +1,17 @@
 <!-- templates/errors/404.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Page Not Found</title>
-</head>
-<body>
-    <h1>404 - Page Not Found</h1>
-    <p>The requested page could not be found.</p>
-</body>
-</html>
+
+{% extends 'error_base.html' %}
+
+{% block title %}Page Not Found{% endblock %}
+
+
+{% block content %}
+
+    <h1>404</h1>
+    <h2>Oops! You seem to be lost.</h2>
+    <p>The page you are searching for doesn't exist.
+      It's a mystery how you ended up here, but you can click the button below
+      to return to Indrajit's homepage.
+    </p>
+
+{% endblock %}

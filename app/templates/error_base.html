@@ -1,0 +1,28 @@
+<!-- error_base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error_style.css') }}">
+</head>
+<body>
+
+    <div class="error_container">
+        <div class="col-md-6 align-self-center">
+            {% block content %}{% endblock %}
+    
+            <button class="btn green" id="homeButton">HOME</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("homeButton").addEventListener("click", function() {
+            window.location.href = "/"; // Redirect to the home page
+        });
+    </script>
+    
+</body>
+</html>
