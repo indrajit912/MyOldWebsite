@@ -65,19 +65,20 @@ a {
 }
 
 @media (max-width: 600px) {
+  .container{
+    width: 89%;
+  }
   .episode__content {
     grid-template-columns: 1fr;
   }
   .episode__number {
     font-size: 10vw;
   }
-}
-
-@media (max-width: 576px) {
   .episode__content .story {
     font-size: 15px;
   }
 }
+
 
 .toc_container {
   width: 50%;
@@ -107,6 +108,6 @@ a {
 
 @media (max-width: 600px) {
   .toc_container {
-      width: 90%;
+      width: 89%;
   }
 }
