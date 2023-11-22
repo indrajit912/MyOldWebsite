@@ -82,6 +82,9 @@ p {
   
 
 @media (max-width: 600px) {
+  .teaching-container{
+    width: 89%;
+  }
   .course__content {
     grid-template-columns: 1fr;
   }
