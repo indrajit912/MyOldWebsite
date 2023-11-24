@@ -60,6 +60,10 @@ def index_mobile():
 def teaching():
     return render_template('teaching.html')
 
+@app.route('/teaching/isibc/intro_to_cp_even_2024.html')
+def intro_to_cp_even_2024():
+    return render_template('teaching/isibc/intro_to_cp_even_2024.html')
+
 @app.route('/teaching/isibc/anal_several_vars_odd_2023.html')
 def anal_several_vars_odd_2023_ta():
     return render_template('teaching/isibc/anal_several_vars_odd_2023.html')

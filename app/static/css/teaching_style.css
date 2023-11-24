@@ -228,3 +228,21 @@ p {
         margin-bottom: 2px;
     }
 }
+
+
+.teaching-content {
+  width: 80%;
+  max-width: 1220px;
+  margin: 10px auto;
+  margin-left: 25px;
+  /* background-color: #777; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+@media (max-width: 600px) {
+  .teaching-content {
+    width: 95%;
+    margin-left: auto;
+  }
+}
