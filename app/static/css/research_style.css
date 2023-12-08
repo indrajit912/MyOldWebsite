@@ -2,11 +2,17 @@
 
 /* Additional styles for research content */
 .research-content {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     padding: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex; */
+    justify-content: center;
+    width: 70%;
 }
 /* Additional styles for research text */
 .research-text {
@@ -14,21 +20,23 @@
     line-height: 1.6;
     margin-bottom: 20px;
 }
+
+.page-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #001233;
+    text-align: center;
+}
 /* Additional styles for research headings */
 .research-heading {
     margin-top: 15px;
     margin-bottom: 10px;
 }
-.research-heading h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #001233;
-    margin-bottom: 5px;
-}
-.research-heading h2 {
+
+.research-heading {
     font-size: 24px;
     font-weight: bold;
-    color: #002366;
+    color: #001233;
     margin-bottom: 5px;
 }
 /* Additional styles for equations */
@@ -74,15 +82,16 @@
 
     /* Example: Reduce padding and margin for better use of screen space */
     .research-content {
-        padding: 10px;
+        padding: 13px;
         margin-top: 10px;
+        width: 90%;
     }
 
     /* Example: Adjust font sizes for headings on mobile */
-    .research-heading h1 {
+    .page-title {
         font-size: 24px;
     }
-    .research-heading h2 {
+    .research-heading {
         font-size: 20px;
     }
 

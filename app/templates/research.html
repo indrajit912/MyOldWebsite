@@ -20,10 +20,10 @@
 {% endblock %} 
  
 {% block content %}
- <div class="content">
+ <!-- <div class="content" style="display: flex; justify-content: center;"> -->
     <div class="research-content">
 
-        <h1 class="research-heading">Research Interests</h1>
+        <h1 class="page-title">Research Interests</h1>
 
             <p class="research-text">
                 My primary focus revolves around Operator Algebras, encompassing a particular fascination with von-Neumann algebras. Currently pursuing my graduate studies within the Stat-Math Unit at the Indian Statistical Institute in Bangalore, India, my research efforts are channeled into two primary avenues:
@@ -37,13 +37,23 @@
                     </li>   
                 </ul>
             </p>
-
+        
+        <div class="research-heading">
+            Preprints
+        </div>
+        <p>
+            <ol>
+                <li>
+                    <cite>Algebraic aspects and functoriality of the set of affiliated operators</cite>, with S. Nayak, <a href="https://arxiv.org/abs/2311.16170" target="_blank">arXiv:2311.16170</a> [<span class="datestamp">2023</span>] .
+                </li>
+            </ol>
+        </p>
 
         <!-- Functoriality of Affiliated Operators -->
-        <h2 class="research-heading">Algebraic Aspects and Functoriality of The Set of Affiliated Operators</h2>
+        <div class="research-heading">Algebraic Aspects and Functoriality of The Set of Affiliated Operators</div>
 
             <p class="research-text">
-                In our recent collaborative paper with <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>, we have developed a comprehensive algebraic framework aimed at enhancing our understanding of the set of affiliated operators within von Neumann algebras. This framework draws a parallel with the characterization of Murray-von Neumann algebras as specific Ore localizations of finite von Neumann algebras. Our primary objective in this study is to meticulously scrutinize the concept of affiliated operators in von Neumann algebras and elucidate how they should undergo transformations when subjected to morphisms, particularly unital normal homomorphisms, between von Neumann algebras.
+                In our recent collaborative<a href="https://arxiv.org/abs/2311.16170" target="_blank"> paper</a> with <a href="https://www.isibang.ac.in/~soumyashant/" target="_blank">Dr. Soumyashant Nayak</a>, we have developed a comprehensive algebraic framework aimed at enhancing our understanding of the set of affiliated operators within von Neumann algebras. This framework draws a parallel with the characterization of Murray-von Neumann algebras as specific Ore localizations of finite von Neumann algebras. Our primary objective in this study is to meticulously scrutinize the concept of affiliated operators in von Neumann algebras and elucidate how they should undergo transformations when subjected to morphisms, particularly unital normal homomorphisms, between von Neumann algebras.
             </p>
         
 
@@ -64,7 +74,7 @@
             </p>
         
         <!-- Matrix Decomposition -->
-        <h2 class="research-heading">Matrix Decomposition Results in \(M_n(\mathscr{R})\)</h2>
+        <div class="research-heading">Matrix Decomposition Results in \(M_n(\mathscr{R})\)</div>
 
             <p class="research-text">
                 It is well known that any normal matrix in \(M_n(\mathbb{C})\) can be unitarily "diagonalized", that is, there is a unitary matrix \(U\) such that \(U A U^{-1}\) is diagonal. For a \(C^*\)-algebra \(\mathfrak{A}\), the ring of \(n \times n\) matrices over \(\mathfrak{A}\), \(M_n(\mathfrak{A})\), naturally has the structure of a \(C^*\)-algebra. For a von Neumann algebra \(\mathscr{R}\), \(M_n(\mathscr{R})\) is a von Neumann algebra. In <cite><a href="#kad_diag">[2]</a></cite>, R. V. Kadison proved that each normal element in \(M_n(\mathscr{R})\) can be diagonalized via conjugation with a unitary matrix in \(M_n(\mathscr{R})\). Furthermore, using basic homotopy theoretic techniques, he showed that this is not true in general in the context of  \(M_2(C(\mathbb{S}^4))\) where \(\mathbb{S}^4\) denotes the 4-sphere, and \(C(\mathbb{S}^4)\) is the \(C^*\)-algebra of complex-valued continuous functions on \(\mathbb{S}^4\).
@@ -112,7 +122,7 @@
                 </li>
             </ol>
     </div>
-</div>
+<!-- </div> -->
 
 {% endblock %}
   
