@@ -350,7 +350,18 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     margin-bottom:0;
   }
 
-/* Add styles for mobile toggle */
+
+/* New styles for last updated information */
+.last-updated {
+  color: #999;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
 
 
 /* Styles for smaller screens */
@@ -371,4 +382,10 @@ body, h1, h2, h3, h4, h5, h6, p, a {
     a.back-to-top {
       width: 100%;
     }
+
+    /* Adjust the margin and font size for larger screens */
+    .last-updated {
+      margin-top: 30px;
+      font-size: 16px;
+  }
 }
