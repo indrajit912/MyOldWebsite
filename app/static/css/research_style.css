@@ -28,17 +28,16 @@
     text-align: center;
 }
 /* Additional styles for research headings */
+
 .research-heading {
     margin-top: 15px;
     margin-bottom: 10px;
-}
-
-.research-heading {
     font-size: 24px;
     font-weight: bold;
     color: #001233;
     margin-bottom: 5px;
 }
+
 /* Additional styles for equations */
 .equation {
     font-size: 16px;
