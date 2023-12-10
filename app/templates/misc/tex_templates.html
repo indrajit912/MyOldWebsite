@@ -15,7 +15,7 @@
               <div class="download-links">
                   <a href="{{ url_for('static', filename='others/isi_reg_form.zip') }}" download>Download .zip</a>
                   <a href="{{ url_for('static', filename='others/isi_reg_form.pdf') }}" target="_blank">View PDF</a>
-                  <button onclick="openOverleaf('{{ isi_reg_form_zip_base64 }}')" class="overleaf-link">Open in Overleaf</button>
+                  <button onclick="openOverleaf('{{ convert_zip_to_base64(isi_reg_zip_path) }}')" class="overleaf-link">Open in Overleaf</button>
               </div>
           </div>
       </div>
@@ -27,7 +27,30 @@
       <div class="episode__content">
         <div class="title">LaTeX Template for AMS Article</div>
         <div class="story">
-          <p>Will be updated soon!</p>
+            Presenting my own <code>amsart</code> LaTeX template, meticulously tailored for crafting documents with the esteemed AMS (American Mathematical Society) style. This template combines functionality with elegance, providing a seamless solution for academic and mathematical writing. Its minimalistic design ensures clarity and focus on content, making it ideal for research papers, articles, and other scholarly works.
+            <br>
+            <div class="download-links">
+                <a href="{{ url_for('static', filename='others/amsart_template_indrajit.zip') }}" download>Download .zip</a>
+                <a href="{{ url_for('static', filename='others/amsart_template_indrajit.pdf') }}" target="_blank">View PDF</a>
+                <button onclick="openOverleaf('{{ convert_zip_to_base64(amsart_template_zip_path) }}')" class="overleaf-link">Open in Overleaf</button>
+            </div>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="episode">
+      <div class="episode__number">03</div>
+      <div class="episode__content">
+        <div class="title">LaTeX Template for Formal letter</div>
+        <div class="story">
+            Introducing my personally crafted LaTeX template designed for formatting formal letters. Embracing a minimalist aesthetic, this template is suitable for various office or formal purposes. It operates under the MIT license, granting you the freedom to use it as you see fit. Feel liberated to make the most of this template for your professional communication needs.
+            <br>
+            <div class="download-links">
+                <a href="{{ url_for('static', filename='others/formal-letter-template-Indrajit.zip') }}" download>Download .zip</a>
+                <a href="{{ url_for('static', filename='others/formal_letter_template_Indrajit.pdf') }}" target="_blank">View PDF</a>
+                <button onclick="openOverleaf('{{ convert_zip_to_base64(formal_letter_template_zip_path) }}')" class="overleaf-link">Open in Overleaf</button>
+            </div>
         </div>
       </div>
     </article>

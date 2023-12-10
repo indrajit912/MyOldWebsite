@@ -97,8 +97,16 @@ def research():
 @app.route('/misc')
 def misc():
     isi_reg_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'isi_reg_form.zip'
-    isi_reg_form_zip_base64 = convert_zip_to_base64(isi_reg_zip_path)
-    return render_template('misc.html', isi_reg_form_zip_base64=isi_reg_form_zip_base64)
+    amsart_template_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'amsart_template_indrajit.zip'
+    formal_letter_template_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'formal-letter-template-Indrajit.zip'
+    
+    return render_template(
+        'misc.html', 
+        convert_zip_to_base64=convert_zip_to_base64,
+        isi_reg_zip_path=isi_reg_zip_path,
+        amsart_template_zip_path=amsart_template_zip_path,
+        formal_letter_template_zip_path=formal_letter_template_zip_path
+    )
 
 ######################################################################
 #                       Blog
