@@ -11,7 +11,7 @@ Attributes:
 """
 
 
-from flask import render_template, request, abort, url_for
+from flask import render_template, request, abort, url_for, redirect
 from app import app
 from config import *
 from pathlib import Path

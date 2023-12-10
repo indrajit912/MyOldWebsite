@@ -7,6 +7,10 @@ from smtplib import SMTPAuthenticationError, SMTPException
 
 errors_bp = Blueprint('errors', __name__)
 
+
+##########################################
+#        Page not found!
+##########################################
 @errors_bp.app_errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
@@ -16,6 +20,10 @@ def page_not_found(error):
 def page_not_found_route():
     return page_not_found(None)
 
+
+##########################################
+#        Internal Server Error!
+##########################################
 @errors_bp.app_errorhandler(500)
 def internal_server_error(error):
     return render_template('errors/500.html'), 500
@@ -25,6 +33,9 @@ def internal_server_error(error):
 def internal_server_error_route():
     return internal_server_error(None)
 
+##########################################
+#        Unauthorize!
+##########################################
 @errors_bp.app_errorhandler(401)
 def unauthorized(error):
     """
@@ -38,7 +49,9 @@ def unauthorized(error):
 def unauthorized_route():
     return unauthorized(None)
     
-
+##########################################
+#        Forbidden!
+##########################################
 @errors_bp.app_errorhandler(403)
 def forbidden(error):
     """
@@ -52,6 +65,9 @@ def forbidden(error):
 def forbidden_route():
     return forbidden(None)
 
+##########################################
+#        Bad request!
+##########################################
 @errors_bp.app_errorhandler(400)
 def bad_request(error):
     """
@@ -64,6 +80,9 @@ def bad_request(error):
 def bad_request_route():
     return bad_request(None)
 
+##########################################
+#        Too many requests!
+##########################################
 @errors_bp.app_errorhandler(429)
 def too_many_requests(error):
     """
@@ -76,16 +95,23 @@ def too_many_requests(error):
 def too_many_requests_route():
     return too_many_requests(None)
 
-# Email-related errors
+##########################################
+#      Email authorization error!
+##########################################
 @errors_bp.app_errorhandler(SMTPAuthenticationError)
 def email_auth_error(error):
     return render_template('errors/email_auth_error.html'), 500
 
+##########################################
+#        Email sending error!
+##########################################
 @errors_bp.app_errorhandler(SMTPException)
 def email_send_error(error):
     return render_template('errors/email_send_error.html'), 500
 
-# Define a catch-all error handler for other exceptions
+#######################################################################
+#      A catch-all error handler for other exceptions!
+########################################################################
 @errors_bp.app_errorhandler(Exception)
 def generic_error(error):
     return render_template('errors/generic_error.html'), 500
