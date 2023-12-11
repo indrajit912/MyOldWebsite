@@ -5,7 +5,7 @@
 from flask import Blueprint, render_template
 from smtplib import SMTPAuthenticationError, SMTPException
 
-errors_bp = Blueprint('errors', __name__)
+errors_bp = Blueprint('errors', __name__, url_prefix='/errors')
 
 
 ##########################################
@@ -102,6 +102,11 @@ def too_many_requests_route():
 def email_auth_error(error):
     return render_template('errors/email_auth_error.html'), 500
 
+# Create a named route for email_auth_error
+@errors_bp.route('/email_auth_error')
+def email_auth_error_route():
+    return email_auth_error(None)
+
 ##########################################
 #        Email sending error!
 ##########################################
@@ -109,10 +114,20 @@ def email_auth_error(error):
 def email_send_error(error):
     return render_template('errors/email_send_error.html'), 500
 
+# Create a named route for email_send_error
+@errors_bp.route('/email_send_error')
+def email_send_error_route():
+    return email_send_error(None)
+
 #######################################################################
 #      A catch-all error handler for other exceptions!
 ########################################################################
 @errors_bp.app_errorhandler(Exception)
 def generic_error(error):
     return render_template('errors/generic_error.html'), 500
+
+# Create a named route for generic errors
+@errors_bp.route('/generic_error')
+def generic_error_route():
+    return generic_error(None)
 

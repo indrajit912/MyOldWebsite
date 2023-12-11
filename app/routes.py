@@ -10,19 +10,17 @@ Attributes:
     app (Flask): The Flask web application instance.
 """
 
-
-from flask import render_template, request, abort, url_for, redirect
 from app import app
-from config import *
-from pathlib import Path
-# Import the 'errors' Blueprint
-from .errors.handlers import errors_bp
-
-from scripts.email_message import EmailMessage
-from scripts.utils import convert_zip_to_base64
-from smtplib import SMTPAuthenticationError, SMTPException
+from flask import render_template, request, abort, url_for, redirect
 
 import random
+from pathlib import Path
+from smtplib import SMTPAuthenticationError, SMTPException
+
+from config import *
+from scripts.email_message import EmailMessage
+from scripts.utils import convert_zip_to_base64
+
 
 ######################################################################
 #                           Processor Function
@@ -214,14 +212,22 @@ def contact():
         
         except SMTPAuthenticationError as e:
             # Redirect to the email authentication error page using the error blueprint
-            return errors_bp.email_auth_error(e)
+            return redirect(url_for('errors.email_auth_error_route'))
+        
         
         except SMTPException as e:
-            return errors_bp.email_send_error(e)
+            return redirect(url_for('errors.email_send_error_route'))
         
         except:
             # Handle email sending error
-            return errors_bp.generic_error(e)
+            return redirect(url_for('errors.generic_error_route'))
 
 
     return render_template('contact.html')
+
+###########################################################
+#               Test route
+###########################################################
+@app.route('/devtest')
+def devtest():
+    return redirect(url_for('errors.forbidden_route'))
