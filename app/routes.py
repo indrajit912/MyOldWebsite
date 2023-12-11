@@ -46,7 +46,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/index_mobile')
+@app.route('/index_mobile/')
 def index_mobile():
     return render_template('index_mobile.html')
 
@@ -54,7 +54,7 @@ def index_mobile():
 ######################################################################
 #                       Research
 ######################################################################
-@app.route('/research')
+@app.route('/research/')
 def research():
     return render_template('research.html')
 
@@ -62,7 +62,7 @@ def research():
 ######################################################################
 #                       Miscellaneous
 ######################################################################
-@app.route('/misc')
+@app.route('/misc/')
 def misc():
     isi_reg_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'isi_reg_form.zip'
     amsart_template_zip_path = Path(__file__).parent.absolute() / 'static' / 'others' / 'amsart_template_indrajit.zip'
@@ -80,35 +80,35 @@ def misc():
 ######################################################################
 #                       Timeline
 ######################################################################
-@app.route('/timeline')
+@app.route('/timeline/')
 def timeline():
     return render_template('timeline.html')
 
 ######################################################################
 #                       Photos
 ######################################################################
-@app.route('/photos')
+@app.route('/photos/')
 def photos():
     return render_template('photos.html')
 
 ######################################################################
 #                       CV
 ######################################################################
-@app.route('/cv')
+@app.route('/cv/')
 def cv():
     return render_template('cv.html')
 
 ######################################################################
 #                       Coming Soon!
 ######################################################################
-@app.route('/coming_soon')
+@app.route('/coming_soon/')
 def coming_soon():
     return render_template('coming_soon.html')
 
 ######################################################################
 #                       Contact Me!
 ######################################################################
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact/', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
         # Process the form data and send an email or save the message, etc.
