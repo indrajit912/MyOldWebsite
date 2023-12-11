@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Indrajit Ghosh - BlogHome{% endblock %}
+
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('blog.static', filename='css/blog_style.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="blog-list">
+
+    <article class="blog-item">
+        <h2><a href="{{ url_for('blog.blogpost', postid=1) }}" target="_blank">Blog Post 1</a></h2>
+        <p class="date-time">Published on August 15, 2023</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Some Garbage dolor sit amet elit...
+        </p>
+    </article>
+    
+    <article class="blog-item">
+        <h2><a href="/blog_posts/blog_post.html" target="_blank">Another Blog</a></h2>
+        <p class="date-time">Published on July 15, 2023</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </article>
+
+    <article class="blog-item">
+        <h2><a href="/blog_posts/blog_post.html" target="_blank">What If Blog?</a></h2>
+        <p class="date-time">Published on July 15, 2023</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </article>
+
+</div>
+
+{% endblock %}
