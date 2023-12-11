@@ -52,36 +52,6 @@ def index_mobile():
 
 
 ######################################################################
-#                           Teaching
-######################################################################
-@app.route('/teaching')
-def teaching():
-    return render_template('teaching.html')
-
-@app.route('/teaching/isibc/intro_to_cp_even_2024.html')
-def intro_to_cp_even_2024():
-    return render_template('teaching/isibc/intro_to_cp_even_2024.html')
-
-@app.route('/teaching/isibc/anal_several_vars_odd_2023.html')
-def anal_several_vars_odd_2023_ta():
-    return render_template('teaching/isibc/anal_several_vars_odd_2023.html')
-
-@app.route('/teaching/isibc/comp_anal_odd_sem_2022.html')
-def comp_anal_odd_sem_2022_ta():
-    return render_template('teaching/isibc/comp_anal_odd_sem_2022.html')
-
-@app.route('/teaching/isibc/func_anal_even_sem_2021.html')
-def func_anal_even_sem_2021_ta():
-    return render_template('teaching/isibc/func_anal_even_sem_2021.html')
-
-@app.route('/teaching/isibc/optimization_odd_sem_2021.html')
-def optimization_odd_sem_2021_ta():
-    return render_template('teaching/isibc/optimization_odd_sem_2021.html')
-
-
-######################################################################
-
-######################################################################
 #                       Research
 ######################################################################
 @app.route('/research')
