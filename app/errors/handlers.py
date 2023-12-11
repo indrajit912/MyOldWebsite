@@ -2,10 +2,9 @@
 # Author: Indrajit Ghosh
 # Created On: Aug 18, 2023
 
-from flask import Blueprint, render_template
+from . import errors_bp
+from flask import render_template
 from smtplib import SMTPAuthenticationError, SMTPException
-
-errors_bp = Blueprint('errors', __name__, url_prefix='/errors')
 
 
 ##########################################
