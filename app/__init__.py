@@ -10,6 +10,7 @@ from flask import Flask
 from app.errors import errors_bp
 from app.blog import blog_bp
 from app.teaching import teaching_bp
+from app.comments import comments_bp
 
 app = Flask(__name__)
 
@@ -17,6 +18,7 @@ app = Flask(__name__)
 app.register_blueprint(errors_bp)
 app.register_blueprint(blog_bp)
 app.register_blueprint(teaching_bp)
+app.register_blueprint(comments_bp)
 
 # Import routes and extensions
 from app import routes

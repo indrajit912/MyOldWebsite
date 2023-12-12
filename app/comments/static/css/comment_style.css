@@ -1,0 +1,134 @@
+/* Inside static/css/comment_style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.comment-section {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.comment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.comment-list {
+    display: grid;
+    gap: 20px;
+}
+
+.comment {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.comment h4 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 18px;
+}
+
+.comment .comment-datetime {
+    color: #888;
+    font-size: 14px;
+}
+
+.comment p.comment-text {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.4;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.comment-form {
+    width: 300px;
+}
+
+.no-comments-text {
+    color: #555;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group textarea,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.comment-btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.comment-btn:hover {
+    background-color: #45a049;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .comment-container {
+        flex-direction: column;
+    }
+
+    .comments {
+        flex: none;
+        margin-bottom: 20px; /* Add a gap between comments and comment-form */
+        margin-right: 0;
+    }
+
+    .comment-form {
+        width: 100%;
+    }
+
+    .no-comments-text {
+        font-size: 15px;
+        margin-bottom: 50px;
+    }
+}

@@ -14,7 +14,6 @@ from app import app
 from flask import render_template, request, abort, url_for, redirect
 
 import random
-import requests
 from pathlib import Path
 from smtplib import SMTPAuthenticationError, SMTPException
 
@@ -189,13 +188,5 @@ def contact():
 def devtest():
     user_ip = request.remote_addr
     user_agent = request.headers.get('User-Agent')
-    response = requests.get(f'https://ipinfo.io/{user_ip}/json')
-    user_data = response.json()
-
-    return f"""
-User IP: {user_ip}
-<br>
-User Agent: {user_agent}
-<br>
-{user_data}
-"""
+    
+    return f"User IP: {user_ip}"
