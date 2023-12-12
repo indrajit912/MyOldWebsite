@@ -1,0 +1,130 @@
+/* static/css/dashboard_style.css */
+
+.dashboard-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space elements evenly */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-panel {
+    width: 30%; /* Adjust the width of the admin panel */
+    text-align: left;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-panel .large-text {
+    font-size: 50pt;
+}
+
+.admin-panel .small-text {
+    font-size: 30pt;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.comments {
+    width: 60%; /* Adjust the width of the comments section */
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 70%;
+    max-width: 100%;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment h4 {
+    margin: 0;
+    color: #333;
+}
+
+.comment-datetime {
+    color: #888;
+    font-size: 12px;
+}
+
+.comment-text {
+    margin-top: 10px;
+    text-align: left;
+    font-family: 'Courier New', monospace; /* Use a monospace font */
+}
+
+.email-text {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Stack elements in a column for smaller screens */
+        width: 90%;
+    }
+
+    .admin-panel,
+    .comments,
+    .comment {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .admin-panel {
+        text-align: center;
+    }
+
+    .admin-panel .large-text {
+        font-size: 20pt;
+    }
+    
+    .admin-panel .small-text {
+        font-size: 15pt;
+    }
+}

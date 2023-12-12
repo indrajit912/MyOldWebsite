@@ -1,9 +1,16 @@
+# Admin related routes
+# Author: Indrajit Ghosh
+# Created On: Dec 12, 2023
+
 from . import admin_bp
 from flask import render_template, url_for, request, session, redirect
 import json
+from functools import wraps
 from config import APP_DATA_DIR
 
-comments_list = []
+# TODO: Add database.
+# TODO: Add delete functionality for comments.
+
 COMMENTS_JSON_FILE = APP_DATA_DIR / 'comments.json'
 
 def save_comments_to_json(comments):
@@ -18,6 +25,7 @@ def load_comments_from_json():
         return []
     
 def admin_login_required(view_func):
+    @wraps(view_func)
     def wrapper(*args, **kwargs):
         if not session.get('admin_logged_in'):
             return redirect(url_for('admin.login'))
@@ -27,7 +35,6 @@ def admin_login_required(view_func):
 @admin_bp.route('/dashboard')
 @admin_login_required
 def dashboard():
-    global comments_list
     comments_list = load_comments_from_json()
     return render_template('dashboard.html', comments=comments_list)
 
