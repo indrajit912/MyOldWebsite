@@ -1,14 +1,14 @@
 <!-- admin_login.html -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="{{ url_for('admin.static', filename='css/admin_style.css') }}">
-</head>
-<body>
+{% extends 'admin_base.html' %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
     <form method="post" action="{{ url_for('admin.login') }}">
         <h2>Admin Login</h2>
         {% if error %}
@@ -22,5 +22,4 @@
 
         <button type="submit">Login</button>
     </form>
-</body>
-</html>
+{% endblock %}

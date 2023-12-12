@@ -1,21 +1,35 @@
-<!-- templates/dashboard.html -->
+{% extends 'admin_base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('admin.static', filename='css/admin_style.css') }}">
-</head>
-<body>
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('admin.static', filename='css/admin_dashboard_style.css') }}">
+{% endblock %}
+
+{% block content %}
     <div class="dashboard-container">
         <h1>Welcome to the Admin Dashboard</h1>
-        <!-- Add your dashboard content here -->
+        
+        <div class="comments">
+            <h2>Public Comments</h2>
+            {% if comments %}
+                <div class="comment-list">
+                    {% for comment in comments|reverse %}
+                        <div class="comment">
+                            <h4>{{ comment['visitor_name'] }}</h4>
+                            <span class="comment-datetime">{{ comment['datetime'] }}</span>
+                            <p class="comment-text">{{ comment['comment_text'] }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="no-comments-text">No comments yet!</p>
+            {% endif %}
+        </div>
 
         <form action="{{ url_for('admin.logout') }}" method="get">
             <button type="submit">Logout</button>
         </form>
     </div>
-</body>
-</html>
+{% endblock %}

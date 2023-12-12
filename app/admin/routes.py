@@ -1,12 +1,35 @@
 from . import admin_bp
 from flask import render_template, url_for, request, session, redirect
+import json
+from config import APP_DATA_DIR
 
+comments_list = []
+COMMENTS_JSON_FILE = APP_DATA_DIR / 'comments.json'
+
+def save_comments_to_json(comments):
+    with open(COMMENTS_JSON_FILE, 'w') as json_file:
+        json.dump(comments, json_file, indent=4)
+
+def load_comments_from_json():
+    try:
+        with open(COMMENTS_JSON_FILE, 'r') as json_file:
+            return json.load(json_file)
+    except FileNotFoundError:
+        return []
+    
+def admin_login_required(view_func):
+    def wrapper(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin.login'))
+        return view_func(*args, **kwargs)
+    return wrapper
 
 @admin_bp.route('/dashboard')
+@admin_login_required
 def dashboard():
-    # Add authentication check here
-    # Example: if user_is_authenticated():
-    return render_template('dashboard.html')
+    global comments_list
+    comments_list = load_comments_from_json()
+    return render_template('dashboard.html', comments=comments_list)
 
 
 @admin_bp.route('/login', methods=['GET', 'POST'])
@@ -25,4 +48,4 @@ def login():
 @admin_bp.route('/logout')
 def logout():
     session.pop('admin_logged_in', None)
-    return redirect(url_for('admin.login'))
+    return redirect(url_for('index'))
