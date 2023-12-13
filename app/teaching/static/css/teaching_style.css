@@ -46,7 +46,7 @@ p {
   border-top: 2px solid #fff;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-gap: 10px;
+  grid-gap: 15px;
   padding: 15px 0;
   width: 90%;
 }

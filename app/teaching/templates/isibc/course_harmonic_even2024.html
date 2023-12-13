@@ -1,0 +1,50 @@
+<!-- 
+    Author: Indrajit Ghosh
+    Created On: Dec 13, 2023
+ -->
+
+{% extends 'base.html' %}
+
+{% block title %}Analysis of Several Variables (BMAT2), Odd Sem 2023{% endblock %}
+   
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('teaching.static', filename='css/teaching_style.css') }}">
+{% endblock %}
+  
+   
+{% block content %}
+
+<div class="page-title">A Course in Harmonic Analysis (BMAT3), Even Sem 2024</div>
+   <div class="teaching-content">
+       <b>Term:</b> Even Semester 2024<br>
+       <b>Duration:</b> Jan 2023 - TBA<br><br>
+       <b>Course Name:</b> A Course in Harmonic Analysis (B. Math III)<br>
+       <b>Syllabus:</b>
+       <p>
+        <em>Main topics. </em> Review of Fourier series and Hilbert spaces, The Fourier Transform and the Poisson Summation Formula, Finite Abelian Groups, Metrizable LCA Groups, The Dual Group, The Plancherel Theorem, The Heisenberg Group.
+       </p>
+       <p>
+        <em>Additional topics.</em> Haar Integration, Banach Algebras, Representation theory of compact topological groups: Peter-Weyl theorem.
+       </p>
+       <b>Course Description:</b>
+       <p>
+        Before the class, participants are expected to review the assigned material. The session will be led by a main presenter who will comprehensively cover the results and proofs, with active contributions from other participants. Additionally, we will collectively work on solving the majority of exercises from the reference textbooks.
+       </p>
+       <b>Instructors:</b> Soumyashant Nayak (Asst. Prof.) and Indrajit Ghosh (SRF)<br>
+       <b>Room:</b> TBA<br>
+       <br>
+
+        <h3>Textbooks and other references</h3>
+
+        <ol>
+            <li>A. Deitmar, <i>A First Course in Harmonic Analysis.</i></li>
+            <li>A. Deitmar, S. Echterhoff, <i>Principles of Harmonic Analysis.</i></li>
+            <li>G. W. Mackey, <i><a href="https://drive.google.com/file/d/1DaE4-I50lX15hv53-JE0vYlffzBcwIwy/view?usp=drive_link" target="_blank">Harmonic analysis as the exploitation of symmetry - a historical survey</a>,</i> Bull. Amer. Math. Soc. <b>3</b> (1980), 543--698.</li>
+        </ol>
+</div>
+
+<!-- Add last updated information -->
+<p class="last-updated">Last Updated: Dec 13, 2023</p>
+
+{% endblock %}
