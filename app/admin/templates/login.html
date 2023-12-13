@@ -74,5 +74,10 @@
 
             <button type="submit" class="login-btn">Login</button>
         </form>
+
+        <!-- Add Admin button -->
+        <a href="{{ url_for('admin.add_admin') }}" class="login-btn" style="margin-top: 10px; text-decoration: none; display: block;">
+            Add Admin
+        </a>
     </div>
 {% endblock %}

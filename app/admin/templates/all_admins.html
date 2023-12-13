@@ -1,0 +1,46 @@
+<!-- all_admins.html -->
+
+{% extends 'admin_base.html' %}
+
+{% block title %}All Admins{% endblock %}
+
+{% block content %}
+
+    {% include 'flash_msgs.html' %}
+    <div class="admins-container">
+
+        <div class="admins-content">
+        <h2>All Admins</h2>
+        <a href="{{ url_for('admin.dashboard') }}" class="dashboard-btn">Dashboard</a>
+
+    
+        {% if admins %}
+            {% for admin in admins %}
+                <div class="admin-details">
+                    <h4 class="details-header">Admin Details</h4>
+                    <ul class="details-list">
+                        <li class="details-item">
+                            <span class="details-label">ID:</span> {{ admin.id }}<br>
+                            <span class="details-label">Username:</span> {{ admin.username }}<br>
+                            <span class="details-label">Email:</span> {{ admin.email }}<br>
+                            <span class="details-label">Full Name:</span> {{ admin.fullname }}<br>
+                            <span class="details-label">Created At:</span> {{ admin.created_at }}
+                        </li>
+                    </ul>
+
+                    <div class="separator"></div>
+
+                    <!-- Add button to delete admin -->
+                    <form action="{{ url_for('admin.delete_admin', admin_id=admin.id) }}" method="post" class="delete-form">
+                        <button type="submit" class="delete-btn">Delete Admin</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No admins found.</p>
+        {% endif %}
+
+        </div>
+        
+    </div>
+{% endblock %}

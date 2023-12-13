@@ -6,8 +6,8 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Space elements evenly */
+    display: flex;
+    justify-content: space-between;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -15,12 +15,17 @@
 }
 
 .admin-panel {
-    width: 30%; /* Adjust the width of the admin panel */
+    width: 60%;
     text-align: left;
     font-weight: bold;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
 }
 
 .admin-panel .large-text {
@@ -38,8 +43,6 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 .logout-btn:hover {
@@ -120,11 +123,42 @@
     background-color: #c82333;
 }
 
+.all-admins-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4285f4; /* Change the background color as needed */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.all-admins-btn:hover {
+    background-color: #3367d6; /* Change the hover background color as needed */
+}
+
+.add-admin-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #34a853;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.add-admin-btn:hover {
+    background-color: #2d8d4c;
+}
+
 /* Media query for smaller screens */
 @media only screen and (max-width: 768px) {
     .dashboard-container {
         flex-direction: column; /* Stack elements in a column for smaller screens */
         width: 90%;
+        gap: 25px;
     }
 
     .admin-panel,
@@ -137,11 +171,23 @@
         text-align: center;
     }
 
+    .btn-group {
+        flex-direction: column; /* Stack buttons in a column for smaller screens */
+        gap: 15px;
+    }
+    
+    .btn-group form button {
+        padding: 6px 10px; /* Adjust padding for the buttons on smaller screens */
+    }
+    
     .admin-panel .large-text {
         font-size: 20pt;
     }
     
     .admin-panel .small-text {
         font-size: 15pt;
+    }
+    .comment-header {
+        flex-direction: column;
     }
 }

@@ -21,9 +21,20 @@
             <span class="small-text">to the</span>
             <br>
             <span class="large-text">Admin Dashboard!</span>
-            <form action="{{ url_for('admin.logout') }}" method="get">
-                <button class="logout-btn" type="submit">Logout</button>
-            </form>
+            <div class="btn-group">
+                <form action="{{ url_for('admin.logout') }}" method="get">
+                    <button class="logout-btn" type="submit">Logout</button>
+                </form>
+                
+                <form action="{{ url_for('admin.all_admins') }}" method="get">
+                    <button class="all-admins-btn" type="submit">All Admins</button>
+                </form>
+                
+                <!-- Button for Add Admin -->
+                <form action="{{ url_for('admin.add_admin') }}" method="get">
+                    <button class="add-admin-btn" type="submit">Add Admin</button>
+                </form>
+            </div>
         </div>
 
         <div class="comments">
