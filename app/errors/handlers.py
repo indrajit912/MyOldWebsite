@@ -121,12 +121,12 @@ def email_send_error_route():
 #######################################################################
 #      A catch-all error handler for other exceptions!
 ########################################################################
-@errors_bp.app_errorhandler(Exception)
-def generic_error(error):
-    return render_template('errors/generic_error.html'), 500
+# @errors_bp.app_errorhandler(Exception)
+# def generic_error(error):
+#     return render_template('errors/generic_error.html'), 500
 
-# Create a named route for generic errors
-@errors_bp.route('/generic_error')
-def generic_error_route():
-    return generic_error(None)
+# # Create a named route for generic errors
+# @errors_bp.route('/generic_error')
+# def generic_error_route():
+#     return generic_error(None)
 

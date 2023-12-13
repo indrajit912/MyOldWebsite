@@ -18,7 +18,7 @@
                     {% for comment in comments|reverse %}
                         <div class="comment">
                             <h4>{{ comment['visitor_name'] }}</h4>
-                            <span class="comment-datetime">{{ comment['datetime'] }}</span>
+                            <span class="comment-datetime">{{ comment['created_at'] }}</span>
                             <p class="comment-text">{{ comment['comment_text'] }}</p>
                         </div>
                     {% endfor %}

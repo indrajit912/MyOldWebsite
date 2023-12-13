@@ -1,0 +1,23 @@
+<!-- all_comments.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Comments</title>
+</head>
+<body>
+    <h1>All Comments</h1>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.id }}. {{ comment.visitor_name }}</strong> - {{ comment.created_at }}<br>
+                {{ comment.visitor_email }}
+                <br>
+                {{ comment.comment_text }}
+                <br><br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

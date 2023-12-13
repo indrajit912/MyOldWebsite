@@ -1,56 +1,75 @@
 from . import comments_bp
+from app.models.comments import Comment
+from app.database import db
+
 from flask import render_template, redirect, url_for, request
 from datetime import datetime, timedelta, timezone
-import json
-from config import APP_DATA_DIR
 
-comments_list = []
-COMMENTS_JSON_FILE = APP_DATA_DIR / 'comments.json'
 
-def save_comments_to_json(comments):
-    with open(COMMENTS_JSON_FILE, 'w') as json_file:
-        json.dump(comments, json_file, indent=4)
+def convert_utc_to_ist(utc_datetime_str):
+    """
+    Convert a UTC datetime string to Indian Standard Time (IST) format.
 
-def load_comments_from_json():
-    try:
-        with open(COMMENTS_JSON_FILE, 'r') as json_file:
-            return json.load(json_file)
-    except FileNotFoundError:
-        return []
+    Args:
+        utc_datetime_str (str): A string representing a UTC datetime in the format '%Y-%m-%d %H:%M:%S'.
+
+    Returns:
+        str: A string representing the datetime in IST format, e.g., 'Dec 13, 2023 07:06 AM IST'.
+
+    Example:
+        >>> convert_utc_to_ist('2023-12-13 07:06:16')
+        'Dec 13, 2023 07:06 AM IST'
+    """
+    # Convert string to datetime object
+    utc_datetime = datetime.strptime(utc_datetime_str, "%Y-%m-%d %H:%M:%S")
+
+    # Define UTC and IST timezones
+    utc_timezone = timezone.utc
+    ist_timezone = timezone(timedelta(hours=5, minutes=30))
+
+    # Convert UTC datetime to IST
+    ist_datetime = utc_datetime.replace(tzinfo=utc_timezone).astimezone(ist_timezone)
+
+    # Format datetime in the desired string format
+    formatted_datetime = ist_datetime.strftime("%b %d, %Y %I:%M %p IST")
+
+    return formatted_datetime
 
 #####################################
 #       Comments Home Page
 #####################################
 @comments_bp.route('/', methods=['GET', 'POST'])
 def index():
-    global comments_list
-    comments_list = load_comments_from_json()
-
     if request.method == 'POST':
         visitor_name = request.form.get('visitor_name')
         visitor_email = request.form.get('email')
         comment_text = request.form.get('comment_text')
         
-        # Get current datetime in UTC
-        utc_now = datetime.now(timezone.utc)
-        
-        # Convert UTC datetime to IST
-        ist = timezone(timedelta(hours=5, minutes=30))
-        current_datetime = utc_now.astimezone(ist)
-        
-        # Format datetime
-        formatted_datetime = current_datetime.strftime("%b %d, %Y %I:%M %p IST")
-        
-        # Create a dictionary to store the comment details
-        new_comment = {
-            'visitor_name': visitor_name,
-            'visitor_email': visitor_email,
-            'datetime': formatted_datetime,
-            'comment_text': comment_text
-        }
-        
-        comments_list.append(new_comment)
-        save_comments_to_json(comments_list)
+        # Create a new Comment instance and add it to the database
+        new_comment = Comment(
+            visitor_name=visitor_name,
+            visitor_email=visitor_email,
+            comment_text=comment_text
+        )
+
+        db.session.add(new_comment)
+        db.session.commit()
         return redirect(url_for('comments.index'))
+    
+    # Retrieve comments from the database
+    comments_list = Comment.query.all()
+
+    # Convert UTC datetime to IST format for each comment
+    for comment in comments_list:
+        comment.created_at = convert_utc_to_ist(comment.created_at.strftime("%Y-%m-%d %H:%M:%S"))
+
 
     return render_template('comment_box.html', comments=comments_list)
+
+@comments_bp.route('/allcomments')
+def allcomments():
+    # Fetch all comments from the database
+    comments = Comment.query.all()
+
+    # Render the template with the comments
+    return render_template('all_comments.html', comments=comments)
