@@ -6,22 +6,17 @@ from . import admin_bp
 from app.models.comments import Comment
 from app.models.users import User
 from app.database import db
+from app.admin.forms import VerifyOTPForm, AdminDetailsForm
 from scripts.email_message import EmailMessage
+from scripts.utils import convert_utc_to_ist, generate_otp
 from config import *
 
 from flask import render_template, url_for, request, session, redirect, flash
-from scripts.utils import convert_utc_to_ist
-from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField
-from wtforms.validators import DataRequired, Email, Length, EqualTo
+from sqlalchemy.exc import IntegrityError
 
 from functools import wraps
 from smtplib import SMTPAuthenticationError, SMTPException
 
-import random
-import hashlib
-
-INDRAJIT_912 = "indrajitghosh912@gmail.com"
     
 def admin_login_required(view_func):
     @wraps(view_func)
@@ -77,31 +72,6 @@ def delete_comment(comment_id):
 
     flash('Comment deleted successfully', 'success')
     return redirect(url_for('admin.dashboard'))
-
-
-class AdminDetailsForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(min=4, max=50)])
-    email = StringField('Email', validators=[DataRequired(), Email()])
-    fullname = StringField('Full Name', validators=[DataRequired(), Length(max=100)])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), Length(min=8), EqualTo('password', message='Passwords must match')])
-    submit = SubmitField('Create Admin')
-
-def generate_otp():
-    return str(random.randint(100000, 999999))
-
-def sha256_hash(raw_text):
-    """Return the hex hash value"""
-    hashed = hashlib.sha256(raw_text.encode()).hexdigest()
-    return hashed
-
-def send_otp_email(otp):
-    # TODO: Write it
-    pass
-
-class VerifyOTPForm(FlaskForm):
-    otp = StringField('OTP', validators=[DataRequired(), Length(min=6, max=6, message='OTP must be 6 digits')])
-    submit = SubmitField('Verify OTP')
 
 
 @admin_bp.route('/add_admin')
@@ -175,6 +145,15 @@ def enter_admin_details():
     form = AdminDetailsForm()
 
     if form.validate_on_submit():
+        # Check if the username or email already exist in the database
+        existing_user = User.query.filter(
+            (User.username == form.username.data) | (User.email == form.email.data)
+        ).first()
+
+        if existing_user:
+            flash('Username or email already exists. Please choose a different one.', 'danger')
+            return render_template('enter_admin_details.html', form=form)
+
         # Save admin details to the database
         new_admin = User(
             email=form.email.data,
@@ -186,11 +165,16 @@ def enter_admin_details():
         # Set password for the admin using the set_password method
         new_admin.set_password(form.password.data)
 
-        db.session.add(new_admin)
-        db.session.commit()
+        try:
+            db.session.add(new_admin)
+            db.session.commit()
 
-        flash('New admin added successfully!', 'success')
-        return redirect(url_for('admin.login'))
+            flash('New admin added successfully!', 'success')
+            return redirect(url_for('admin.login'))
+
+        except IntegrityError:
+            db.session.rollback()
+            flash('Error adding new admin. Please try again.', 'danger')
 
     return render_template('enter_admin_details.html', form=form)
 
@@ -201,6 +185,10 @@ def enter_admin_details():
 def all_admins():
     # Query all users who are admins
     admins = User.query.filter_by(is_admin=True).all()
+
+    # Convert UTC datetime to IST format for each comment
+    for admin in admins:
+        admin.created_at = convert_utc_to_ist(admin.created_at.strftime("%Y-%m-%d %H:%M:%S"))
 
     # Render the template with the list of admins
     return render_template('all_admins.html', admins=admins)

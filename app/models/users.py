@@ -1,7 +1,7 @@
 from app.database import db
+from scripts.utils import sha256_hash
 from datetime import datetime
 import secrets
-import hashlib
 
 
 class User(db.Model):
@@ -23,12 +23,12 @@ class User(db.Model):
         self.password_salt = salt
 
         # Combine password and salt, then hash
-        password_with_salt = (password + salt).encode('utf-8')
-        hashed_password = hashlib.sha512(password_with_salt).hexdigest()
+        password_with_salt = password + salt
+        hashed_password = sha256_hash(password_with_salt)
         self.password_hash = hashed_password
 
     def check_password(self, password):
         # Combine entered password and stored salt, then hash and compare with stored hash
-        password_with_salt = (password + self.password_salt).encode('utf-8')
-        hashed_password = hashlib.sha512(password_with_salt).hexdigest()
+        password_with_salt = password + self.password_salt
+        hashed_password = sha256_hash(password_with_salt)
         return hashed_password == self.password_hash

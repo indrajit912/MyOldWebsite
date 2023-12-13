@@ -6,7 +6,38 @@
 #
 
 import base64
+import random
+import hashlib
 from datetime import datetime, timedelta, timezone
+
+def generate_otp():
+    """Generate a random 6-digit OTP (One-Time Password).
+
+    Returns:
+        str: A string representing the randomly generated OTP.
+
+    Example:
+        >>> generate_otp()
+        '657432'
+    """
+    return str(random.randint(100000, 999999))
+
+def sha256_hash(raw_text):
+    """Hash the given text using SHA-256 algorithm.
+
+    Args:
+        raw_text (str): The input text to be hashed.
+
+    Returns:
+        str: The hexadecimal representation of the hashed value.
+
+    Example:
+        >>> sha256_hash('my_secret_password')
+        'e5e9fa1ba31ecd1ae84f75caaa474f3a663f05f4'
+    """
+    hashed = hashlib.sha256(raw_text.encode()).hexdigest()
+    return hashed
+
 
 def convert_zip_to_base64(file_path):
     """
