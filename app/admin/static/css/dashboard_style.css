@@ -38,6 +38,11 @@
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
 }
 
 .comments {
