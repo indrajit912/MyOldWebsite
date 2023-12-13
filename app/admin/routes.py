@@ -6,6 +6,8 @@ from . import admin_bp
 from app.models.comments import Comment
 from app.models.users import User
 from app.database import db
+from scripts.email_message import EmailMessage
+from config import *
 
 from flask import render_template, url_for, request, session, redirect, flash
 from scripts.utils import convert_utc_to_ist
@@ -14,6 +16,8 @@ from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
 from functools import wraps
+from smtplib import SMTPAuthenticationError, SMTPException
+
 import random
 import hashlib
 
@@ -105,9 +109,42 @@ def add_admin():
 
     otp = generate_otp()
 
+    # Render the email template with the provided parameters
+    _email_html_text = render_template(
+        'email_otp_template.html',
+        otp=otp, 
+        reason="New Admin Registration",
+    )
+
+    # Create the email message
+    msg = EmailMessage(
+        sender_email_id=INDRAJITS_BOT_EMAIL_ID,
+        to=INDRAJIT912_GMAIL,
+        subject="Request for New Admin Registration!",
+        email_html_text=_email_html_text
+    )
+
     # Send OTP via email
-    # send_otp_email(otp)
-    print(otp)
+    try:
+        # Send the email to Indrajit
+        msg.send(
+            sender_email_password=INDRAJITS_BOT_EMAIL_PASSWD, 
+            server_info=GMAIL_SERVER,
+            print_success_status=False
+        )
+    
+    except SMTPAuthenticationError as e:
+        # Redirect to the email authentication error page using the error blueprint
+        return redirect(url_for('errors.email_auth_error_route'))
+    
+    
+    except SMTPException as e:
+        return redirect(url_for('errors.email_send_error_route'))
+    
+    except:
+        # Handle email sending error
+        return redirect(url_for('errors.generic_error_route'))
+
 
     # Store OTP in session for verification
     session['otp'] = otp
