@@ -23,7 +23,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 500px;
             text-align: center;
         }
 
@@ -59,25 +59,45 @@
         .login-btn:hover {
             background-color: #45a049;
         }
+
+        .flash-container {
+            width: 500px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .login-container {
+                width: 100%;
+            }
+            .flash-container {
+                width: 90%;
+            }
+        }
     </style>
 {% endblock %}
 
 {% block content %}
-    <div class="login-container">
-        <form method="post" action="{{ url_for('admin.login') }}">
-            <h2 class="login-title">Admin Login</h2>
-            <label for="username" class="login-form-label">Username:</label>
-            <input type="text" name="username" id="username" class="login-form-input" placeholder="Enter your username" required>
 
-            <label for="password" class="login-form-label">Password:</label>
-            <input type="password" name="password" id="password" class="login-form-input" placeholder="Enter your password" required>
+    <div class="content">
+        <div class="flash-container">
+            {% include 'flash_msgs.html' %}
+        </div>
+    
+        <div class="login-container">
+            <form method="post" action="{{ url_for('admin.login') }}">
+                <h2 class="login-title">Admin Login</h2>
+                <label for="username" class="login-form-label">Username:</label>
+                <input type="text" name="username" id="username" class="login-form-input" placeholder="Enter your username" required>
 
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+                <label for="password" class="login-form-label">Password:</label>
+                <input type="password" name="password" id="password" class="login-form-input" placeholder="Enter your password" required>
 
-        <!-- Add Admin button -->
-        <a href="{{ url_for('admin.add_admin') }}" class="login-btn" style="margin-top: 10px; text-decoration: none; display: block;">
-            Add Admin
-        </a>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <!-- Add Admin button -->
+            <a href="{{ url_for('admin.add_admin') }}" class="login-btn" style="margin-top: 10px; text-decoration: none; display: block;">
+                Add Admin
+            </a>
+        </div>
     </div>
 {% endblock %}

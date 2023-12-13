@@ -45,10 +45,14 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # Add your authentication logic here
-        if username == 'admin' and password == 'password':
+        # Check if the username exists in the database
+        user = User.query.filter_by(username=username).first()
+
+        if user and user.check_password(password):
             session['admin_logged_in'] = True
             return redirect(url_for('admin.dashboard'))
+        else:
+            flash('Invalid username or password. Please try again.', 'danger')
 
     return render_template('login.html')
 
