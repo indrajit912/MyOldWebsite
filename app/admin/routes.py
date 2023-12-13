@@ -3,14 +3,12 @@
 # Created On: Dec 12, 2023
 
 from . import admin_bp
-from flask import render_template, url_for, request, session, redirect
+from flask import render_template, url_for, request, session, redirect, flash
 from app.models.comments import Comment
 from app.database import db
 from scripts.utils import convert_utc_to_ist
 
-import json
 from functools import wraps
-from config import APP_DATA_DIR
 
     
 def admin_login_required(view_func):
@@ -29,7 +27,7 @@ def dashboard():
     # Convert UTC datetime to IST format for each comment
     for comment in comments_list:
         comment.created_at = convert_utc_to_ist(comment.created_at.strftime("%Y-%m-%d %H:%M:%S"))
-        
+
     return render_template('dashboard.html', comments=comments_list)
 
 
@@ -50,3 +48,17 @@ def login():
 def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('index'))
+
+
+@admin_bp.route('/delete_comment/<int:comment_id>', methods=['POST'])
+@admin_login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    # Delete the comment from the database
+    db.session.delete(comment)
+    db.session.commit()
+
+    flash('Comment deleted successfully', 'success')
+    return redirect(url_for('admin.dashboard'))
+

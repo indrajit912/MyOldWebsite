@@ -35,11 +35,3 @@ def index():
 
 
     return render_template('comment_box.html', comments=comments_list)
-
-@comments_bp.route('/allcomments')
-def allcomments():
-    # Fetch all comments from the database
-    comments = Comment.query.all()
-
-    # Render the template with the comments
-    return render_template('all_comments.html', comments=comments)

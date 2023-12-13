@@ -10,6 +10,9 @@
 {% endblock %}
 
 {% block content %}
+
+    {% include 'flash_msgs.html' %}
+
     <div class="dashboard-container">
 
         <div class="admin-panel">
@@ -28,11 +31,16 @@
             {% if comments %}
                 <div class="comment-list">
                     {% for comment in comments|reverse %}
+                    <span class="comment-id">Comment ID: {{ comment['id'] }}</span>
                         <div class="comment">
                             <div class="comment-header">
                                 <h4>{{ comment['visitor_name'] }}</h4>
                                 <span class="comment-datetime">{{ comment['created_at'] }}</span>
-                                <button class="delete-btn">Delete</button>
+                            
+                                <!-- Add a form for handling comment deletion -->
+                                <form action="{{ url_for('admin.delete_comment', comment_id=comment.id) }}" method="post" class="delete-form">
+                                    <button type="submit" class="delete-btn">Delete</button>
+                                </form>
                             </div>
                             <p class="comment-text"><span class="email-text">Email:</span> {{ comment['visitor_email'] }}</p>
                             <p class="comment-text">{{ comment['comment_text'] }}</p>
@@ -44,4 +52,5 @@
             {% endif %}
         </div>
     </div>
+
 {% endblock %}
