@@ -4,25 +4,14 @@
 
 from . import admin_bp
 from flask import render_template, url_for, request, session, redirect
+from app.models.comments import Comment
+from app.database import db
+from scripts.utils import convert_utc_to_ist
+
 import json
 from functools import wraps
 from config import APP_DATA_DIR
 
-# TODO: Add database.
-# TODO: Add delete functionality for comments.
-
-COMMENTS_JSON_FILE = APP_DATA_DIR / 'comments.json'
-
-def save_comments_to_json(comments):
-    with open(COMMENTS_JSON_FILE, 'w') as json_file:
-        json.dump(comments, json_file, indent=4)
-
-def load_comments_from_json():
-    try:
-        with open(COMMENTS_JSON_FILE, 'r') as json_file:
-            return json.load(json_file)
-    except FileNotFoundError:
-        return []
     
 def admin_login_required(view_func):
     @wraps(view_func)
@@ -35,7 +24,12 @@ def admin_login_required(view_func):
 @admin_bp.route('/dashboard')
 @admin_login_required
 def dashboard():
-    comments_list = load_comments_from_json()
+    comments_list = Comment.query.all()
+
+    # Convert UTC datetime to IST format for each comment
+    for comment in comments_list:
+        comment.created_at = convert_utc_to_ist(comment.created_at.strftime("%Y-%m-%d %H:%M:%S"))
+        
     return render_template('dashboard.html', comments=comments_list)
 
 
