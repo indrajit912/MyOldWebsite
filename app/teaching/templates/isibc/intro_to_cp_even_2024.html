@@ -6,26 +6,84 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('teaching.static', filename='css/teaching_style.css') }}">
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            /* border: 2px solid black; Add this line to set the table border */
+        }
+
+        th, td {
+            border: 1px solid black; /* Add this line to set the cell borders */
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for odd rows excluding the first column */
+        tr:nth-child(odd) td:not(:first-child) {
+            background-color: #e6e6e6;
+        }
+
+        /* Style for even rows excluding the first column */
+        tr:nth-child(even) td:not(:first-child) {
+            background-color: #d9d9d9;
+        }
+
+        /* Style for the print button */
+        .print-button {
+            margin-top: 1px;
+            margin-bottom: 2px;
+            float: right;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            align-items: right;
+        }
+        
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+
+            .print-button {
+                font-size: 12px;
+            }
+        }
+    </style>
 {% endblock %}
  
   
 {% block content %}
-<div class="page-title">Introduction To Completely Positive Maps, Even Sem 2024</div>
+<div class="page-title">A Workshop on Completely Positive Maps and Operator Algebras, Even Sem 2024</div>
 <div class="teaching-content">
     <b>Term:</b> Even Semester 2024<br>
-    <b>Duration:</b> Jan 2024 - TBA<br><br>
-    <b>Course Name:</b> Introduction To Completely Positive Maps (RF/VS)<br>
+    <b>Duration:</b> Jan, 15 2024 - Apr 29, 2024<br><br>
+    <b>Course Name:</b> A Workshop on Completely Positive Maps and Operator Algebras (RF/VS)<br>
     <b>Course Overview:</b>
     <p>
-        The lecture series is designed for both non-experts and seasoned researchers in the field. This course is crafted as an introduction to the fundamental concepts and theories encapsulated in the first seven chapters of the seminal work by Vern Paulsen, "Completely Bounded Maps and Operator Algebras.
+        This workshop centers around the theoretical exploration of completely positive maps and its associated domain. In the initial sessions, we will delve into the fundamentals of quantum theory, encompassing both mathematical principles and introductory physical aspects. Subsequently, we will pivot to the foundational concepts of quantum information, covering topics such as registers/states, quantum channels, and measurements. Following this groundwork, our focus will shift towards a comprehensive understanding of Completely Positive Maps, encompassing discussions on Dilation Theorems, Arveson's Extension Theorem, and the C*-tensor product. The latter part of the workshop will introduce participants to Completely Bounded Maps and their interconnected areas. Additionally, we will delve into the abstract characterizations of Operator Systems and Operator Spaces, enriching the exploration of this intriguing field.
     </p>
     <br>
     <b>Instructors:</b>  Indrajit Ghosh (SRF), Gahin Maity (JRF) and Soumyashant Nayak (Asst. Prof.)<br>
-    <b>Lecture Timings:</b> TBA<br>
+    <b>Lecture Timings:</b> 10:00 AM - 04:15 PM with breaks (11:00-11:15 AM coffee, 01:00-02:00 PM lunch and 03:00-03:15 PM tea) <br>
     <b>Room:</b> TBA<br>
     <br>
 
-    <h3>References.</h3>
+    <h3>References</h3>
 
     <ol>
         <li>Vern Paulsen, <i>Completely Bounded Maps and Operator Algebras.</i></li>
@@ -33,7 +91,136 @@
         <li>John Watrous, <i>The Theory of Quantum Information.</i></li>
         <li>L. Susskind and A. Friedman, <i>Quantum Mechanics: The Theoretical Minimum</i></li>
     </ol>
+
+    <br>
+
+    <h3>Tentative Schedule</h3>
+    <!-- Button to trigger printing -->
+    <button onclick="printTentativeSchedule()" class="print-button">Print</button>
+
+    <table id="tentativeScheduleTable">
+        <tr>
+            <th>Phase</th>
+            <th>Date</th>
+            <th>Speaker</th>
+            <th>Topics</th>
+            <th>Reference</th>
+        </tr>
+
+        <!-- Phase I -->
+        <tr>
+            <td rowspan="4">I</td>
+            <td>Jan 15 (Mon)</td>
+            <td>Soumyashant Nayak</td>
+            <td>Review of basic matrix analysis;</td>
+            <td>Chapter 1 of Watrous, Section 2.1 of Nielsen-Chuang</td>
+        </tr>
+        <tr>
+            <td>Jan 17 (Wed)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Review of basics of quantum mechanics;</td>
+            <td>Chapter 2 of Nielsen-Chuang (Section 2.2 onwards)</td>
+        </tr>
+        <tr>
+            <td>Jan 22 (Mon)</td>
+            <td>Gahin Maiti</td>
+            <td>Review of basics of quantum mechanics</td>
+            <td>Chapters 3, 6, 7 of Susskind-Friedman</td>
+        </tr>
+        <tr>
+            <td>Jan 24 (Wed)</td>
+            <td>IG+GM+SN</td>
+            <td>Problem-solving session</td>
+            <td>Nielsen-Chuang, Watrous</td>
+        </tr>
+
+        <!-- Phase II -->
+        <tr>
+            <td rowspan="4">II</td>
+            <td>Feb 19 (Mon)</td>
+            <td>Gahin Maiti</td>
+            <td>Basic notions of quantum information - Registers/states, Quantum channels, Measurements;</td>
+            <td>Chapter 2 of Watrous</td>
+        </tr>
+        <tr>
+            <td>Feb 20 (Tue)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Positive Maps; Problem-solving session</td>
+            <td>Chapter 2 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Feb 21 (Wed)</td>
+            <td>Gahin Maiti</td>
+            <td>Completely Positive Maps; Problem-solving session</td>
+            <td>Chapter 3 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Feb 22 (Thur)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Dilation Theorems; Problem-solving session</td>
+            <td>Chapter 4 of Paulsen</td>
+        </tr>
+
+        <!-- Phase III -->
+        <tr>
+            <td rowspan="3">III</td>
+            <td>Mar 18 (Mon)</td>
+            <td>Gahin Maiti</td>
+            <td>Completely Positive Maps into \(M_n( C )\); Problem-solving session</td>
+            <td>Chapter 6 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Mar 20 (Wed)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Arveson's Extension Theorems; Problem-solving session</td>
+            <td>Chapter 7 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Mar 25 (Mon)</td>
+            <td>Soumyashant Nayak</td>
+            <td>Tensor Products of \(C^*\)-algebras; Problem-solving session</td>
+            <td>Chapter 11 of Paulsen, Chapter 11 of Kadison-Ringrose</td>
+        </tr>
+
+        <!-- Phase IV -->
+        <tr>
+            <td rowspan="6">IV</td>
+            <td>Apr 22 (Mon)</td>
+            <td>Gahin Maiti</td>
+            <td>Completely Bounded Maps</td>
+            <td>Chapter 8 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Apr 23 (Tue)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Completely Bounded Homomorphisms</td>
+            <td>Chapter 9 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Apr 24 (Wed)</td>
+            <td>Soumyashant Nayak</td>
+            <td>Abstract Characterizations of Operator Systems and Operator Spaces</td>
+            <td>Chapter 13 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Apr 25 (Thur)</td>
+            <td>Gahin Maiti</td>
+            <td>An Operator Space Bestiary</td>
+            <td>Chapter 14 of Paulsen</td>
+        </tr>
+        <tr>
+            <td>Apr 29 (Mon)</td>
+            <td>Indrajit Ghosh</td>
+            <td>Injective Envelopes</td>
+            <td>Chapter 15 of Paulsen</td>
+        </tr>
+    </table>
+    
 </div>
+
+<!-- Link to the external JavaScript file -->
+<script src="{{ url_for('teaching.static', filename='js/printSchedule.js') }}"></script>
+
 
 <br>
 <!-- Add last updated information -->
