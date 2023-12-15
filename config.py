@@ -16,6 +16,12 @@ INDRAJITS_BOT_EMAIL_ID = os.environ.get("INDRAJITS_BOT_EMAIL_ID")
 INDRAJITS_BOT_EMAIL_PASSWD = os.environ.get("INDRAJITS_BOT_APP_PASSWORD")
 INDRAJIT912_GMAIL = os.environ.get("INDRAJIT912_GMAIL")
 
+# MySQL Database credentials
+DB_HOST = os.environ.get("DB_HOST")
+DB_USERNAME = os.environ.get("DB_USERNAME")
+DB_PASSWORD = os.environ.get("DB_PASSWORD")
+DB_NAME = os.environ.get("DB_NAME")
+
 MAIL_USE_TLS = True
 MAIL_USE_SSL = False
 MAIL_USERNAME = INDRAJITS_BOT_EMAIL_ID # Your Gmail email address

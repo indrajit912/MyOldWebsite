@@ -6,3 +6,4 @@ Flask-WTF
 gunicorn
 python-dotenv
 email_validator
+mysql-connector-python

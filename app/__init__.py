@@ -14,6 +14,7 @@ from app.teaching import teaching_bp
 from app.comments import comments_bp
 from app.admin import admin_bp
 from .database import db
+from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME
 
 
 app = Flask(__name__)
@@ -29,7 +30,11 @@ app.register_blueprint(comments_bp)
 app.register_blueprint(admin_bp)
 
 # Database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+connection_uri = (
+    f"mysql+mysqlconnector://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
+    "?ssl_ca=/etc/ssl/cert.pem"
+)
+app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
