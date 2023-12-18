@@ -1,6 +1,6 @@
 from . import comments_bp
 from app.models.comments import Comment
-from app.database import db
+from app.extensions import db
 from scripts.utils import convert_utc_to_ist
 
 from flask import render_template, redirect, url_for, request

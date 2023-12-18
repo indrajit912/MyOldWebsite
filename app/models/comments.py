@@ -1,4 +1,4 @@
-from app.database import db
+from app.extensions import db
 from datetime import datetime
 
 class Comment(db.Model):

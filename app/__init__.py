@@ -7,14 +7,13 @@ Attributes:
     app (Flask): The Flask web application instance.
 """
 from flask import Flask
-from flask_migrate import Migrate
 from secrets import token_hex
 from app.errors import errors_bp
 from app.blog import blog_bp
 from app.teaching import teaching_bp
 from app.comments import comments_bp
 from app.admin import admin_bp
-from .database import db
+from .extensions import db, migrate
 from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME, DEBUG
 
 
@@ -40,8 +39,12 @@ connection_uri = (
 app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
+# Initialize the app with db
 db.init_app(app)
-migrate = Migrate(app, db)
+
+# Initialize the app and db with Flask-Migrate
+migrate.init_app(app, db)
 
 # Import routes and extensions
 from app import routes

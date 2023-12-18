@@ -5,7 +5,7 @@
 from . import admin_bp
 from app.models.comments import Comment
 from app.models.users import User
-from app.database import db
+from app.extensions import db
 from app.admin.forms import VerifyOTPForm, AdminDetailsForm
 from scripts.email_message import EmailMessage
 from scripts.utils import convert_utc_to_ist, generate_otp

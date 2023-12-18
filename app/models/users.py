@@ -1,4 +1,4 @@
-from app.database import db
+from app.extensions import db
 from scripts.utils import sha256_hash
 from datetime import datetime
 import secrets
