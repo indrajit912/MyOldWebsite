@@ -7,44 +7,41 @@ Attributes:
     app (Flask): The Flask web application instance.
 """
 from flask import Flask
-from secrets import token_hex
+
+from config import Config
+
 from app.errors import errors_bp
 from app.blog import blog_bp
 from app.teaching import teaching_bp
 from app.comments import comments_bp
 from app.admin import admin_bp
 from .extensions import db, migrate
-from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME, DEBUG
 
 
-app = Flask(__name__)
+def create_app(config_class=Config):
+    # Creates an app with specific config class
 
-# Set a secure and random secret key
-app.secret_key = token_hex(16)
+    app = Flask(__name__)
+    app.config.from_object(config_class)
 
-app.debug = DEBUG
+    # Initialize the app with db
+    db.init_app(app)
 
-# Register all blueprints
-app.register_blueprint(errors_bp)
-app.register_blueprint(blog_bp)
-app.register_blueprint(teaching_bp)
-app.register_blueprint(comments_bp)
-app.register_blueprint(admin_bp)
+    # Initialize the app and db with Flask-Migrate
+    migrate.init_app(app, db)
 
-# Database URI
-connection_uri = (
-    f"mysql+mysqlconnector://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
-    "?ssl_ca=/etc/ssl/cert.pem"
-)
-app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # Register all blueprints
+    app.register_blueprint(errors_bp)
+    app.register_blueprint(blog_bp)
+    app.register_blueprint(teaching_bp)
+    app.register_blueprint(comments_bp)
+    app.register_blueprint(admin_bp)
+
+    return app
 
 
-# Initialize the app with db
-db.init_app(app)
-
-# Initialize the app and db with Flask-Migrate
-migrate.init_app(app, db)
+# Create the app
+app = create_app()
 
 # Import routes and extensions
 from app import routes

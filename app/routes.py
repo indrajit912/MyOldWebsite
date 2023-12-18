@@ -11,9 +11,8 @@ Attributes:
 """
 
 from app import app
-from flask import render_template, request, abort, url_for, redirect
+from flask import render_template, request, url_for, redirect
 
-import random
 from pathlib import Path
 from smtplib import SMTPAuthenticationError, SMTPException
 
@@ -21,16 +20,6 @@ from config import *
 from scripts.email_message import EmailMessage
 from scripts.utils import convert_zip_to_base64
 
-
-######################################################################
-#                           Processor Function
-######################################################################
-# Define the context processor function
-# This function make the variables abailable for all routes!
-@app.context_processor
-def inject_quote():
-    quote, quote_source = random.choice(QUOTES)
-    return dict(quote=quote, quote_source=quote_source)
 
 ######################################################################
 #                           Home
