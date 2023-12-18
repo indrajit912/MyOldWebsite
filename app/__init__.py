@@ -7,6 +7,7 @@ Attributes:
     app (Flask): The Flask web application instance.
 """
 from flask import Flask
+from flask_migrate import Migrate
 from secrets import token_hex
 from app.errors import errors_bp
 from app.blog import blog_bp
@@ -14,13 +15,15 @@ from app.teaching import teaching_bp
 from app.comments import comments_bp
 from app.admin import admin_bp
 from .database import db
-from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME
+from config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USERNAME, DEBUG
 
 
 app = Flask(__name__)
 
 # Set a secure and random secret key
 app.secret_key = token_hex(16)
+
+app.debug = DEBUG
 
 # Register all blueprints
 app.register_blueprint(errors_bp)
@@ -38,6 +41,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = connection_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+migrate = Migrate(app, db)
 
 # Import routes and extensions
 from app import routes

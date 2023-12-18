@@ -30,6 +30,9 @@ MAIL_DEFAULT_SENDER = INDRAJITS_BOT_EMAIL_ID  # Default sender email address
 
 GMAIL_SERVER = ['smtp.gmail.com', 587]
 
+DEV_ENV = os.environ.get("DEV_ENV")
+DEBUG = True if str(DEV_ENV) == '1' else False
+
 APP_DATA_DIR = Path(__file__).parent / "app_data"
 
 # Math quotes: "http://math.furman.edu/~mwoodard/data.html"
