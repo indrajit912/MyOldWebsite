@@ -156,6 +156,7 @@ def contact():
             return render_template('thank_you.html')
         
         except SMTPAuthenticationError as e:
+            # TODO: Print the error `e` as 'Know More' button!
             # Redirect to the email authentication error page using the error blueprint
             return redirect(url_for('errors.email_auth_error_route'))
         

@@ -1,207 +1,104 @@
-<!-- templates/contact.html -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Contact - Indrajit Ghosh</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="contact indrajit ghosh, stat-math unit, ISI Bangalore">
+{% extends 'base.html' %}
 
-        <style>
-            h1 {
-                text-align: center;
-            }
-            .contact-container {
-              max-width: 600px;
-              margin: 15px auto;
-              padding: 20px;
-              background-color: #fff;
-              border-radius: 5px;
-              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-              width: 100%;
-            }
+{% block title %}Indrajit Ghosh - Contact{% endblock %}
 
-            .input-box {
-              margin: 15px;
-            }
+{% block styles %}
+     {{ super() }}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_style.css') }}">
+{% endblock %} 
+ 
+{% block content %}
 
-            label {
-              display: block;
-              margin-bottom: 5px;
-              font-weight: bold;
-              color: #333;
-            }
-
-            input[type="text"],
-            input[type="email"],
-            textarea {
-              width: 100%;
-              padding: 10px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-              font-size: 16px;
-            }
-
-            textarea {
-              resize: vertical;
-            }
-
-            button[type="submit"] {
-              background-color: #007bff;
-              color: #fff;
-              padding: 10px 20px;
-              border: none;
-              border-radius: 5px;
-              font-size: 16px;
-              cursor: pointer;
-            }
-
-            button[type="submit"]:hover {
-              background-color: #0056b3;
-            }
-
-            /* Add a new class for the button container */
-            .button-container {
-                text-align: right;
-                margin-top: 20px;
-            }
-
-            /* Add styles for the "Add More" and "Clear" buttons */
-            #attachment-container {
-                margin-top: 10px;
-            }
-
-            #attachment-container .input-box {
-                display: flex;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-
-            #attachment-container label {
-                margin-right: 10px;
-            }
-
-            #add-more-btn,
-            .clear-btn {
-                background-color: #28a745;
-                color: #fff;
-                padding: 8px 12px;
-                border: none;
-                border-radius: 5px;
-                font-size: 14px;
-                cursor: pointer;
-                margin-right: 10px;
-            }
-
-            #add-more-btn:hover,
-            .clear-btn:hover {
-                background-color: #218838;
-            }
-
-            .clear-btn {
-                background-color: #dc3545; /* Red color for the "Clear" button */
-                margin-right: 0; /* Remove right margin for spacing */
-            }
-
-            .clear-btn:hover {
-                background-color: #c82333;
-            }
-
-            @media (max-width: 480px) {
-              .contact-container {
-                  padding: 15px;
-                  width: 90%;
-              }
-              .input-box {
-                margin: 15px;
-                margin-right: 20px;
-              }
-
-              #attachment-container .input-box {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: flex-start; /* Align items to the start (left) */
-              }
-
-              .clear-btn {
-                  width: 30%;
-                  margin-top: 10px; /* Add margin at the top for spacing */
-              }
-            }
-        </style>
-    </head>
-    <body>
-
-        {% include '_navbar.html' %}
-
-        <div class="contact-container">
-          <h1>Contact Indrajit</h1>
-          
-          <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-              <div class="input-box">
-                  <label for="name">Name:</label>
-                  <input type="text" id="name" name="name" required>
-              </div>
-              <div class="input-box">
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" required>
-              </div>
-              <div class="input-box">
-                  <label for="subject">Subject:</label>
-                  <input type="text" id="subject" name="subject" required>
-              </div>
-              <div class="input-box">
-                  <label for="message">Message:</label>
-                  <textarea id="message" name="message" rows="4" required></textarea>
-              </div>
-              <!-- Add the attachment field -->
-              <div id="attachment-container">
-                <div class="input-box">
-                  <label for="attachment">Attachment:</label>
-                  <input type="file" id="attachment" name="attachment[]" onchange="validateFileSize(this)">
-                  <button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>
-                </div>
-                    
-              </div>
-
-              <button type="button" id="add-more-btn" onclick="addAttachmentField()">Add More</button>
-              <div class="button-container">
-                <button type="submit">Send</button>
-              </div>
-          </form>
+<div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
         </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>CONTACT</span>
+              <span>INDRAJIT</span>
+            </div>
+          </div>
+          <div class="screen-body-item">
 
-        {% include '_footer.html' %}
+            <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+              <div class="app-form">
+                <div class="app-form-group">
+                  <input type="text" id="name" name="name" class="app-form-control" placeholder="Name" required>
+                </div>
+                <div class="app-form-group">
+                  <input type="email" id="email" name="email" class="app-form-control" placeholder="Email" required>
+                </div>
+                <div class="app-form-group">
+                  <input type="text" id="subject" name="subject" class="app-form-control" placeholder="Subject" required>
+                </div>
+                <div class="app-form-group message">
+                  <textarea id="message" name="message" class="app-form-control" placeholder="Nessage" rows="5" required></textarea>
+                </div>
+  
+                <div id="attachment-container">
+                  <div class="app-form-group" class="app-form-group">
+                    <input type="file" id="attachment" name="attachment[]" class="app-form-control" onchange="validateFileSize(this)">
+                    <button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>
+                  </div>
+                </div>
+                <button type="button" id="add-more-btn" class="app-form-button" onclick="addAttachmentField()">Attach More</button>
+  
+                <div class="app-form-group buttons">
+                  <!-- <button class="app-form-button">CANCEL</button> -->
+                  <button type="submit" class="app-form-button">Send</button>
+                </div>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 
-        <script>
-          function addAttachmentField() {
-                var container = document.getElementById('attachment-container');
-                var newInput = document.createElement('div');
-                newInput.classList.add('input-box');
-                newInput.innerHTML = '<label for="attachment">Attachment:</label><input type="file" name="attachment[]" onchange="validateFileSize(this)"><button type="button" class="clear-btn" onclick="clearAttachment(this)">Clear</button>';
-                container.appendChild(newInput);
-            }
+  <script>
+    function addAttachmentField() {
+          var container = document.getElementById('attachment-container');
+          var newInput = document.createElement('div');
+          newInput.classList.add('input-box');
+          newInput.innerHTML = '<input type="file" id="attachment" name="attachment[]" class="app-form-control" onchange="validateFileSize(this)"><button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>';
+          container.appendChild(newInput);
+      }
 
-            function validateFileSize(input) {
-                var maxSizeMB = 24;
-                var fileSize = input.files[0].size / (1024 * 1024); // Size in MB
-                if (fileSize > maxSizeMB) {
-                    alert("File size exceeds the maximum limit of 24 MB.");
-                    input.value = ""; // Clear the file input
-                    return false;
-                }
-                return true;
-            }
+      function validateFileSize(input) {
+          var maxSizeMB = 24;
+          var fileSize = input.files[0].size / (1024 * 1024); // Size in MB
+          if (fileSize > maxSizeMB) {
+              alert("File size exceeds the maximum limit of 24 MB.");
+              input.value = ""; // Clear the file input
+              return false;
+          }
+          return true;
+      }
 
-            function clearAttachment(button) {
-                var input = button.previousElementSibling;
-                input.value = ""; // Clear the file input
-            }
+      function clearAttachment(button) {
+          var input = button.previousElementSibling;
+          input.value = ""; // Clear the file input
+      }
 
-            function validateForm() {
-                // Add any additional form validation logic here
-                return true; // Return false to prevent form submission
-            }
-        </script>
-    
-    </body>
-</html>
+      function validateForm() {
+          // Add any additional form validation logic here
+          return true; // Return false to prevent form submission
+      }
+  </script>
+
+{% endblock %}

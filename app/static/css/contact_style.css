@@ -1,75 +1,200 @@
-/* static/css/contact_style.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* contact.css */
+
+.background {
+    display: flex;
+    min-height: 70vh;
 }
 
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #001233;
+.screen {
+    position: relative;
+    background: #f2f2f2; /* Change background color to match body background color */
+    border-radius: 15px;
 }
 
-.input-box {
-  margin: 15px;
+.screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
+.screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #001233; /* Change background color to match header background color */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+.screen-header-left {
+    margin-right: auto;
 }
 
-textarea {
-  resize: vertical;
+.screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: #fff; /* Change button color to white */
 }
 
-button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+.screen-header-button.close {
+    background: #FF595A; /* Change close button color */
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+.screen-header-button.maximize {
+    background: #e8e925; /* Change maximize button color */
 }
 
-@media (max-width: 480px) {
-  .container {
-      padding: 15px;
-  }
-  .input-box {
-    margin: 15px;
-  }
+.screen-header-button.minimize {
+    background: #74c54f; /* Change minimize button color */
+}
+
+.screen-header-right {
+    display: flex;
+}
+
+.screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+}
+
+.screen-body {
+    display: flex;
+}
+
+.screen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #FF595A; /* Change title color */
+    font-size: 26px;
+}
+
+.app-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: #FF595A; /* Change title underline color */
+}
+
+
+.app-form-group {
+    margin-bottom: 15px;
+}
+
+.app-form-group.message {
+    margin-top: 40px;
+}
+
+.app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.app-form-control::placeholder {
+    color: #666;
+}
+
+.app-form-control:focus {
+    border-bottom-color: #666;
+}
+
+.app-form-button {
+    background: none;
+    border: none;
+    color: #FF595A;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-form-button:hover {
+    color: #b91313;
+}
+
+.dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+    .screen-body {
+        flex-direction: column;
+    }
+
+    .screen-body-item.left {
+        margin-bottom: 30px;
+    }
+
+    .app-title {
+        flex-direction: row;
+    }
+
+    .app-title span {
+        margin-right: 12px;
+    }
+
+    .app-title:after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .screen-body {
+        padding: 40px;
+    }
+
+    .screen-body-item {
+        padding: 0;
+    }
+
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
