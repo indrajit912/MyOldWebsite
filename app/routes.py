@@ -106,7 +106,7 @@ def contact():
         name = request.form.get('name')
         email_id = request.form.get('email')
         subject = request.form.get('subject')
-        message = request.form.get('message')
+        message_parts = request.form.get('message').split('\n')
 
         # Process file attachments
         attachments = request.files.getlist('attachment[]')
@@ -124,7 +124,7 @@ def contact():
             'emails/email_template.html', 
             name=name, 
             subject=subject, 
-            message=message, 
+            message_parts=message_parts, 
             email_id=email_id
         )
 
