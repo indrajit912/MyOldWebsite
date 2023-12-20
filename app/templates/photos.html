@@ -1,95 +1,70 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Indrajit Ghosh - Photos</title>
-    <meta name="keywords" content="indrajit ghosh, personal photos, mathematics, isi campus, ISI Bangalore">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/collage_style.css') }}">
-</head>
-<body>
+{% extends 'base.html' %}
 
-    {% include '_header.html' %}
+{% block title %}Indrajit Ghosh - Photos{% endblock %}
 
-    <div class="grid">
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo1.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Selfi, in ISI Office</div>
-            </div>
-        </div>
-              
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo2.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Photo by Sneha Bharti</div>
-            </div>
-        </div>
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/photo_style.css') }}">
+{% endblock %}
 
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo_sob.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">In the Restaurant Secrets of Bangalore</div>
-            </div>
-        </div>
+{% block content %}
 
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indra_library/books.jpg);"></div>
-            <div class="container">
-                <h2>Book Shelf</h2>
-                <div class="desc">Personal book shelf in my ISI Hostel</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo_near_dqtrs.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Photo by Sneha Bharti</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo_with_cat.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit With Cat</h2>
-                <div class="desc">Captured using my Sneha Bharti</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/isi_office_pic.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Captured by me using Apple Watch in ISI Office</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo_bookfair.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Captured by Sneha Bharti</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indrajit/photo_sob_staircase.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit</h2>
-                <div class="desc">Captured by Geetika Barman</div>
-            </div>
-        </div>
-
-        <div class="grid--item">
-            <div class="img" style="background-image: url(/static/images/indra_library/indra_with_books.jpg);"></div>
-            <div class="container">
-                <h2>Indrajit With Book</h2>
-                <div class="desc">Captured using my Apple Watch</div>
-            </div>
-        </div>
-
+<div class="gallery">
+    
+    <div class="photo-list">
+        <ul>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indrajit/photo1.jpg') }}" alt='Volcano and lava field against a stormy sky'>
+                        <figcaption>Mountains and volcanos</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indrajit/photo2.jpg') }}" alt='Guy on a bike ok a wooden bridge with a forest backdrop'>
+                        <figcaption>Adventure getaways</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indrajit/photo_sob.jpg') }}" alt='Person standing alone in a misty forest'>
+                        <figcaption>Forest escapes</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indra_library/books.jpg') }}" alt='Person hiking on a trail through mountains while taking a photo with phone'>
+                        <figcaption>Hiking trails</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indrajit/photo_near_dqtrs.jpg') }}" alt='Street scene with person walking and others on motorbikes, all wearing masks'>
+                        <figcaption>Street scenes</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/indrajit/photo_with_cat.jpg') }}" alt='Fashionable-looking girl with blond hair and pink sunglasses'>
+                        <figcaption>Trending</figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
     </div>
-</body>
-</html>
+
+</div>
+
+
+{% endblock %}
