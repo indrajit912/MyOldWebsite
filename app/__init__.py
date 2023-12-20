@@ -8,7 +8,7 @@ Attributes:
 """
 from flask import Flask
 
-from config import Config
+from config import ProductionConfig, DevelopmentConfig
 
 from app.errors import errors_bp
 from app.blog import blog_bp
@@ -18,7 +18,7 @@ from app.admin import admin_bp
 from .extensions import db, migrate
 
 
-def create_app(config_class=Config):
+def create_app(config_class=ProductionConfig):
     # Creates an app with specific config class
 
     app = Flask(__name__)

@@ -9,7 +9,7 @@ from app.extensions import db
 from app.admin.forms import VerifyOTPForm, AdminDetailsForm
 from scripts.email_message import EmailMessage
 from scripts.utils import convert_utc_to_ist, generate_otp
-from config import *
+from config import EmailConfig
 
 from flask import render_template, url_for, request, session, redirect, flash
 from sqlalchemy.exc import IntegrityError
@@ -88,8 +88,8 @@ def add_admin():
 
     # Create the email message
     msg = EmailMessage(
-        sender_email_id=INDRAJITS_BOT_EMAIL_ID,
-        to=INDRAJIT912_GMAIL,
+        sender_email_id=EmailConfig.INDRAJITS_BOT_EMAIL_ID,
+        to=EmailConfig.INDRAJIT912_GMAIL,
         subject="Request for New Admin Registration!",
         email_html_text=_email_html_text
     )
@@ -98,8 +98,8 @@ def add_admin():
     try:
         # Send the email to Indrajit
         msg.send(
-            sender_email_password=INDRAJITS_BOT_EMAIL_PASSWD, 
-            server_info=GMAIL_SERVER,
+            sender_email_password=EmailConfig.INDRAJITS_BOT_EMAIL_PASSWD, 
+            server_info=EmailConfig.GMAIL_SERVER,
             print_success_status=False
         )
     

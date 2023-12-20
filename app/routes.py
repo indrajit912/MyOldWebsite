@@ -16,7 +16,7 @@ from flask import render_template, request, url_for, redirect
 from pathlib import Path
 from smtplib import SMTPAuthenticationError, SMTPException
 
-from config import *
+from config import EmailConfig, APP_DATA_DIR
 from scripts.email_message import EmailMessage
 from scripts.utils import convert_zip_to_base64
 
@@ -130,8 +130,8 @@ def contact():
 
         # Create the email message
         msg = EmailMessage(
-            sender_email_id=INDRAJITS_BOT_EMAIL_ID,
-            to=INDRAJIT912_GMAIL,
+            sender_email_id=EmailConfig.INDRAJITS_BOT_EMAIL_ID,
+            to=EmailConfig.INDRAJIT912_GMAIL,
             subject="Message from your WebSite!",
             email_html_text=_email_html_text,
             attachments=_attachment_paths
@@ -141,8 +141,8 @@ def contact():
         try:
             # Send the email to Indrajit
             msg.send(
-                sender_email_password=INDRAJITS_BOT_EMAIL_PASSWD, 
-                server_info=GMAIL_SERVER,
+                sender_email_password=EmailConfig.INDRAJITS_BOT_EMAIL_PASSWD, 
+                server_info=EmailConfig.GMAIL_SERVER,
                 print_success_status=False
             )
 
