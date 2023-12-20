@@ -41,7 +41,7 @@ def create_app(config_class=ProductionConfig):
 
 
 # Create the app
-app = create_app()
+app = create_app(DevelopmentConfig)
 
 # Import routes and extensions
 from app import routes
