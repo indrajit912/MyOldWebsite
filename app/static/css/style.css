@@ -23,6 +23,14 @@ body {
     line-height: 1.6;
 }
 
+img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-position: center;
+  object-fit: cover;
+}
+
 /* Header styles */
 #header {
     background-color: #001233;

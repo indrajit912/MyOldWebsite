@@ -22,13 +22,14 @@
         <div class="menu">
             
           <li><a href="/">Home</a></li>
-          <li><a href="/teaching">Teaching</a></li>
-          <li><a href="/research">Research</a></li>
-          <li><a href="/cv" target="_blank">CV</a></li>
-          <li><a href="/misc">Miscellaneous</a></li>
-          <li><a href="/photos">Photos</a></li>
-          <li><a href="/timeline">Timeline </a></li>
-          <li><a href="{{ url_for('comments.index') }}">Comments </a></li>
+          <li><a href="{{ url_for('teaching.index') }}">Teaching</a></li>
+          <li><a href="{{ url_for('research') }}">Research</a></li>
+          <li><a href="{{ url_for('cv') }}" target="_blank">CV</a></li>
+          <li><a href="{{ url_for('misc') }}">Miscellaneous</a></li>
+          <li><a href="{{ url_for('photos') }}">Photos</a></li>
+          <li><a href="{{ url_for('timeline') }}">Timeline</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a href="{{ url_for('comments.index') }}">Comments</a></li>
     
           <!-- DROPDOWN MENU -->
           <!-- <li class="services">

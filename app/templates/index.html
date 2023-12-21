@@ -44,7 +44,14 @@
     <div class="content">
     
         <div class="profile">
-            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile photo of Indrajit Ghosh" class="profile-image">
+
+            <img 
+            src="{{ url_for('static', filename='images/profile.jpg') }}" 
+            class="profile-image"
+            alt="Profile photo of Indrajit Ghosh"
+            loading="lazy"
+            >
+
             <div class="address">
                 <p><strong>Office:</strong> S6, ISI Bangalore</p>
                 <p><strong>Email:</strong> rs_math1902@isibang.ac.in</p>
