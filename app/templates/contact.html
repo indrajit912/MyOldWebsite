@@ -33,35 +33,44 @@
           </div>
           <div class="screen-body-item">
 
+            <!-- Contact Me form -->
             <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+              {{ form.hidden_tag() }}
+              <!-- ... existing form fields ... -->
               <div class="app-form">
+
                 <div class="app-form-group">
-                  <input type="text" id="name" name="name" class="app-form-control" placeholder="Name" required>
+                    {{ form.name(class="app-form-control", placeholder="Name") }}
                 </div>
                 <div class="app-form-group">
-                  <input type="email" id="email" name="email" class="app-form-control" placeholder="Email" required>
+                    {{ form.email(class="app-form-control", placeholder="Email") }}
                 </div>
                 <div class="app-form-group">
-                  <input type="text" id="subject" name="subject" class="app-form-control" placeholder="Subject" required>
+                    {{ form.subject(class="app-form-control", placeholder="Subject") }}
                 </div>
                 <div class="app-form-group message">
-                  <textarea id="message" name="message" class="app-form-control" placeholder="Nessage" rows="5" required></textarea>
+                    {{ form.message(class="app-form-control", placeholder="Write your message here ...", rows=5) }}
                 </div>
-  
-                <div id="attachment-container">
-                  <div class="app-form-group" class="app-form-group">
-                    <input type="file" id="attachment" name="attachment[]" class="app-form-control" onchange="validateFileSize(this)">
-                    <button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>
+              
+                  <div id="attachment-container">
+                      <div class="app-form-group">
+                          {{ form.attachment.label }} {{ form.attachment(class="app-form-control") }}
+                          <button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>
+                      </div>
                   </div>
+
+                  <button type="button" id="add-more-btn" class="app-form-button" onclick="addAttachmentField()">Attach More</button>
+                  
                 </div>
-                <button type="button" id="add-more-btn" class="app-form-button" onclick="addAttachmentField()">Attach More</button>
-  
+                <!-- ... existing form fields ... -->
                 <div class="app-form-group buttons">
-                  <!-- <button class="app-form-button">CANCEL</button> -->
-                  <button type="submit" class="app-form-button">Send</button>
+                    <button type="submit" class="app-form-button">Send</button>
                 </div>
+
               </div>
+              
             </form>
+
             
           </div>
         </div>
@@ -71,6 +80,7 @@
   </div>
 
   <script>
+    
     function addAttachmentField() {
           var container = document.getElementById('attachment-container');
           var newInput = document.createElement('div');
@@ -99,6 +109,7 @@
           // Add any additional form validation logic here
           return true; // Return false to prevent form submission
       }
+
   </script>
 
 {% endblock %}

@@ -12,6 +12,9 @@ Attributes:
 
 from app import app
 from flask import render_template, request, url_for, redirect
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, FileField
+from wtforms.validators import DataRequired, Email
 
 from pathlib import Path
 from smtplib import SMTPAuthenticationError, SMTPException
@@ -97,19 +100,29 @@ def coming_soon():
 ######################################################################
 #                       Contact Me!
 ######################################################################
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    subject = StringField('Subject', validators=[DataRequired()])
+    message = TextAreaField('Message', validators=[DataRequired()])
+    attachment = FileField('Attachment')
+
+
 @app.route('/contact/', methods=['GET', 'POST'])
 def contact():
-    if request.method == 'POST':
+    form = ContactForm()
+    attachments = []
+
+    if request.method == 'POST' and form.validate_on_submit():
         # Process the form data and send an email or save the message, etc.
-        # You can use Flask-Mail or other libraries for email sending.
-        # Get form data from the request object
-        name = request.form.get('name')
-        email_id = request.form.get('email')
-        subject = request.form.get('subject')
-        message_parts = request.form.get('message').split('\n')
+        # Access form data using form.data
+        name = form.name.data
+        email_id = form.email.data
+        subject = form.subject.data
+        message_parts = form.message.data.split('\n')
 
         # Process file attachments
-        attachments = request.files.getlist('attachment[]')
+        attachments = request.files.getlist('attachment')
 
         # Attach files to the email
         _attachment_paths = []
@@ -169,7 +182,7 @@ def contact():
             return redirect(url_for('errors.generic_error_route'))
 
 
-    return render_template('contact.html')
+    return render_template('contact.html', form=form, attachments=attachments)
 
 ###########################################################
 #               Test route
