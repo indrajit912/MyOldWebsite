@@ -9,6 +9,10 @@ body, h1, h2, p, a {
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Heading styles */
 h1, h2, h3, h4, h5, h6 {
     color: #001233; /* Your desired heading color */
