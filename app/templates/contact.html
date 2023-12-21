@@ -36,7 +36,6 @@
             <!-- Contact Me form -->
             <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
               {{ form.hidden_tag() }}
-              <!-- ... existing form fields ... -->
               <div class="app-form">
 
                 <div class="app-form-group">
@@ -52,14 +51,14 @@
                     {{ form.message(class="app-form-control", placeholder="Write your message here ...", rows=5) }}
                 </div>
               
-                  <div id="attachment-container">
-                      <div class="app-form-group">
-                          {{ form.attachment.label }} {{ form.attachment(class="app-form-control") }}
-                          <button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>
-                      </div>
-                  </div>
-
-                  <button type="button" id="add-more-btn" class="app-form-button" onclick="addAttachmentField()">Attach More</button>
+                <div id="attachment-container">
+                    <div class="app-form-group">
+                        {{ form.attachment.label }} {{ form.attachment(class="app-form-control") }}
+                        <button type="button" class="app-form-button" onclick="clearAttachment(this)">Clear</button>
+                    </div>
+                </div>
+                
+                <button type="button" id="add-more-btn" class="app-form-button" onclick="addAttachmentField()">Attach More</button>
                   
                 </div>
                 <!-- ... existing form fields ... -->
@@ -68,10 +67,8 @@
                 </div>
 
               </div>
-              
             </form>
 
-            
           </div>
         </div>
       </div>

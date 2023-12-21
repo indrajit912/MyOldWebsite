@@ -105,13 +105,12 @@ class ContactForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     subject = StringField('Subject', validators=[DataRequired()])
     message = TextAreaField('Message', validators=[DataRequired()])
-    attachment = FileField('Attachment')
+    attachment = FileField('Attachment(s)')
 
 
 @app.route('/contact/', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
-    attachments = []
 
     if request.method == 'POST' and form.validate_on_submit():
         # Process the form data and send an email or save the message, etc.
@@ -182,7 +181,7 @@ def contact():
             return redirect(url_for('errors.generic_error_route'))
 
 
-    return render_template('contact.html', form=form, attachments=attachments)
+    return render_template('contact.html', form=form)
 
 ###########################################################
 #               Test route
